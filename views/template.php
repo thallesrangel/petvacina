@@ -49,13 +49,13 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon" data-feather="users"></i> Pulgas e Carrapatos</span>
+                        <span><i class="icon" data-feather="alert-circle"></i> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon" data-feather="users"></i> Anticoncepcional</span>
+                        <span><i class="icon" data-feather="pocket"></i> Anticoncepcional</span>
                         </a>
                     </li> 
 

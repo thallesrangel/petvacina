@@ -9,10 +9,16 @@
         </div>
 
         <div class="col-md-3">
-            <span>Proprietário</span>
-            <select class="form-control form-control-sm js-select" name="proprietario" required>
-                <option value="1">Thalles</option>
-            </select>
+            <div class="form-group">
+                <span>Proprietário *</span>
+                <select class="form-control form-control-sm js-select" name="proprietario" required>
+                    <?php
+                    foreach($proprietario as $item){
+                    ?>
+                    <option value="<?= $item['id_proprietario'] ?>"> <?= $item['nome_proprietario'] ." ". $item['sobrenome_proprietario']?> </option>
+                    <?php }?>
+                </select>
+            </div>  
         </div>
         
         <div class="col-md-3">
@@ -70,6 +76,20 @@
 
 
         <div class="form-group col-3">
+            <p>Castrado?</p>
+            <div class="custom-control custom-radio float-left mr-1">
+                <input type="radio" id="castradoS" name="castrado" class="custom-control-input" value="1" checked>
+                <label class="custom-control-label" for="castradoS">Sim</label>
+            </div>
+
+            <div class="custom-control custom-radio float-left ml-1">
+                <input type="radio" id="castradoN" name="castrado" class="custom-control-input" value="2">
+                <label class="custom-control-label" for="castradoN" checked>Não</label>
+            </div>
+        </div>
+
+
+        <div class="form-group col-2">
             <p>Possui Filhotes? *</p>
             <div class="custom-control custom-radio float-left mr-1">
                 <input type="radio" id="filhotes1" name="filhotes" class="custom-control-input" value="1">
@@ -80,6 +100,11 @@
                 <input type="radio" id="filhotes2" name="filhotes" class="custom-control-input" value="2" checked>
                 <label class="custom-control-label" for="filhotes2">Não</label>
             </div>
+        </div>
+
+        <div class="form-group col-2">
+            <label id="img">Imagem</labe>
+            <input for="img" type="file" name="arquivo">
         </div>
 
     </div>
@@ -100,10 +125,6 @@
             <input id="local_implatacao" type="text" name="local_implatacao" class="form-control form-control-sm">
         </div>
 
-        <div class="form-group col-2">
-            <label id="img">Imagem</labe>
-            <input for="img" type="file" name="arquivo">
-        </div>
     </div>
     <input class="btn btn-primary" type="submit" value="Registrar">
     <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>

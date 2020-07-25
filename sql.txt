@@ -33,11 +33,14 @@ create table tbproprietario(
     data_nascimento date not null,
     contato varchar(50) not null,
     email varchar(100) not null,
-    endereco_numero varchar(50) null,
-    endereco_estado int null,
-    endereco_cidade int null,
-    endereco_bairro varchar(100) null,
-    endereco_rua varchar(100) null,
+    endereco_estado int not null,
+    endereco_cidade int not null,
+    endereco_bairro varchar(100) not null,
+    endereco_rua varchar(100) not null,
+    endereco_numero varchar(50) not null,
+    endereco_complemento varchar(100) null,
+    endereco_referencia varchar(100) null,
+    data_registro date not null,
     FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario)
 )
 

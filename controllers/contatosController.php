@@ -1,4 +1,5 @@
 <?php
+
 class contatosController extends Controller 
 {   
     public function index() {}

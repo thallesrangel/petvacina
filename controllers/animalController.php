@@ -24,6 +24,8 @@ class animalController extends Controller
     public function registrar()
     {
         $animalEspecies = new AnimalEspecie();
+        $proprietarios = new Proprietario();
+        $dados['proprietario'] = $proprietarios->getAllResumido();
         $dados['especies'] = $animalEspecies->getAll();
         
         $this->loadTemplate('animalRegistrar', $dados);
