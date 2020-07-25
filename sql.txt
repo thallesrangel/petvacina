@@ -1,0 +1,101 @@
+create database petvacina;
+use petvacina;
+
+
+create table tbespecie(
+    id_especie int PRIMARY KEY AUTO_INCREMENT,
+    nome_especie varchar(100)not null
+)
+
+-- multitenant
+
+create table tbusuario(
+    id_usuario int PRIMARY KEY AUTO_INCREMENT,
+    nome_usuario varchar(100) not null,
+    sobrenome_usuario varchar(110) not null,
+    email_usuario varchar(220) not null,
+    senha varchar(32) not null,
+    contato_usuario varchar(50) not null,
+    endereco_usuario_numero varchar(50) null,
+    endereco_usuario_estado int null,
+    endereco_usuario_cidade int null,
+    endereco_usuario_bairro varchar(100) null,
+    endereco_usuario_rua varchar(100) null
+)
+
+
+ 
+create table tbproprietario(
+    id_proprietario int PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int not null,
+    nome_proprietario varchar(220) not null,
+    sobrenome_proprietario varchar(220) not null,
+    data_nascimento date not null,
+    contato varchar(50) not null,
+    email varchar(100) not null,
+    endereco_numero varchar(50) null,
+    endereco_estado int null,
+    endereco_cidade int null,
+    endereco_bairro varchar(100) null,
+    endereco_rua varchar(100) null,
+    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario)
+)
+
+
+create table tbanimal(
+    id_animal int PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int not null,
+    nome_animal varchar(150) not null,
+    identificacao_animal varchar(100) null, 
+    data_nascimento date not null,
+    id_especie int not null,
+    raca varchar(150) not null,
+    sexo int not null,
+    pelagem varchar(100) not null,
+    id_proprietario int not null,
+    microchip varchar(120) null,
+    data_implantacao date null,
+    local_implantacao varchar(220) null,
+    url varchar(220) null,
+    data_registro date not null,
+    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
+    FOREIGN KEY (id_especie) REFERENCES tbespecie(id_especie),
+    FOREIGN KEY (id_proprietario) REFERENCES tbproprietario(id_proprietario)
+)
+
+
+create table tbvacina(
+    id_vacina int PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int not null,
+    id_animal int not null,
+    titulo_vacina varchar(220) not null,
+    data_aplicacao date not null,
+    data_revacinacao date null,
+    nome_veterinario varchar(220) null,
+    registro_crmv varchar(100) null,
+    data_registro date not null,
+    flag_excluido int default 0 not null,
+    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
+    FOREIGN KEY (id_animal) REFERENCES tbanimal(id_animal)
+)
+
+
+
+create table tbvermifugacao(
+    id_vermifugacao int PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int not null,
+    id_animal int not null,
+    nome_produto varchar(220) not null,
+    dose double(10,2) not null,
+    peso double(10,2) not null,
+    data_aplicacao date not null,
+    data_prox_dose date null,
+    nome_veterinario varchar(220) null,
+    registro_crmv varchar(100) null,
+    data_registro date not null,
+    flag_excluido int default 0 not null,
+    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
+    FOREIGN KEY (id_animal) REFERENCES tbanimal(id_animal)
+)
+
+
