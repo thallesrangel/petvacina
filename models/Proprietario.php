@@ -33,11 +33,21 @@ class Proprietario extends model
         }
     }    
 
-
-    // Retorna todos os animais so o nome 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario    FROM tbproprietario";
+        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function getAll() {
+        $array = array();
+        $sql = "SELECT * FROM tbproprietario";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

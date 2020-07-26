@@ -32,36 +32,36 @@
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
-                        <span> <i class="icon" data-feather="heart"></i> Pets</span></a>
+                        <span> <i class="icon-red" data-feather="heart"></i> Pets</span></a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vacina">
-                        <span><i class="icon" data-feather="droplet"></i> Vacinas</span>
+                        <span><i class="icon-yellow" data-feather="award"></i> Vacinas</span>
                         </a>
                     </li>  
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                        <span><i class="icon" data-feather="shield"></i> Vermifugação</span>
+                        <span><i class="icon-green" data-feather="shield"></i> Vermifugação</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon" data-feather="alert-circle"></i> Pulgas e Carrapatos</span>
+                        <span><i class="icon-orange" data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon" data-feather="pocket"></i> Anticoncepcional</span>
+                        <span><i class="icon-blue" data-feather="pocket"></i> Anti-cio</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon" data-feather="users"></i> Proprietários</span>
+                        <span><i class="icon-purple" data-feather="users"></i> Proprietários</span>
                         </a>
                     </li> 
             </a>

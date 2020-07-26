@@ -3,7 +3,8 @@ class proprietarioController extends Controller
 {   
     public function index() {
 
-        $dados = [];
+        $proprietario = new Proprietario();
+        $dados['proprietario'] = $proprietario->getAllResumido();
 
         $this->loadTemplate('proprietarioList', $dados);
     }

@@ -18,7 +18,7 @@
     
     <div class="row justify-content-md-center mb-2">
         <div class="col-sm-12 col-md-2">
-            <img src="<?=BASE_URL?>assets/img/galeria/<?=$dados_animal['url'];?>" width="85" height="85" class="rounded-circle mt-3 mb-2 border border-light">
+            <img src="<?=BASE_URL?>assets/img/galeria/<?=$dados_animal['url'];?>" width="100" height="100" class="rounded-circle mt-3 mb-2 border border-light">
         </div>
 
         <div class="col-sm-12 col-md-2 text-sm-center text-md-left">
@@ -30,22 +30,40 @@
     
     <h4>Cartão de Vermifugação</h4>
 
-    <?php foreach($lista as $item) { ?>
+    <div class="row justify-content-md-center">
         
-    <div class="row justify-content-md-center mb-2">
-        <div class="col-8 border rounded p-3 ml-1">
-            <ul class="list-inline">
-                <li class="list-inline-item"><p><b>Produto</b></p><?=$item['nome_produto']?></li>
-                <li class="list-inline-item"><p><b>Dose</b></p><?=$item['dose']?></li>
-                <li class="list-inline-item"><p><b>Peso</b></p><?=$item['peso']?></li>
-                <li class="list-inline-item"><p><b>Aplicação</b></p><?=$item['data_aplicacao']?></li>
-                <li class="list-inline-item"><p><b>Próxima Dose</b></p><?=$item['data_prox_dose'] == null ? 'Sem renovação' : $item['data_prox_dose']?></li>
-                <li class="list-inline-item"><p><b>Médico Veterinário</b></p><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></li>
-                <li class="list-inline-item"><p><b>CRMV</b></p><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></li>
-            </ul>   
+        <div class="col-md-10 border rounded bg-white p-2">
+            <table class="table table-bordered table-striped ">
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Dose</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Aplicação</th>
+                    <th scope="col">Próxima Dose</th>
+                    <th scope="col">Médico Veterinário</th>
+                    <th scope="col">CRMV</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach($lista as $item) { ?>
+                <tr>
+                <td><?=$item['nome_produto']?></td>
+                <td><?=$item['dose']?></td>
+                <td><?=$item['peso']?></td>
+                <td><?=$item['data_aplicacao']?></td>
+                <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : $item['data_prox_dose']?></td>
+                <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
+                <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
+        
+                <td><a href=""><i class="icon" data-feather="edit"></i><a> <a href=""><i class="icon" data-feather="trash"></a></td>
+                </tr>
+            <?php
+                }
+            ?>
+            </tbody>
+            </table>
         </div>
-     
     </div>
-   
-    <?php } ?>
 </div>

@@ -18,9 +18,6 @@
 	width: 250px;
 }
 
-.icon{
-    color: #5352ed;
-}
 .gray-color{
     color: #2f3640 !important;
 }
@@ -52,4 +49,42 @@
 
 .card-animal:hover{
     border: 1px solid #3742fa;
+}
+
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+background-color: #ADD8E6;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+background-color: #a29bfe;
+}
+
+
+
+/* CORES ICONES*/
+
+.icon-red{
+    color: #e74c3c;
+}
+
+.icon-roxo{
+    color: #5352ed;
+}
+.icon-green{
+    color: #2ecc71;
+}
+
+.icon-yellow{
+    color: #f1c40f;
+}
+.icon-orange{
+    color: #e67e22;
+}
+.icon-blue{
+    color: #3498db;
+}
+.icon-purple{
+    color: #786fa6;
 }
