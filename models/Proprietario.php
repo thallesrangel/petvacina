@@ -35,7 +35,7 @@ class Proprietario extends model
 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']."";
+        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -47,7 +47,7 @@ class Proprietario extends model
 
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']."";
+        $sql = "SELECT * FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -55,5 +55,14 @@ class Proprietario extends model
         }
 
         return $array;
+    }
+
+    public function delete($id)
+    {
+        $sql = "UPDATE tbproprietario SET flag_excluido = :flag_excluido WHERE id_proprietario = :id_proprietario";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_proprietario', $id, PDO::PARAM_INT);
+        $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
+        $sql->execute();
     }
 }

@@ -2,9 +2,10 @@
 class Vermifugacao extends model 
 {
     # Retorna vermifugacao especifica de um animal
-    public function getEspecifico($id) {
+    public function getEspecifico($id)
+    {
         $array = array();
-        $sql = "SELECT * FROM tbvermifugacao WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']."";
+        $sql = "SELECT * FROM tbvermifugacao WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -33,8 +34,30 @@ class Vermifugacao extends model
 
         $sql->execute();
 
-        if( $sql ) {
+        if ($sql) {
             return true;
         }
     }    
+
+    public function count()
+    {
+        $array = array();
+        $sql = "SELECT count(*) as qtd FROM tbvermifugacao WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function delete($id)
+    {
+        $sql = "UPDATE tbvermifugacao SET flag_excluido = :flag_excluido WHERE id_vermifugacao = :id_vermifugacao";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_vermifugacao', $id, PDO::PARAM_INT);
+        $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
+        $sql->execute();
+    }
 }

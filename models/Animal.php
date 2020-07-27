@@ -65,7 +65,7 @@ class Animal extends model
     // Retorna todos os animais so o nome 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']."";
+        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -75,10 +75,9 @@ class Animal extends model
         return $array;
     }
 
-    // Retorna todos os animais
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']."";
+        $sql = "SELECT * FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -86,6 +85,27 @@ class Animal extends model
         }
 
         return $array;
+    }
+
+    public function count() {
+        $array = array();
+        $sql = "SELECT count(*) as qtd FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function delete($id)
+    {
+        $sql = "UPDATE tbanimal SET flag_excluido = :flag_excluido WHERE id_animal = :id_animal";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_animal', $id, PDO::PARAM_INT);
+        $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
+        $sql->execute();
     }
 
 } 

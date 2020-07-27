@@ -46,4 +46,13 @@ class vermifugacaoController extends Controller
 
         $this->loadTemplate('vermifugacaoDetalhes', $dados);
     }
+
+    public function deletar($id)
+    {
+      if(!empty($id)) {
+          $vermifugacao = new Vermifugacao();
+          $vermifugacao->delete($id);
+      }
+      header("Location: ".BASE_URL."vermifugacao/detalhes/".$id);
+    }
 }

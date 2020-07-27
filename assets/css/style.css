@@ -1,3 +1,7 @@
+body{
+    color: #3d3d3d;
+}
+
 .wrapper{
     display: flex;
 }
@@ -106,4 +110,11 @@ background-color: #a29bfe;
 
 .border-radius{
     border-radius: 12px;
+}
+
+.list-color-text{
+    color: #3d3d3d;
+}
+.list-color-text:hover{
+    color: #3d3d3d;
 }

@@ -35,19 +35,29 @@ class vacinaController extends Controller
     }
 
     
-     public function registrar_save($idAnimal)
-     {   
+    public function registrar_save($idAnimal)
+    {   
         $id_animal = $idAnimal;
         $nome_vacina = $_POST['nome_vacina'];
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_revacinacao = implode('-', array_reverse(explode('/', $_POST['data_revacinacao'])));
         $nome_veterinario = $_POST['nome_veterinario'];
         $registro_crmv = $_POST['registro_crmv'];
-    
+
         $vacina = new Vacina();
-         
+        
         if ($vacina->add($id_animal, $nome_vacina, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv)) {
             header("Location: ".BASE_URL."vacina/detalhes/".$id_animal);
         } 
-     }
+    }
+
+    public function deletar($id)
+    {
+      if(!empty($id)) {
+          $vacina = new Vacina();
+          $vacina->delete($id);
+      }
+
+      header("Location: ".BASE_URL."vacina/detalhes/".$id);
+    }
 }

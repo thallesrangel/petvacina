@@ -18,7 +18,7 @@
     
     <div class="row justify-content-md-center mb-2">
         <div class="col-sm-12 col-md-2">
-            <img src="<?=BASE_URL?>assets/img/galeria/<?=$dados_animal['url'];?>" width="100" height="100" class="rounded-circle mt-3 mb-2 border border-light">
+            <img src="<?=BASE_URL?>assets/img/galeria/<?=$dados_animal['url'] == null ? 'padrao.png': $dados_animal['url'];?>" width="100" height="100" class="rounded-circle mt-3 mb-2 border border-light">
         </div>
 
         <div class="col-sm-12 col-md-3 text-sm-center text-md-left">
@@ -50,15 +50,17 @@
             <tbody>
             <?php foreach($lista as $item) { ?>
                 <tr>
-                <td><?=$item['nome_produto']?></td>
-                <td><?=$item['dose']?></td>
-                <td><?=$item['peso']?></td>
-                <td><?=$item['data_aplicacao']?></td>
-                <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : $item['data_prox_dose']?></td>
-                <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
-                <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
-        
-                <td><a href=""><i class="icon" data-feather="edit"></i><a> <a href=""><i class="icon-red" data-feather="trash"></a></td>
+                    <td><?=$item['nome_produto']?></td>
+                    <td><?=$item['dose']?></td>
+                    <td><?=$item['peso']?></td>
+                    <td><?=$item['data_aplicacao']?></td>
+                    <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : $item['data_prox_dose']?></td>
+                    <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
+                    <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
+                    <td>
+                        <a href="<?=BASE_URL?>vermifugacao/editar/<?=$item['id_vermifugacao']?>"><i class="icon" data-feather="edit"></i><a> 
+                        <a href="<?=BASE_URL?>vermifugacao/deletar/<?=$item['id_vermifugacao']?>"><i class="icon-red" data-feather="trash"></i></a>
+                    </td>
                 </tr>
             <?php
                 }

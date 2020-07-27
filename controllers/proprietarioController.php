@@ -44,5 +44,15 @@ class proprietarioController extends Controller
             header("Location: ".BASE_URL."proprietario");
         } 
     }
+
+    public function deletar($id)
+    {
+      if(!empty($id)) {
+          $proprietario = new Proprietario();
+          $proprietario->delete($id);
+      }
+
+      header("Location: ".BASE_URL."proprietario");
+    }
     
 }

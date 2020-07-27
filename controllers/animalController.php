@@ -58,4 +58,14 @@ class animalController extends Controller
             header("Location: ".BASE_URL."animal");
         } 
     }
+
+    public function deletar($id)
+    {
+      if(!empty($id)) {
+          $animal = new Animal();
+          $animal->delete($id);
+      }
+
+      header("Location: ".BASE_URL."animal");
+    }
 }
