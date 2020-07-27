@@ -97,6 +97,13 @@ background-color: #a29bfe;
     color: #FFF;
 }
 
+.icon-gray-submenu{
+    color: #bdc3c7;
+}
+.font-14{
+    font-size: 14px;
+}
+
 .border-radius{
     border-radius: 12px;
 }

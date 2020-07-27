@@ -13,6 +13,7 @@
 			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 			  crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?=BASE_URL?>/assets/js/script.js"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>/assets/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>
         
         <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />
@@ -73,6 +74,21 @@
 
                 <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top">
                     <a class="nav-link " href="<?=BASE_URL?>">Início</a>
+
+                    <ul class="navbar-nav ml-auto">
+                       
+
+                        <div class="btn-group">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span><?=$_SESSION['nome_usuario']?></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right mt-4">
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="user"></i> Perfil</a>
+                            <a href="<?=BASE_URL?>configuracao" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="settings"></i> Configurações</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="log-out"></i> Sair</a>
+                        </div>
+                        </div>
+                    </ul>
                 </nav>
                 
                 <div>

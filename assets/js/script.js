@@ -32,9 +32,8 @@ $(document).ready(function($){
         dateFormat: "d/m/Y",
         locale:traducao
     });
-});
 
-
-$(document).ready(function() {
     $('.js-select').select2();
 });
+
+$('.dropdown-toggle').dropdown('toggle');
