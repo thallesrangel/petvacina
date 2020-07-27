@@ -22,7 +22,7 @@ class Animal extends model
         VALUES(:id_usuario, :nome_animal, :identificacao_animal, :data_nascimento, :id_especie, :raca, :sexo, :pelagem, :id_proprietario, :microchip, :data_implementacao, :local_implementacao, :url, :data_registro)";
      
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_usuario', 1);
+        $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
         $sql->bindValue(':nome_animal', $nome_animal);
         $sql->bindValue(':identificacao_animal', $identificacao);
         $sql->bindValue(':data_nascimento', $data_nascimento);
@@ -49,7 +49,7 @@ class Animal extends model
         $sql = "SELECT a.*, b.*, c.* FROM tbanimal a 
             INNER JOIN tbespecie b ON (b.id_especie = a.id_especie)
             INNER JOIN tbproprietario c ON (c.id_proprietario = a.id_proprietario)
-        WHERE id_animal = ".$id."";
+        WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']."";
      
         $sql = $this->db->query($sql);
 
@@ -65,7 +65,7 @@ class Animal extends model
     // Retorna todos os animais so o nome 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal";
+        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -78,7 +78,7 @@ class Animal extends model
     // Retorna todos os animais
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbanimal";
+        $sql = "SELECT * FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

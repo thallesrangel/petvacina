@@ -21,9 +21,10 @@
             <img src="<?=BASE_URL?>assets/img/galeria/<?=$dados_animal['url'];?>" width="100" height="100" class="rounded-circle mt-3 mb-2 border border-light">
         </div>
 
-        <div class="col-sm-12 col-md-2 text-sm-center text-md-left">
+        <div class="col-sm-12 col-md-3 text-sm-center text-md-left">
             <h4 class="m-1 pt-4"><?=$dados_animal['nome_animal'];?></h4>
-            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>vermifugacao/registrar/<?=$dados_animal['id_animal'];?>">Vermifugar</a>
+            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>vermifugacao/registrar/<?=$dados_animal['id_animal'];?>"><i class="icon-white" data-feather="plus"></i> Vermifugar</a>
+            <a class="btn btn-sm btn-primary mb-3" href="#"><i class="icon-white" data-feather="printer"></i> Imprimir</a>
         </div>
     
     </div>
@@ -41,8 +42,8 @@
                     <th scope="col">Peso</th>
                     <th scope="col">Aplicação</th>
                     <th scope="col">Próxima Dose</th>
-                    <th scope="col">Médico Veterinário</th>
-                    <th scope="col">CRMV</th>
+                    <th scope="col">Veterinário</th>
+                    <th title="Conselho Regional de Medicina Veterinária" scope="col">CRMV</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -57,7 +58,7 @@
                 <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                 <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
         
-                <td><a href=""><i class="icon" data-feather="edit"></i><a> <a href=""><i class="icon" data-feather="trash"></a></td>
+                <td><a href=""><i class="icon" data-feather="edit"></i><a> <a href=""><i class="icon-red" data-feather="trash"></a></td>
                 </tr>
             <?php
                 }

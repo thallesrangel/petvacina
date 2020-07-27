@@ -32,7 +32,8 @@
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
-                        <span> <i class="icon-red" data-feather="heart"></i> Pets</span></a>
+                        <span> <i class="icon-red" data-feather="heart"></i> Animais</span>
+                        </a>
                     </li>
 
                     <li class="nav-item">

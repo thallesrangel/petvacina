@@ -1,4 +1,10 @@
 <?php
+
+if(!isset($_SESSION['id_usuario'])) {
+    header("Location:".BASE_URL."login");
+    die();   
+}
+
 class proprietarioController extends Controller 
 {   
     public function index() {

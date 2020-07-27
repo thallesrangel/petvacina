@@ -4,7 +4,7 @@ class Vermifugacao extends model
     # Retorna vermifugacao especifica de um animal
     public function getEspecifico($id) {
         $array = array();
-        $sql = "SELECT * FROM tbvermifugacao WHERE id_animal = ".$id."";
+        $sql = "SELECT * FROM tbvermifugacao WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -20,7 +20,7 @@ class Vermifugacao extends model
         VALUES(:id_usuario, :id_animal, :nome_produto, :dose, :peso, :data_aplicacao, :data_prox_dose, :nome_veterinario,:registro_crmv, :data_registro)";
      
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_usuario', 1);
+        $sql->bindValue(':id_usuario',$_SESSION['id_usuario']);
         $sql->bindValue(':id_animal', $id_animal);
         $sql->bindValue(':nome_produto', $nome_produto);
         $sql->bindValue(':dose', $dose);

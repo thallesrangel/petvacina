@@ -7,7 +7,7 @@ class Proprietario extends model
         VALUES(:id_usuario, :nome_proprietario, :sobrenome_proprietario, :data_nascimento, :contato, :email, :endereco_estado, :endereco_cidade, :endereco_bairro, :endereco_rua, :endereco_numero, :endereco_complemento, :endereco_referencia, :data_registro)";
      
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_usuario', 1);
+        $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
         $sql->bindValue(':nome_proprietario', $nome_proprietario);
         $sql->bindValue(':sobrenome_proprietario', $sobrenome_proprietario);
         $sql->bindValue(':data_nascimento', $data_nascimento);
@@ -35,7 +35,7 @@ class Proprietario extends model
 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario";
+        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -47,7 +47,7 @@ class Proprietario extends model
 
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbproprietario";
+        $sql = "SELECT * FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

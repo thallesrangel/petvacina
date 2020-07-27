@@ -1,14 +1,20 @@
 <?php
 
+if(!isset($_SESSION['id_usuario'])) {
+    header("Location:".BASE_URL."login");
+    die();   
+}
+
 class vacinaController extends Controller 
 {   
     public function index()
-    {
+    {   
         $animais = new Animal();
 
         $dados['lista'] = $animais->getAllResumido();
-        
+    
         $this->loadTemplate('vacinaList', $dados);
+
     }   
 
     public function detalhes($id) 
