@@ -50,13 +50,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <a class="nav-link" href="<?=BASE_URL?>parasita">
                         <span><i class="icon-orange" data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <a class="nav-link" href="<?=BASE_URL?>anticio">
                         <span><i class="icon-blue" data-feather="pocket"></i> Anti-cio</span>
                         </a>
                     </li> 

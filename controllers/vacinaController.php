@@ -39,6 +39,7 @@ class vacinaController extends Controller
     {   
         $id_animal = $idAnimal;
         $nome_vacina = $_POST['nome_vacina'];
+        $dose = $_POST['dose'];
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_revacinacao = implode('-', array_reverse(explode('/', $_POST['data_revacinacao'])));
         $nome_veterinario = $_POST['nome_veterinario'];
@@ -58,6 +59,6 @@ class vacinaController extends Controller
           $vacina->delete($id);
       }
 
-      header("Location: ".BASE_URL."vacina/detalhes/".$id);
+      header("Location: ".BASE_URL."vacina/detalhes/");
     }
 }
