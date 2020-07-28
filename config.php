@@ -5,7 +5,7 @@ require "environment.php";
 $config = array();
 
 if(ENVIRONMENT == 'dev') {
-    define("BASE_URL", "http://localhost:8080/crud-mvc/");
+    define("BASE_URL", "http://localhost:8080/pet-vacina/");
     $config['dbname'] = 'petvacina';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';

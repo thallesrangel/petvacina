@@ -59,13 +59,25 @@
                         <a class="nav-link" href="<?=BASE_URL?>anticio">
                         <span><i class="icon-blue" data-feather="pocket"></i> Anti-cio</span>
                         </a>
-                    </li> 
+                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon-purple" data-feather="users"></i> Proprietários</span>
+                        <a class="nav-link" href="<?=BASE_URL?>higiene">
+                        <span><i class="icon-high-blue" data-feather="scissors"></i> Banho e Tosa</span>
                         </a>
                     </li> 
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>relatorio">
+                        <span><i class="icon-green" data-feather="file-text"></i> Relatórios</span>
+                        </a>
+                    </li> 
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <span><i class="icon-yellow" data-feather="users"></i> Proprietários</span>
+                        </a>
+                    </li>
             </a>
         </ul>
 

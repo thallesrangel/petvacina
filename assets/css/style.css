@@ -89,9 +89,7 @@ background-color: #a29bfe;
 .icon-blue{
     color: #3498db;
 }
-.icon-purple{
-    color: #786fa6;
-}
+
 .colo-red{
     color: #e74c3c;
 }
@@ -100,7 +98,9 @@ background-color: #a29bfe;
     height: 18px;
     color: #FFF;
 }
-
+.icon-high-blue{
+    color: #45aaf2;
+}
 .icon-gray-submenu{
     color: #bdc3c7;
 }
