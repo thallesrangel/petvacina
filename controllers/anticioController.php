@@ -8,18 +8,32 @@ if (!isset($_SESSION['id_usuario'])) {
 class anticioController extends Controller 
 {   
     public function index()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Anti-cio' => 'false',
+			'Listagem' => 'false'
+        ];
+
         $animais = new Animal();
 
         $dados['lista'] = $animais->getAllResumido();
-    
+        
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('antiCioList', $dados);
     }
 
     public function registrar()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Anti-cio' => 'anticio',
+			'Registrar' => 'false'
+        ];
+
         $dados = [];
-        
+
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('antiCioRegistrar', $dados);
     }
 
@@ -41,12 +55,19 @@ class anticioController extends Controller
     }
 
     public function detalhes($id)
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Anti-cio' => 'anticio',
+			'Detalhes' => 'false'
+        ];
+
         $anticio = new Anticio();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
         $dados['lista'] = $anticio->getEspecifico($id);
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('antiCioDetalhes', $dados); 
     }
 

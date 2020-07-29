@@ -51,10 +51,10 @@
             <?php foreach($lista as $item) { ?>
                 <tr>
                     <td><?=$item['nome_produto']?></td>
-                    <td><?=$item['dose']?></td>
-                    <td><?=$item['peso']?></td>
-                    <td><?=$item['data_aplicacao']?></td>
-                    <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : $item['data_prox_dose']?></td>
+                    <td class="quantidade"><?=$item['dose']?></td>
+                    <td class="quantidade"><?=$item['peso']?></td>
+                    <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></td>
+                    <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_prox_dose']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
                     <td>

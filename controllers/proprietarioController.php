@@ -9,17 +9,31 @@ class proprietarioController extends Controller
 {   
     public function index() {
 
+        $breadcrumb = [
+			'Início' => '',
+			'Proprietários' => 'proprietario',
+			'Listagem' => 'false'
+        ];
+
         $proprietario = new Proprietario();
         $dados['proprietario'] = $proprietario->getAllResumido();
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('proprietarioList', $dados);
     }
 
     // Retorna a view formulário registrar
     public function registrar()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Proprietários' => 'proprietario',
+			'Registrar' => 'false'
+        ];
+
         $dados = [];
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('proprietarioRegistrar', $dados);
     }
 

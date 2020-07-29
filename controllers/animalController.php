@@ -9,30 +9,52 @@ class animalController extends Controller
 {   
 
     public function index()
-    {
-        $animais = new Animal();
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Animais' => 'false',
+			'Listagem' => 'false'
+        ];
 
-        $dados['lista'] = $animais->getAllResumido();
+        $animais = new Animal();
         
+        $dados['lista'] = $animais->getAllResumido();
+
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalList', $dados);
     }
     
-    public function detalhes($id){
+    public function detalhes($id)
+    {
+        $breadcrumb = [
+			'Início' => '',
+			'Animais' => 'animal',
+			'Detalhes' => 'false'
+        ];
+
         $animais = new Animal();
 
         $dados['lista'] = $animais->getEspecifico($id);
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalDetalhes', $dados);
     }
 
     # Retorna formulário cadastro Registrar Animal
     public function registrar()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Animais' => 'animal',
+			'Registrar' => 'false'
+        ];
+        
         $animalEspecies = new AnimalEspecie();
         $proprietarios = new Proprietario();
         $dados['proprietario'] = $proprietarios->getAllResumido();
         $dados['especies'] = $animalEspecies->getAll();
-        
+
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalRegistrar', $dados);
     }
 

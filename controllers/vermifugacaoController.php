@@ -2,19 +2,34 @@
 class vermifugacaoController extends Controller 
 {   
     public function index() 
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Vermifugação' => 'false',
+			'Listagem' => 'false'
+        ];
+
         $dados = [];
 
         $animais = new Animal();
 
         $dados['lista'] = $animais->getAllResumido();
         
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vermifugacaoList', $dados);
     }
 
     public function registrar()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Vermifugação' => 'vermifugacao',
+			'Registrar' => 'false'
+        ];
+
         $dados = [];
+
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vermifugacaoRegistrar', $dados);
     }
 
@@ -37,13 +52,20 @@ class vermifugacaoController extends Controller
     }
 
     public function detalhes($id)
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Vermifugação' => 'vermifugacao',
+			'Detalhes' => 'false'
+        ];
+        
         $animal = new Animal();
         $vermifugacao = new Vermifugacao();
         
         $dados['animal'] = $animal->getEspecifico($id);
         $dados['lista'] = $vermifugacao->getEspecifico($id);
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vermifugacaoDetalhes', $dados);
     }
 

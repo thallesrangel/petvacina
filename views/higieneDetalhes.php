@@ -50,9 +50,9 @@
                 <tr>
                     <td><?=$item['higiene_tipo']?></td>
                     <td><?=$item['nome_prestador']?></td>
-                    <td>R$: <?=$item['valor']?></td>
-                    <td><?=$item['data_servico']?></td>
-                    <td><?=$item['data_prox_servico'] == null ? 'Indefinido' : $item['data_prox_servico']?></td>
+                    <td>R$: <span class="valor-limite"><?=$item['valor']?></span></td>
+                    <td><?=date("d/m/Y", strtotime($item['data_servico']))?></td>
+                    <td><?=$item['data_prox_servico'] == null ? 'Indefinido' : date("d/m/Y", strtotime($item['data_prox_servico']))?></td>
                     <td>
                         <a href="<?=BASE_URL?>higiene/editar/<?=$item['id_higiene']?>"><i class="icon" data-feather="edit"></i><a> 
                         <a href="<?=BASE_URL?>higiene/deletar/<?=$item['id_higiene']?>"><i class="icon-red" data-feather="trash"></i></a>

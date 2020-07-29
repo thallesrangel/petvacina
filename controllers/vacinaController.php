@@ -8,29 +8,50 @@ if(!isset($_SESSION['id_usuario'])) {
 class vacinaController extends Controller 
 {   
     public function index()
-    {   
+    {      
+        $breadcrumb = [
+			'Início' => '',
+			'Vacinas' => 'false',
+			'Listagem' => 'false'
+        ];
+
         $animais = new Animal();
 
         $dados['lista'] = $animais->getAllResumido();
-    
+        
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vacinaList', $dados);
 
     }   
 
     public function detalhes($id) 
     {
+        $breadcrumb = [
+			'Início' => '',
+			'Vacinas' => 'vacina',
+			'Detalhes' => 'false'
+        ];
+
         $vacinas = new Vacina();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
         $dados['lista'] = $vacinas->getEspecifico($id);
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vacinaDetalhes', $dados);
     }
     
     public function registrar($idAnimal)
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Vacinas' => 'vacina',
+			'Registrar' => 'false'
+        ];
+
         $dados = [];
         
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vacinaRegistrar', $dados);
     }
 

@@ -9,6 +9,10 @@ class HomeController extends Controller
 {   
     public function index() 
     {   
+        $breadcrumb = [
+			'Início' => 'false',
+        ];
+
         $lista = [];
         $qtd_animais = new Animal();
         $qtd_vacinas = new Vacina();
@@ -18,6 +22,7 @@ class HomeController extends Controller
         $lista['qtd_vacinas'] = $qtd_vacinas->count();
         $lista['qtd_vermifugacao'] = $qtd_vermifigos->count();
         
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('home', $lista);
     }    
 }

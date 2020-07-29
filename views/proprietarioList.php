@@ -16,7 +16,7 @@
             <?php foreach($proprietario as $item) { ?>
                 <tr>
                 <td><?=$item['nome_proprietario'] . " " .$item['sobrenome_proprietario']?></td>
-                <td><?=$item['contato']?></td>
+                <td class="telefone"><?=$item['contato']?></td>
                     <td>
                         <a href="<?=BASE_URL?>proprietario/editar/<?=$item['id_proprietario']?>"><i class="icon" data-feather="edit"></i><a> 
                         <a href="<?=BASE_URL?>proprietario/deletar/<?=$item['id_proprietario']?>"><i class="icon-red" data-feather="trash"></i></a>

@@ -8,18 +8,31 @@ if (!isset($_SESSION['id_usuario'])) {
 class parasitaController extends Controller 
 {   
     public function index()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Pulgas e Carrapatos' => 'false',
+			'Listagem' => 'false'
+        ];
+
         $animais = new Animal();
 
         $dados['lista'] = $animais->getAllResumido();
-    
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('parasitaList', $dados);
     }
 
     public function registrar()
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Pulgas e Carrapatos' => 'parasita',
+			'Registrar' => 'false'
+        ];
+
         $dados = [];
         
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('parasitaRegistrar', $dados);
     }
 
@@ -41,12 +54,19 @@ class parasitaController extends Controller
     }
 
     public function detalhes($id)
-    {
+    {   
+        $breadcrumb = [
+			'Início' => '',
+			'Pulgas e Carrapatos' => 'parasita',
+			'Detalhes' => 'false'
+        ];
+
         $parasita = new Parasita();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
         $dados['lista'] = $parasita->getEspecifico($id);
 
+        $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('parasitaDetalhes', $dados); 
     }
 
