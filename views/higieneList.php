@@ -1,7 +1,6 @@
-<div class="container-fluid">
-    <p class="pt-1">Banho e Tosa</p>
-    <br>
-  
+<div class="container bg-white rounded h-75">
+    <h5 class="pl-3 pt-3 mb-0 h5-title-list">Banho e Tosa</h5>
+
     <?php
     foreach($lista as $item){
     ?>  

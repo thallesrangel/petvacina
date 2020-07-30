@@ -11,7 +11,7 @@ class proprietarioController extends Controller
 
         $breadcrumb = [
 			'Início' => '',
-			'Proprietários' => 'proprietario',
+			'Proprietários' => 'false',
 			'Listagem' => 'false'
         ];
 

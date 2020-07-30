@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <p class="pt-1">Animais</p>
-    <a href="<?=BASE_URL?>animal/registrar" class="btn btn-sm btn-primary">Registrar</a>
+<div class="container bg-white rounded h-75">
+    <h5 class="pl-3 pt-3 mb-0 h5-title-list float-left">Animais</h5>
+
+    <p><a href="<?=BASE_URL?>animal/registrar" class="ml-3 mt-3 btn btn-sm btn-primary">Registrar</a></p>
     
-    <br><br>
   
     <?php
     foreach($lista as $item){

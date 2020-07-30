@@ -104,17 +104,18 @@
                     </ul>
                 </nav>
                 
-                <div>
-                <div class="container">
-                    <ul class="nav p-2 pl-3 breadcrumb">
-                        <li class='nav-item'>
-                            <?php $this->addBreadCrumb(); ?>
-                        </li> 
-                    </ul>
-                </div>
-
-                <?php $this->loadViewInTemplate($viewName, $dados);?>
-                </div>
+                
+                    <div class="container">
+                        <ul class="nav p-2 pl-3 breadcrumb">
+                            <li class='nav-item'>
+                                <?php $this->addBreadCrumb(); ?>
+                            </li> 
+                        </ul>
+                    </div>
+                
+                    <div class="container">
+                        <?php $this->loadViewInTemplate($viewName, $dados);?>
+                    </div>
             </div>
         </div>
     </div>
