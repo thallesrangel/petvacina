@@ -3,7 +3,7 @@
 
 class usuarioController extends Controller 
 {   
-    public function index() {
-        echo "cadastrar o cliente";
+    public function registrar() {
+        $this->loadView('usuarioRegistrar');
     }
 }

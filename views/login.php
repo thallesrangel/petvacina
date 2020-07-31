@@ -7,16 +7,20 @@
         <title>Pet Vacina</title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
+        <script src="<?BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
 </head>
 
 <style>
-body{
-	background-color: #ecf0f1;
-    font-family: 'Barlow', sans-serif;
-    backgroind: 
+.login-body{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    font-family: 'Barlow', sans-serif; 
+    
+    background-size: cover;
 }
 .tamanho-largura {
-    max-width: 350px;
+    max-width: 340px;
     height: auto;
     background: #FFF;
     padding: 2%;
@@ -25,40 +29,54 @@ body{
     border-radius: 10px;
 }
 </style>
-
- <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
+<body class="login-body">
+    <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
+            
+        <div class="d-flex justify-content-center">
+            <img class="img-fluid" src="<?=BASE_URL . 'assets/img/logo.png'?>">
+            <span>Alfa</span>
+        </div>
         
-    <div class="d-flex justify-content-center">
-        <img class="img-fluid" src="<?=BASE_URL . 'assets/img/logo.png'?>">
+        <br>
+
+        <form action="<?=BASE_URL.'login/logar'?>" method="POST" id="form" autocomplete="off">
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" type="email" name="email" placeholder="Digite seu e-mail"
+                    autocomplete="off" id="campo" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" required/>
+            </div>
+
+            <div class="row">
+
+                <div class="col-12">
+                        <button type="submit" class="btn btn-sm btn-block btn-primary p-2">Entrar</button>
+                </div>	
+            
+            </div>
+            <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso</a></p>
+        </form>
     </div>
+</body>
+
+
+<script>
     
-    <br>
 
-    <form action="<?=BASE_URL.'login/logar'?>" method="POST" id="form" autocomplete="off">
+    $(document).ready(function(){
+        let random = Math.floor((Math.random() * 9) + 1);
+        let style = 'assets/img/background/'+random+'.jpg';
+        $('.login-body').css('background-image', `url(${style})`);
 
-        <div class="form-group">
-            <label>E-mail</label>
-            <input class="form-control" type="email" name="email" placeholder="Digite seu e-mail"
-                autocomplete="off" id="campo" required autofocus/>
-        </div>
+        
+    });
 
-        <div class="form-group">
-            <label>Senha</label>
-            <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" required/>
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
-                    <button type="submit" class="btn btn-sm btn-block btn-primary p-2">Entrar</button>
-            </div>	
-          
-        </div>
-        <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso.</a></p>
-    </form>
-</div>
-
-
+</script>
 
 <!--
     Ajax login
