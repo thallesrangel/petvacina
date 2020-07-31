@@ -33,15 +33,24 @@
                 <input id="email" type="email" class="form-control form-control-sm" name="email" required>
             </div>
     
-            <div class="form-group col-2">
-                <label for="uf">Estado UF *</label>
-                <input id="uf" type="number" class="form-control form-control-sm" name="endereco_estado" required>
+    
+            <div class="col-sm-12 col-md-3">
+                <label for="estado">Estado</label>
+                
+                <select class="form-control form-control-sm js-select" name="endereco_estados" onchange="pegarCidades(this)" required>
+                    <?php
+                    foreach($estado as $item){
+                    ?>
+                    <option value="<?= $item['id_estado'] ?>"> <?= $item['nome_estado']?> </option>
+                    <?php }?>
+                </select>
             </div>
-
-            <div class="form-group col-3">
-                <label for="cidade">Cidade *</label>
-                <input id="cidade" type="number" class="form-control form-control-sm" name="endereco_cidade" required>
-            </div>
+    
+            <div class="col-sm-12 col-md-3">
+                        <label for="cidade">Cidade</label>
+                        <select id="cidade" class="form-control form-control-sm js-select" name="endereco_cidade" required>
+                        </select>
+                    </div>
 
             <div class="form-group col-3">
                 <label for="bairro">Bairro *</label>
@@ -76,4 +85,5 @@
         <input class="btn btn-primary" type="submit" value="Registrar">
         <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
+    <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'proprietario'; ?>';</script>
 </div>

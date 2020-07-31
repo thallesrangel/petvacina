@@ -71,3 +71,25 @@ function pegarCidades(obj) {
 		}
 	});
 }
+
+
+function pegarCidades(obj) {
+    var item = obj.value;
+
+	$.ajax({
+		url:BASE_URL+"/pegarcidades",
+		type:'POST',
+		data:{id_estado:item},
+		dataType:'json',
+		success:function(json) {
+			var html = '';
+
+			for(var i in json) {
+                console.log(json);
+				html += '<option value="'+json[i].id_cidade+'">'+json[i].nome_cidade+'</option>';
+			}
+
+			$("#cidade").html(html);
+		}
+	});
+}
