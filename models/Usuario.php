@@ -17,6 +17,19 @@ class Usuario extends model
         return $array;
     }
 
+    public function getExisteEmail($email)
+    {   
+        $sql = "SELECT * FROM tbusuario WHERE email_usuario = :email";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':email', $email);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+    }
 
     public function add($nome_usuario, $sobrenome_usuario, $email_usuario, $senha, $id_estado, $id_cidade)
     {     

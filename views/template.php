@@ -64,7 +64,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>higiene">
-                        <span><i class="icon-high-blue" data-feather="scissors"></i> Banho e Tosa</span>
+                        <span><i class="icon-high-blue" data-feather="scissors"></i> Higiene</span>
                         </a>
                     </li> 
                     

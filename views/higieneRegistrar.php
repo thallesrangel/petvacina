@@ -1,6 +1,6 @@
 <div class="container bg-white rounded h-75">
     <div class="d-sm-flex align-items-center justify-content-between mb-1 pt-2">
-        <h4 class="ml-2 gray-color">Registrar Banho e Tosa</h4>
+        <h4 class="ml-2 gray-color">Registrar Higienização</h4>
     </div>
 
     <?php

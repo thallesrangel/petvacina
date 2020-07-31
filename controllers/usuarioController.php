@@ -26,18 +26,28 @@ class usuarioController extends Controller
     }
 
     public function registrar_save()
-    {
-        $nome_usuario = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $email = $_POST['email'];
-        $senha = md5($_POST['senha']);
-        $id_estado = $_POST['id_estado'];
-        $id_cidade = $_POST['id_cidade'];
+    {   
+        if ($this->existeEmail($_POST['email']) == false) {
+            $nome_usuario = $_POST['nome'];
+            $sobrenome = $_POST['sobrenome'];
+            $email = $_POST['email'];
+            $senha = md5($_POST['senha']);
+            $id_estado = $_POST['id_estado'];
+            $id_cidade = $_POST['id_cidade'];
 
+            $usuario = new Usuario();
+            
+            if ($usuario->add($nome_usuario, $sobrenome, $email, $senha, $id_estado, $id_cidade)) {
+                header("Location: ".BASE_URL."login");
+            } 
+        } else {
+            die("E-mail já usado");
+        }
+    }
+
+    public function existeEmail($email)
+    {   
         $usuario = new Usuario();
-        
-        if ($usuario->add($nome_usuario, $sobrenome, $email, $senha, $id_estado, $id_cidade)) {
-            header("Location: ".BASE_URL."login");
-        } 
+        return $usuario->getExisteEmail($email);
     }
 }

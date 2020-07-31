@@ -29,7 +29,7 @@
     
     </div>
     
-    <h4>Controle de Banho e Tosa</h4>
+    <h4>Controle de Higienização</h4>
 
     <div class="row justify-content-md-center">
         
