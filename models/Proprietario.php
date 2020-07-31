@@ -24,12 +24,12 @@ class Proprietario extends model
 
         if ($sql->execute()) { 
            
-            $count = $sql->rowCount();
-            echo $count . ' rows updated properly!';
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
             return true;
         } else {
-            //return false;
-            print_r($sql->errorInfo());
+            return false;
+            //print_r($sql->errorInfo());
         }
     }    
 

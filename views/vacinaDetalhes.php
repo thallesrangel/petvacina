@@ -38,8 +38,10 @@
             <thead>
                 <tr>
                     <th scope="col">Vacina</th>
-                    <th scope="col">Data Aplicação</th>
-                    <th scope="col">Data Revacinação</th>
+                    <th scope="col">Dose</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Aplicação</th>
+                    <th scope="col">Revacinação</th>
                     <th scope="col">Médico Veterinário</th>
                     <th scope="col">CRMV</th>
                     <th scope="col">Ações</th>
@@ -49,7 +51,9 @@
             <?php foreach($lista as $item) { ?>
                 <tr>
                     <td><?=$item['titulo_vacina']?></td>
-                    <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></td>
+                    <td><span class="quantidade"><?=$item['dose']?></span></td>
+                    <td>R$: <span class="valor-limite"><?=$item['valor_total']?></td>
+                    <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></span></td>
                     <td><?=$item['data_revacinacao'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_revacinacao']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Veterinário Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>

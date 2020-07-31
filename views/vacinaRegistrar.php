@@ -14,7 +14,20 @@
                 <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina">
             </div>
 
-            
+            <div class="col-md-3">
+                <label for="dose">Dose *</labe>
+                <input class="quantidade" id="dose" type="text" class="form-control form-control-sm" name="dose">
+            </div>
+
+            <div class="col-md-3">
+                <label for="valor_total">Valor Total *</labe>
+                <input class="valor-limite" id="valor_total" type="text" class="form-control form-control-sm" placeholder="R$" name="valor_total">
+            </div>
+    
+        </div>
+
+        <div class="row">
+
             <div class="col-md-3">
                 <label for="aplicacao">Data Aplicação *</labe>
                 <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
@@ -25,10 +38,6 @@
                 <input id="revacinacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_revacinacao">
             </div>
 
-        </div>
-
-        <div class="row">
-        
             <div class="col-md-3">
                 <label for="veterinario">Médico Veterinário</labe>
                 <input id="veterinario" type="text" class="form-control form-control-sm" name="nome_veterinario">
