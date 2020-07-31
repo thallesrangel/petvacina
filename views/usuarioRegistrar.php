@@ -72,7 +72,6 @@
                     <div class="col-sm-12 col-md-6">
                         <label for="cidade">Cidade</label>
                         <select id="cidade" class="form-control form-control-sm js-select" name="id_cidade" required>
-                            
                         </select>
                     </div>
                 </div>

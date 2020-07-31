@@ -51,10 +51,6 @@ $(document).ready(function($){
 $('.dropdown-toggle').dropdown('toggle');
 
 
-
-
-
-
 function pegarCidades(obj) {
     var item = obj.value;
 

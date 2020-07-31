@@ -11,7 +11,7 @@ if(ENVIRONMENT == 'dev') {
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
 } else {
-    define("BASE_URL", "http://localhost/estrutura-mvc/");
+    define("BASE_URL", "https://petvacina.000webhostapp.com/pet-vacina/");
     $config['dbname'] = 'petvacina';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'user';

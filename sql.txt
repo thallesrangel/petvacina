@@ -15,12 +15,16 @@ create table tbusuario(
     sobrenome_usuario varchar(110) not null,
     email_usuario varchar(220) not null,
     senha varchar(32) not null,
-    contato_usuario varchar(50) not null,
-    endereco_usuario_numero varchar(50) null,
-    endereco_usuario_estado int null,
-    endereco_usuario_cidade int null,
+    contato_usuario varchar(50) null,
+    id_estado int not null,
+    id_cidade int not null,
     endereco_usuario_bairro varchar(100) null,
-    endereco_usuario_rua varchar(100) null
+    endereco_usuario_rua varchar(100) null,
+    endereco_usuario_numero varchar(50) null,
+    data_registro date not null,
+    flag_excluido int default 0 not null,
+    FOREIGN KEY (id_estado) REFERENCES tbestado(id_estado),
+    FOREIGN KEY (id_cidade) REFERENCES tbcidade(id_cidade)
 )
 
 
@@ -149,9 +153,9 @@ create table tbprestador_tipo(
     prestador_tipo varchar(220) not null
 )
 
--- INSERT PADRÃO
+-- INSERT PADRï¿½O
 
-INSERT INTO `tbprestador_tipo` (`id_prestador_tipo`, `prestador_tipo`) VALUES (NULL, 'Produto e Serviço'), (NULL, 'Produto'), (NULL, 'Serviço');
+INSERT INTO `tbprestador_tipo` (`id_prestador_tipo`, `prestador_tipo`) VALUES (NULL, 'Produto e Serviï¿½o'), (NULL, 'Produto'), (NULL, 'Serviï¿½o');
 
 
 
