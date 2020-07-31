@@ -5,6 +5,9 @@
     
   
     <?php
+        if(empty($lista)) {
+        echo '<h6 class="pl-3 pt-3 mb-0">Não há registros.</h6>';
+        }
     foreach($lista as $item){
     ?>  
     <a class="list-color-text" href="<?=BASE_URL?>animal/detalhes/<?=$item['id_animal']?>">

@@ -2,6 +2,9 @@
     <h5 class="pl-3 pt-3 mb-0 h5-title-list">Pulgas e Carrapatos</h5>
   
     <?php
+        if(empty($lista)) {
+             echo '<h6 class="pl-3 pt-3 mb-0">Não há registros.</h6>';
+        }
     foreach($lista as $item){
     ?>  
     <a href="<?=BASE_URL?>parasita/detalhes/<?=$item['id_animal']?>">
