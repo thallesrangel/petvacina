@@ -24,7 +24,7 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         
 </head>
-    <body class="bg-purple">
+    <body class="bg-cinza">
     
         <div class="d-flex align-items-center justify-content-center h-100">
             <form method="POST" class="p-2 h-75 w-50 rounded bg-white" action="<?=BASE_URL?>usuario/registrar_save">

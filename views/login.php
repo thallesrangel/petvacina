@@ -16,7 +16,6 @@
     background-position: center;
     background-size: auto;
     font-family: 'Barlow', sans-serif; 
-    
     background-size: cover;
 }
 .tamanho-largura {
@@ -73,8 +72,6 @@
         let random = Math.floor((Math.random() * 8) + 1);
         let style = 'assets/img/background/'+random+'.jpg';
         $('.login-body').css('background-image', `url(${style})`);
-
-        
     });
 </script>
 
