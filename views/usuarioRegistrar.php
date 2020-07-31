@@ -6,12 +6,26 @@
         <meta name="description" content="PetVacina">
         <meta name="author" content="Thalles Rangel Lopes">
         <title>Pet Vacina</title>
+        <script src="<?=BASE_URL?>assets/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
+        <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			  crossorigin="anonymous"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>assets/js/script.js"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        
+        <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />
+        <script src="<?=BASE_URL?>assets/js/select2.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        
 </head>
     <body class="bg-purple">
     
-        
         <div class="d-flex align-items-center justify-content-center h-100">
             <form method="POST" class="p-2 h-75 w-50 rounded bg-white" action="<?=BASE_URL?>usuario/registrar_save">
                 <div class="text-center">
@@ -41,16 +55,25 @@
                         <input class="form-control form-control-sm" id="senha" type="password" name="senha" required>
                     </div>
                 </div>
-
+               
                 <div class="row pt-3 pl-4 pr-4">
                     <div class="col-sm-12 col-md-6">
-                        <label for="cidade">Cidade</label>
-                        <input class="form-control form-control-sm" id="cidade" type="text" name="cidade" required>
+                        <label for="estado">Estado</label>
+                        
+                        <select class="form-control form-control-sm js-select" name="id_estado" onchange="pegarCidades(this)" required>
+                            <?php
+                            foreach($estado as $item){
+                            ?>
+                            <option value="<?= $item['id_estado'] ?>"> <?= $item['nome_estado']?> </option>
+                            <?php }?>
+                        </select>
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <label for="estado">Estado</label>
-                        <input class="form-control form-control-sm" id="senha" type="text" name="estado" required>
+                        <label for="cidade">Cidade</label>
+                        <select id="cidade" class="form-control form-control-sm js-select" name="id_cidade" required>
+                            
+                        </select>
                     </div>
                 </div>
 
@@ -58,6 +81,6 @@
                 <a class="ml-4 mt-3 btn btn-link" href="<?=BASE_URL?>login">Voltar</a>
             </form>
         </div>
-    
+        <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL; ?>';</script>
     </body>
 </html>
