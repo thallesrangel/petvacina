@@ -8,7 +8,10 @@
         <title>Pet Vacina</title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
-        <script src="<?BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			  crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?=BASE_URL?>/assets/js/script.js"></script>
         <script type="text/javascript" src="<?=BASE_URL?>/assets/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>

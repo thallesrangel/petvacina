@@ -57,14 +57,14 @@
                 <div class="col-6">
                         <button type="submit" class="btn btn-sm btn-block btn-primary p-2">Entrar</button>
                 </div>	
-
+        </form>
                 <div class="col-6">
                         <a href="<?=BASE_URL?>usuario/registrar" class="btn btn-sm btn-block btn-secondary p-2">Registre-se</a>
                 </div>
             
             </div>
             <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso</a></p>
-        </form>
+        
     </div>
 </body>
 
