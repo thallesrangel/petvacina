@@ -16,13 +16,13 @@
             </div>
 
             <div class="col-md-3">
-                <label for="identificacao">Data Nascimento *</labe>
-                <input  id="identificacao" type="text" date-input="d/m/y" name="data_nascimento" class="form-control form-control-sm" required>
+                <label for="identificacao">Data Nascimento</labe>
+                <input  id="identificacao" type="text" date-input="d/m/y" name="data_nascimento" class="form-control form-control-sm">
             </div>
 
             <div class="col-md-3">
-                <label for="contato">Contato *</labe>
-                <input id="contato" type="text" class="form-control form-control-sm" name="contato" required>
+                <label for="contato">Contato</labe>
+                <input id="contato" type="text" class="form-control form-control-sm" name="contato">
             </div>
 
         </div>
@@ -35,9 +35,9 @@
     
     
             <div class="col-sm-12 col-md-3">
-                <label for="estado">Estado</label>
+                <label for="estado">Estado *</label>
                 
-                <select class="form-control form-control-sm js-select" name="endereco_estados" onchange="pegarCidades(this)" required>
+                <select class="form-control form-control-sm js-select" name="endereco_estado" onchange="pegarCidades(this)" required>
                     <?php
                     foreach($estado as $item){
                     ?>
@@ -47,26 +47,26 @@
             </div>
     
             <div class="col-sm-12 col-md-3">
-                        <label for="cidade">Cidade</label>
+                        <label for="cidade">Cidade *</label>
                         <select id="cidade" class="form-control form-control-sm js-select" name="endereco_cidade" required>
                         </select>
                     </div>
 
             <div class="form-group col-3">
-                <label for="bairro">Bairro *</label>
-                <input id="bairro" type="text" class="form-control form-control-sm" name="endereco_bairro" required>
+                <label for="bairro">Bairro </label>
+                <input id="bairro" type="text" class="form-control form-control-sm" name="endereco_bairro">
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-3">
-                <label for="logradouro">Logradouro *</label>
-                <input id="logradouro" type="text" class="form-control form-control-sm" name="endereco_rua" required>
+                <label for="logradouro">Logradouro </label>
+                <input id="logradouro" type="text" class="form-control form-control-sm" name="endereco_rua">
             </div>
 
             <div class="form-group col-2">
-                <label for="numero">Número - Quadra *</label>
-                <input id="numero" type="text" class="form-control form-control-sm" name="endereco_numero" required>
+                <label for="numero">Número - Quadra</label>
+                <input id="numero" type="text" class="form-control form-control-sm" name="endereco_numero">
             </div>
 
             <div class="form-group col-3">

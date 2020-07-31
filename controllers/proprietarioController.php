@@ -56,7 +56,7 @@ class proprietarioController extends Controller
     {      
         $nome_proprietario = $_POST['nome_proprietario'];
         $sobrenome_proprietario = $_POST['sobrenome_proprietario'];
-        $data_nascimento = implode('-', array_reverse(explode('/', $_POST['data_nascimento'])));
+        $data_nascimento = $_POST['data_nascimento'] ? implode('-', array_reverse(explode('/', $_POST['data_nascimento']))) : null;
         $contato = $_POST['contato'];
         $email = $_POST['email'];
         $endereco_estado = $_POST['endereco_estado'];

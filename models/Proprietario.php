@@ -3,7 +3,7 @@ class Proprietario extends model
 {
     public function add($nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)
     {
-        $sql = "INSERT INTO tbproprietario (id_usuario, nome_proprietario, sobrenome_proprietario, data_nascimento, contato, email, endereco_estado, endereco_cidade, endereco_bairro, endereco_rua, endereco_numero, endereco_complemento, endereco_referencia, data_registro) 
+        $sql = "INSERT INTO tbproprietario (id_usuario, nome_proprietario, sobrenome_proprietario, data_nascimento, contato, email, id_estado, id_cidade, endereco_bairro, endereco_rua, endereco_numero, endereco_complemento, endereco_referencia, data_registro) 
         VALUES(:id_usuario, :nome_proprietario, :sobrenome_proprietario, :data_nascimento, :contato, :email, :endereco_estado, :endereco_cidade, :endereco_bairro, :endereco_rua, :endereco_numero, :endereco_complemento, :endereco_referencia, :data_registro)";
      
         $sql = $this->db->prepare($sql);
@@ -24,18 +24,18 @@ class Proprietario extends model
 
         if ($sql->execute()) { 
            
-            //$count = $sql->rowCount();
-            //echo $count . ' rows updated properly!';
+            $count = $sql->rowCount();
+            echo $count . ' rows updated properly!';
             return true;
         } else {
-            return false;
-            //print_r($sql->errorInfo());
+            //return false;
+            print_r($sql->errorInfo());
         }
     }    
 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, contato FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, email FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

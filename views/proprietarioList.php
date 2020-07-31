@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Contato</th>
+                    <th scope="col">E-mail</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -16,7 +16,7 @@
             <?php foreach($proprietario as $item) { ?>
                 <tr>
                 <td><?=$item['nome_proprietario'] . " " .$item['sobrenome_proprietario']?></td>
-                <td class="telefone"><?=$item['contato']?></td>
+                <td><?=$item['email']?></td>
                     <td>
                         <a href="<?=BASE_URL?>proprietario/editar/<?=$item['id_proprietario']?>"><i class="icon" data-feather="edit"></i><a> 
                         <a href="<?=BASE_URL?>proprietario/deletar/<?=$item['id_proprietario']?>"><i class="icon-red" data-feather="trash"></i></a>

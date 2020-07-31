@@ -34,18 +34,21 @@ create table tbproprietario(
     id_usuario int not null,
     nome_proprietario varchar(220) not null,
     sobrenome_proprietario varchar(220) not null,
-    data_nascimento date not null,
-    contato varchar(50) not null,
+    data_nascimento date null,
+    contato varchar(50) null,
     email varchar(100) not null,
-    endereco_estado int not null,
-    endereco_cidade int not null,
-    endereco_bairro varchar(100) not null,
-    endereco_rua varchar(100) not null,
-    endereco_numero varchar(50) not null,
+    id_estado int not null,
+    id_cidade int not null,
+    endereco_bairro varchar(100) null,
+    endereco_rua varchar(100) null,
+    endereco_numero varchar(50) null,
     endereco_complemento varchar(100) null,
     endereco_referencia varchar(100) null,
     data_registro date not null,
-    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario)
+    flag_excluido int default 0 not null,
+    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
+    FOREIGN KEY (id_estado) REFERENCES tbestado(id_estado),
+    FOREIGN KEY (id_cidade) REFERENCES tbcidade(id_cidade)
 )
 
 
