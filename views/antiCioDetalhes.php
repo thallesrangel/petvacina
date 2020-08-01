@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th scope="col">Produto</th>
-                    <th scope="col">Dose</th>
+                    <th scope="col">Dose (ml)</th>
                     <th scope="col">Aplicação</th>
                     <th scope="col">Próxima Dose</th>
                     <th scope="col">Veterinário</th>

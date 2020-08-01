@@ -17,19 +17,17 @@ class Higiene extends model
         return $array;
     }
 
-
-    public function add($id_animal, $id_higiene_tipo, $id_prestador, $valor_total, $data_servico, $data_prox_servico)
+    public function add($id_animal, $id_higiene_tipo, $id_prestador, $data_servico, $data_prox_servico)
     {     
         
-        $sql = "INSERT INTO tbhigiene (id_usuario, id_animal, id_higiene_tipo, id_prestador, valor, data_servico, data_prox_servico, data_registro) 
-        VALUES(:id_usuario, :id_animal, :id_higiene_tipo, :id_prestador, :valor_total, :data_servico, :data_prox_servico, :data_registro)";
+        $sql = "INSERT INTO tbhigiene (id_usuario, id_animal, id_higiene_tipo, id_prestador, data_servico, data_prox_servico, data_registro) 
+        VALUES(:id_usuario, :id_animal, :id_higiene_tipo, :id_prestador, :data_servico, :data_prox_servico, :data_registro)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
         $sql->bindValue(':id_animal', $id_animal);
         $sql->bindValue(':id_higiene_tipo', $id_higiene_tipo);
         $sql->bindValue(':id_prestador', $id_prestador);
-        $sql->bindValue(':valor_total', $valor_total);
         $sql->bindValue(':data_servico', $data_servico);
         $sql->bindValue(':data_prox_servico', $data_prox_servico);
         $sql->bindValue(':data_registro', date('y-m-d')); 

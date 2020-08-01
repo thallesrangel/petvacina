@@ -60,13 +60,12 @@ class higieneController extends Controller
         $id_animal = $idAnimal;
         $id_higiene_tipo = $_POST['id_higiene_tipo'];
         $id_prestador = $_POST['id_prestador'];
-        $valor_total = str_replace(',', '.',str_replace('.', '', $_POST['valor_total']));
         $data_servico = implode('-', array_reverse(explode('/', $_POST['data_servico'])));
         $data_prox_servico = implode('-', array_reverse(explode('/', $_POST['data_prox_servico'])));
 
         $higiene = new Higiene();
         
-        if ($higiene->add($id_animal, $id_higiene_tipo, $id_prestador, $valor_total, $data_servico, $data_prox_servico)) {
+        if ($higiene->add($id_animal, $id_higiene_tipo, $id_prestador, $data_servico, $data_prox_servico)) {
             header("Location: ".BASE_URL."higiene/detalhes/".$idAnimal);
         } 
     }

@@ -39,7 +39,6 @@
                 <tr>
                     <th scope="col">Tipo</th>
                     <th scope="col">Prestador</th>
-                    <th scope="col">Valor</th>
                     <th scope="col">Data Serviço</th>
                     <th scope="col">Próximo Serviço</th>
                     <th scope="col">Ações</th>
@@ -50,7 +49,6 @@
                 <tr>
                     <td><?=$item['higiene_tipo']?></td>
                     <td><?=$item['nome_prestador']?></td>
-                    <td>R$: <span class="valor-limite"><?=$item['valor']?></span></td>
                     <td><?=date("d/m/Y", strtotime($item['data_servico']))?></td>
                     <td><?=$item['data_prox_servico'] == null ? 'Indefinido' : date("d/m/Y", strtotime($item['data_prox_servico']))?></td>
                     <td>

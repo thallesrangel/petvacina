@@ -61,7 +61,6 @@ class vacinaController extends Controller
         $id_animal = $idAnimal;
         $nome_vacina = $_POST['nome_vacina'];
         $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose'])); 
-        $valor_total = str_replace(',', '.',str_replace('.', '', $_POST['valor_total']));
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_revacinacao = $_POST['data_revacinacao'] ? implode('-', array_reverse(explode('/', $_POST['data_revacinacao']))) : null;
         $nome_veterinario = $_POST['nome_veterinario'];
@@ -69,7 +68,7 @@ class vacinaController extends Controller
 
         $vacina = new Vacina();
         
-        if ($vacina->add($id_animal, $nome_vacina, $dose, $valor_total, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv)) {
+        if ($vacina->add($id_animal, $nome_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv)) {
             header("Location: ".BASE_URL."vacina/detalhes/".$id_animal);
         } 
     }

@@ -9,6 +9,7 @@
 
     <form method="POST" class="p-2" action="<?=BASE_URL?>vacina/registrar_save/<?=$url[2];?>">
         <div class="row">
+        
             <div class="col-md-3">
                 <label for="vacina">Vacina *</labe>
                 <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina">
@@ -19,11 +20,6 @@
                 <input class="quantidade" id="dose" type="text" class="form-control form-control-sm" name="dose">
             </div>
 
-            <div class="col-md-3">
-                <label for="valor_total">Valor Total *</labe>
-                <input class="valor-limite" id="valor_total" type="text" class="form-control form-control-sm" placeholder="R$" name="valor_total">
-            </div>
-    
         </div>
 
         <div class="row">

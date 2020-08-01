@@ -34,12 +34,6 @@
                     </select>
                 </div>  
             </div>
-            
-
-            <div class="col-md-2">
-                <label for="valor_total">Valor Total</labe>
-                <input id="valor_total" type="text" class="form-control form-control-sm valor-limite" name="valor_total">
-            </div>
         
         </div>
 
