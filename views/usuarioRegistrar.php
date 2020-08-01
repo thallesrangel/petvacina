@@ -80,6 +80,6 @@
                 <a class="ml-4 mt-3 btn btn-link" href="<?=BASE_URL?>login">Voltar</a>
             </form>
         </div>
-        <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL; ?>';</script>
+        <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'usuario'; ?>';</script>
     </body>
 </html>
