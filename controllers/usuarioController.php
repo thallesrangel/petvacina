@@ -22,7 +22,6 @@ class usuarioController extends Controller
     		echo json_encode($array);
     		exit;
     	}
-
     }
 
     public function registrar_save()
@@ -36,8 +35,11 @@ class usuarioController extends Controller
             $id_cidade = $_POST['id_cidade'];
 
             $usuario = new Usuario();
-            
-            if ($usuario->add($nome_usuario, $sobrenome, $email, $senha, $id_estado, $id_cidade)) {
+            $proprietario = new Proprietario();
+            $idUsuarioGerado = $usuario->add($nome_usuario, $sobrenome, $email, $senha, $id_estado, $id_cidade);
+           
+            if ($idUsuarioGerado > 0) {
+                $proprietario->add($idUsuarioGerado, $nome_usuario, $sobrenome,$data_nascimento = null, $contato  = null, $email, $id_estado, $id_cidade, $endereco_bairro = null, $endereco_rua = null, $endereco_numero  = null, $endereco_complemento  = null, $endereco_referencia  = null);
                 header("Location: ".BASE_URL."login");
             } 
         } else {

@@ -49,7 +49,7 @@ class Usuario extends model
         if ($sql->execute()) {  
             //$count = $sql->rowCount();
             //echo $count . ' rows updated properly!';
-            return true;
+            return $this->db->lastInsertId();
         } else {
             return false;
             print_r($sql->errorInfo());

@@ -1,13 +1,13 @@
 <?php
 class Proprietario extends model 
 {
-    public function add($nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)
+    public function add($id_usuario, $nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)
     {
         $sql = "INSERT INTO tbproprietario (id_usuario, nome_proprietario, sobrenome_proprietario, data_nascimento, contato, email, id_estado, id_cidade, endereco_bairro, endereco_rua, endereco_numero, endereco_complemento, endereco_referencia, data_registro) 
         VALUES(:id_usuario, :nome_proprietario, :sobrenome_proprietario, :data_nascimento, :contato, :email, :endereco_estado, :endereco_cidade, :endereco_bairro, :endereco_rua, :endereco_numero, :endereco_complemento, :endereco_referencia, :data_registro)";
      
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
+        $sql->bindValue(':id_usuario', $id_usuario);
         $sql->bindValue(':nome_proprietario', $nome_proprietario);
         $sql->bindValue(':sobrenome_proprietario', $sobrenome_proprietario);
         $sql->bindValue(':data_nascimento', $data_nascimento);

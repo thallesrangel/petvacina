@@ -54,6 +54,7 @@ class proprietarioController extends Controller
 
     public function registrar_save()
     {      
+        $id_usuario = $_SESSION['id_usuario'];
         $nome_proprietario = $_POST['nome_proprietario'];
         $sobrenome_proprietario = $_POST['sobrenome_proprietario'];
         $data_nascimento = $_POST['data_nascimento'] ? implode('-', array_reverse(explode('/', $_POST['data_nascimento']))) : null;
@@ -69,7 +70,7 @@ class proprietarioController extends Controller
 
         $proprietario = new Proprietario();
          
-        if ($proprietario->add($nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)) {
+        if ($proprietario->add($id_usuario, $nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)) {
             header("Location: ".BASE_URL."proprietario");
         } 
     }
