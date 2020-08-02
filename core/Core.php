@@ -44,13 +44,12 @@ class Core
         $currentAction = 'index';
     }
 
-
     /*---------*/
-
-    if (!file_exists('controllers/'.$currentController.'.php') || !method_exists($currentController, $currentAction)) {
+    
+    if ( !(file_exists('controllers/'.$currentController.'.php') || file_exists('controllersReport/'.$currentController.'.php')) || !method_exists($currentController, $currentAction)) {
         $currentController = 'notfoundController';
         $currentAction = 'index';
-    }
+    } 
 
     # Instancia dinamicamente
     $c = new $currentController();

@@ -16,6 +16,13 @@ class Controller
         require_once "views/".$viewName.'.php';
     }
 
+    public function loadViewReport($viewName, $dados = array())
+    {   
+        extract($dados);
+    // Extract passa a key do array $variavel = $value para usar na view
+        require_once "report/".$viewName.'.php';
+    }
+
     public function loadTemplate($viewName, $dados = array(), $breadcrumb = false)
     {
         require "views/template.php";
