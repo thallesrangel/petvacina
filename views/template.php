@@ -108,7 +108,6 @@
                         
                         <div class="dropdown-menu dropdown-menu-right mt-4">
                             <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="user"></i> Perfil</a>
-                            <a href="<?=BASE_URL?>configuracao" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="settings"></i> Configurações</a>
                             <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="log-out"></i> Sair</a>
                         </div>
                         </div>
