@@ -66,6 +66,7 @@ class higieneController extends Controller
         $higiene = new Higiene();
         
         if ($higiene->add($id_animal, $id_higiene_tipo, $id_prestador, $data_servico, $data_prox_servico)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."higiene/detalhes/".$idAnimal);
         } 
     }
@@ -76,7 +77,7 @@ class higieneController extends Controller
         $higiene = new Higiene();
         $higiene->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."higiene");
     }
 }

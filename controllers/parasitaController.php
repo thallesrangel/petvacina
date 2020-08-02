@@ -49,6 +49,7 @@ class parasitaController extends Controller
         $vacina = new Parasita();
         
         if ($vacina->add($id_animal, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."parasita/detalhes/".$id_animal);
         } 
     }
@@ -76,7 +77,7 @@ class parasitaController extends Controller
         $parasita = new Parasita();
         $parasita->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."parasita");
     }
 }

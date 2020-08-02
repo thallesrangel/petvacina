@@ -71,6 +71,7 @@ class proprietarioController extends Controller
         $proprietario = new Proprietario();
          
         if ($proprietario->add($id_usuario, $nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."proprietario");
         } 
     }
@@ -81,7 +82,7 @@ class proprietarioController extends Controller
           $proprietario = new Proprietario();
           $proprietario->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."proprietario");
     }
     

@@ -69,6 +69,7 @@ class vacinaController extends Controller
         $vacina = new Vacina();
         
         if ($vacina->add($id_animal, $nome_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."vacina/detalhes/".$id_animal);
         } 
     }
@@ -79,7 +80,7 @@ class vacinaController extends Controller
           $vacina = new Vacina();
           $vacina->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."vacina/detalhes/");
     }
 }

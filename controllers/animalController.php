@@ -77,6 +77,7 @@ class animalController extends Controller
         $animal = new Animal();
         
         if ($animal->add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $numero_microchip, $data_microchip, $local_implatacao)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."animal");
         } 
     }
@@ -87,7 +88,7 @@ class animalController extends Controller
           $animal = new Animal();
           $animal->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."animal");
     }
 }

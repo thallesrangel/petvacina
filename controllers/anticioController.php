@@ -50,6 +50,7 @@ class anticioController extends Controller
         $anticio = new Anticio();
         
         if ($anticio->add($id_animal, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."anticio/detalhes/".$id_animal);
         } 
     }
@@ -75,9 +76,9 @@ class anticioController extends Controller
     {
       if (!empty($id)) {
         $anticio = new Anticio();
-        $parasanticioita->delete($id);
+        $anticio->delete($id);
       }
-
+      $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."anticio");
     }
 }

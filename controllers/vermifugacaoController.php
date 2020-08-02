@@ -47,6 +47,7 @@ class vermifugacaoController extends Controller
         $vermifugacao = new Vermifugacao();
          
         if ($vermifugacao->add($id_animal, $nome_produto, $dose, $peso_animal, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+            $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."vermifugacao/detalhes/".$id_animal);
         } 
     }
@@ -75,6 +76,7 @@ class vermifugacaoController extends Controller
           $vermifugacao = new Vermifugacao();
           $vermifugacao->delete($id);
       }
-      header("Location: ".BASE_URL."vermifugacao/detalhes/".$id);
+      $_SESSION['msg'] = 'deletado';
+      header("Location: ".BASE_URL."vermifugacao");
     }
 }
