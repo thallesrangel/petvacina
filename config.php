@@ -5,13 +5,13 @@ require "environment.php";
 $config = array();
 
 if(ENVIRONMENT == 'dev') {
-    define("BASE_URL", "http://localhost:8080/pet-vacina/");
+    define("BASE_URL", "http://localhost:8080/petvacina/");
     $config['dbname'] = 'petvacina';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
 } else {
-    define("BASE_URL", "http://191.252.111.150/");
+    define("BASE_URL", "http://191.252.111.150/petvacina/");
     $config['dbname'] = 'petvacina';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'thalles';

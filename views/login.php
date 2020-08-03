@@ -7,7 +7,7 @@
         <title>Pet Vacina</title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
-        <script src="<?BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
+        <script src="<?=BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
         
         <!-- SweetAlert2 -->
         <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
