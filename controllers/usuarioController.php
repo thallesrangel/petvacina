@@ -23,8 +23,8 @@ class usuarioController extends Controller
     		$cidade = new Cidade();
             $array = $cidade->getCidades($idEstado);
             
-            var_dump($array);
-    		echo json_encode($array);
+            $var =  json_encode($array);
+            var_dump($var);
     		exit;
     	}
     }
