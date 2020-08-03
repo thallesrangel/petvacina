@@ -18,14 +18,13 @@ class usuarioController extends Controller
     public function pegarcidades() {
         
     	if (isset($_POST['id_estado'])) {
-           
+            
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
             $array = $cidade->getCidades($idEstado);
-            var_dump("array".$array);
             
-            $json=  json_encode($array);
-            var_dump("".$json);
+            var_dump($array);
+    		echo json_encode($array);
     		exit;
     	}
     }
