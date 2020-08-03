@@ -55,4 +55,18 @@ class Usuario extends model
             print_r($sql->errorInfo());
         }
     }
+
+    public function getUsuario()
+    {
+        $sql = "SELECT * FROM tbusuario WHERE id_usuario = :id_usuario";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+            return $sql->fetch();
+		} else {
+			return false;
+		}
+    }
 }

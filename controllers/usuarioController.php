@@ -52,4 +52,20 @@ class usuarioController extends Controller
         $usuario = new Usuario();
         return $usuario->getExisteEmail($email);
     }
+
+    public function perfil()
+    {
+
+        $breadcrumb = [
+			'Início' => '',
+			'Usuário' => 'false',
+			'Perfil' => 'false'
+        ];
+
+        $usuario = new Usuario();
+        $dados['usuario'] = $usuario->getUsuario();;
+       
+        $this->setBreadCrumb($breadcrumb);
+        $this->loadTemplate('perfil', $dados);
+    }
 }

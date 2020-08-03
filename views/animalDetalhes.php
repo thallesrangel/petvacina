@@ -4,6 +4,7 @@
     foreach($lista as $item ){
         $dados = $item;
     }
+ 
 ?>
 
 <div class="container">
@@ -18,7 +19,7 @@
            <a href="<?=BASE_URL?>animal/editar/<?=$dados['id_animal']?>"><i class="icon" data-feather="edit"></i><a> 
             <a href="<?=BASE_URL?>animal/deletar/<?=$dados['id_animal']?>"><i class="icon-red" data-feather="trash"></i></a>
         </div>
-        
+
         <div class="col-3 pt-5">
             <p class="m-1"><b>Identificação:</b></span> <?=$dados['identificacao_animal']?></p>  
             <p class="m-1"><b>Nascimento:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_nascimento'])));?></p>

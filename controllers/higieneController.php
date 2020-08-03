@@ -61,7 +61,7 @@ class higieneController extends Controller
         $id_higiene_tipo = $_POST['id_higiene_tipo'];
         $id_prestador = $_POST['id_prestador'];
         $data_servico = implode('-', array_reverse(explode('/', $_POST['data_servico'])));
-        $data_prox_servico = implode('-', array_reverse(explode('/', $_POST['data_prox_servico'])));
+        $data_prox_servico =  $_POST['data_prox_servico'] ? implode('-', array_reverse(explode('/', $_POST['data_prox_servico']))) : null;
 
         $higiene = new Higiene();
         
