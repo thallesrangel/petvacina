@@ -65,7 +65,6 @@ function pegarCidades(obj) {
 			var html = '';
 
 			for(var i in json) {
-                console.log(json);
 				html += '<option value="'+json[i].id_cidade+'">'+json[i].nome_cidade+'</option>';
 			}
 
