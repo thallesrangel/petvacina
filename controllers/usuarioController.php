@@ -11,8 +11,6 @@ class usuarioController extends Controller
         $estado = new Estado();
         $dados['estado'] = $estado->getAll();
         
-        var_dump($dados);
-        exit;
         $this->loadView('usuarioRegistrar', $dados);
     }
 
