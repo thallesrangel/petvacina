@@ -16,9 +16,10 @@ class usuarioController extends Controller
 
     // Retorna as cidades via Ajax apos selecionar o id_estado e enviar via POST (view registrar usuario)
     public function pegarcidades() {
-        echo "Oi";
-        exit;
+        
     	if (isset($_POST['id_estado'])) {
+            echo "oi";
+            exit;
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
     		$array = $cidade->getCidades($idEstado);
