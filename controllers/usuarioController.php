@@ -4,12 +4,15 @@
 class usuarioController extends Controller 
 {   
     public function registrar() {
+        echo "Oi";
+        /*        
         $dados = [];
 
         $estado = new Estado();
         $dados['estado'] = $estado->getAll();
     
         $this->loadView('usuarioRegistrar', $dados);
+        */
     }
 
     // Retorna as cidades via Ajax apos selecionar o id_estado e enviar via POST (view registrar usuario)
