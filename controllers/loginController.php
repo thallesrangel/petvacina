@@ -25,10 +25,15 @@ class loginController extends Controller
         foreach($resultado as $item ){
             $dados = $item;
         }
-    
-        $id_usuario = $dados['id_usuario'];
-        $email = $dados['email_usuario'];
-        $senha = $dados['senha'];
+        # Verifica se retornou algo do banco de dados
+        if(!empty($dados)) {
+            $id_usuario = $dados['id_usuario'];
+            $email = $dados['email_usuario'];
+            $senha = $dados['senha'];
+        } else {
+            $_SESSION["msg"] = "email_ou_senha_incorreto";
+            header("Location:".BASE_URL."login");
+        }
   
         if (!empty($email)) {
   
@@ -37,13 +42,12 @@ class loginController extends Controller
                 $_SESSION['nome_usuario'] = $dados['nome_usuario'];
                 header("Location:".BASE_URL."");
             } else {
-                $_SESSION["mensagem"] = "email_senha_incorreto";
+                $_SESSION["msg"] = "email_ou_senha_incorreto";
                 header("Location:".BASE_URL."login");
             }
         }
     
     }
-
 
     public function logout() {
         

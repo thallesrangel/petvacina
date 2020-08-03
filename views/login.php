@@ -8,6 +8,10 @@
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
         <script src="<?BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
+        
+        <!-- SweetAlert2 -->
+        <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
 </head>
 
 <style>
@@ -29,6 +33,10 @@
 }
 </style>
 <body class="login-body">
+<?php
+  require('views/mensagem.php');
+  unset($_SESSION["msg"]);
+?>
     <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
             
         <div class="d-flex justify-content-center">

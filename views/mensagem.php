@@ -22,6 +22,27 @@ if(isset($_SESSION['msg'])){
             })  
             </script>";   
             break;
+
+        case "email_ou_senha_incorreto":
+            echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: 'E-mail ou senha incorreto'
+            })  
+            </script>";  
+            break;
+
+        case "email_utilizado":
+            echo "<script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Aviso',
+                text: 'E-mail já utilizado'
+            })  
+            </script>";  
+            break;
+
     }
 }
 ?>

@@ -43,7 +43,8 @@ class usuarioController extends Controller
                 header("Location: ".BASE_URL."login");
             } 
         } else {
-            die("E-mail já usado");
+            $_SESSION['msg'] = "email_utilizado";
+            header("Location: ".BASE_URL."usuario/registrar");
         }
     }
 

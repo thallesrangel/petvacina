@@ -15,16 +15,20 @@
 			  crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?=BASE_URL?>assets/js/script.js"></script>
         <script type="text/javascript" src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/feather-icons"></script>
-        
         <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />
         <script src="<?=BASE_URL?>assets/js/select2.min.js"></script>
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- SweetAlert2 -->
+        <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
         
 </head>
     <body class="bg-cinza">
+    <?php
+        require('views/mensagem.php');
+        unset($_SESSION["msg"]);
+    ?>
     
         <div class="d-flex align-items-center justify-content-center h-100">
             <form method="POST" class="p-2 h-75 w-50 rounded bg-white" action="<?=BASE_URL?>usuario/registrar_save">

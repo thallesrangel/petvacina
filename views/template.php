@@ -32,7 +32,7 @@
     <div class="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class="sidebar-brand-text mx-5 shadow-sm">
+                <div class="sidebar-brand-text mx-5">
                     <img width="170px" src="<?=BASE_URL?>/assets/img/logo.png"/> 
                 </div>
             
