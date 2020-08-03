@@ -22,9 +22,8 @@ class usuarioController extends Controller
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
             $array = $cidade->getCidades($idEstado);
-            
-            $valor = utf8_encode($array);
-            echo json_encode($valor);
+
+    		echo json_encode($array);
     		exit;
     	}
     }
