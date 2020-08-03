@@ -18,7 +18,8 @@ class usuarioController extends Controller
     public function pegarcidades() {
         
     	if (isset($_POST['id_estado'])) {
-            echo "oi";
+           
+            var_dump($_POST['id_estado']);
             exit;
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
