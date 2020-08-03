@@ -11,11 +11,11 @@ if(ENVIRONMENT == 'dev') {
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
 } else {
-    define("BASE_URL", "https://petvacina.000webhostapp.com/pet-vacina/");
+    define("BASE_URL", "http://191.252.111.150/");
     $config['dbname'] = 'petvacina';
     $config['host'] = 'localhost';
-    $config['dbuser'] = 'user';
-    $config['dbpass'] = 'pass';
+    $config['dbuser'] = 'thalles';
+    $config['dbpass'] = 'maax0710';
 }
 
 global $db;
