@@ -22,10 +22,10 @@ class usuarioController extends Controller
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
             $array = $cidade->getCidades($idEstado);
-            var_dump($array);
+     
+            var_dump(json_encode($array));
             exit;
-    		echo json_encode($array);
-    		exit;
+    		
     	}
     }
 
