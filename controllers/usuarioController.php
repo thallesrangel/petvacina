@@ -19,11 +19,11 @@ class usuarioController extends Controller
         
     	if (isset($_POST['id_estado'])) {
            
-            var_dump($_POST['id_estado']);
-            exit;
     		$idEstado = $_POST['id_estado'];
     		$cidade = new Cidade();
-    		$array = $cidade->getCidades($idEstado);
+            $array = $cidade->getCidades($idEstado);
+            var_dump($array);
+            exit;
     		echo json_encode($array);
     		exit;
     	}
