@@ -30,7 +30,7 @@
         <div class="col-3 pt-5">
            
             <p class="m-1"><b>Proprietário:</b></span> <?=$dados['nome_proprietario']?></p>
-            <p class="m-1"><b>Sexo:</b></span> <?=$dados['sexo'] == 1 ? 'Masculino' : 'Feminino'?></p>
+            <p class="m-1"><b>Sexo:</b></span> <?=$dados['sexo'] == 1 ? 'Macho' : 'Fêmea'?></p>
             <p class="m-1"><b>Pelagem:</b></span> <?=$dados['pelagem']?></p>
             <p class="m-1"><b>Data Registro:</b></span>  <?= implode('/', array_reverse(explode('-', $dados['data_registro'])));?></p>
             
