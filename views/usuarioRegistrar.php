@@ -30,10 +30,10 @@
         unset($_SESSION["msg"]);
     ?>
     
-        <div class="d-flex align-items-center justify-content-center h-100">
-            <form method="POST" class="p-2 h-75 w-50 rounded bg-white" action="<?=BASE_URL?>usuario/registrar_save">
+        <div class="d-flex align-items-center justify-content-center h-100 registrar">
+            <form method="POST" class="p-2 rounded bg-white" action="<?=BASE_URL?>usuario/registrar_save">
                 <div class="text-center">
-                    <img src="<?=BASE_URL?>/assets/img/logo.png">
+                    <img class="img-fluid" src="<?=BASE_URL?>/assets/img/logo.png">
                 </div>
 
                 <div class="row pt-3 pl-4 pr-4">
@@ -61,9 +61,8 @@
                 </div>
                
                 <div class="row pt-3 pl-4 pr-4">
-                    <div class="col-sm-12 col-md-6">
-                        <label for="estado">Estado</label>
-                        
+                    <div class="col-sm-12 col-md-6 mb-3">
+                        <label for="estado">Estado</label><br>
                         <select class="form-control form-control-sm js-select" name="id_estado" onchange="pegarCidades(this)" required>
                             <?php
                             foreach($estado as $item){
@@ -74,7 +73,7 @@
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <label for="cidade">Cidade</label>
+                        <label for="cidade">Cidade</label><br>
                         <select id="cidade" class="form-control form-control-sm js-select" name="id_cidade" required>
                         </select>
                     </div>
