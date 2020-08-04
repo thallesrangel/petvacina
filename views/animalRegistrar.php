@@ -66,12 +66,12 @@
                 <p>Sexo *</p>
                 <div class="custom-control custom-radio float-left mr-1">
                     <input type="radio" id="sexoM" name="sexo" class="custom-control-input" value="1" checked>
-                    <label class="custom-control-label" for="sexoM">Masculino</label>
+                    <label class="custom-control-label" for="sexoM">Macho</label>
                 </div>
 
                 <div class="custom-control custom-radio float-left ml-1">
                     <input type="radio" id="sexoF" name="sexo" class="custom-control-input" value="2">
-                    <label class="custom-control-label" for="sexoF">Feminino</label>
+                    <label class="custom-control-label" for="sexoF">Fêmea</label>
                 </div>
             </div>
 
