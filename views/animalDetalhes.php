@@ -21,7 +21,7 @@
 
         <div class="col-3 pt-5">
             <p class="m-1"><b>Identificação:</b></span> <?=$dados['identificacao_animal']?></p>  
-            <p class="m-1"><b>Nascimento:</b></span> <?= print_r($dados); implode('/', array_reverse(explode('-', $dados['data_nascimento'])));?></p>
+            <p class="m-1"><b>Nascimento:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_nascimento'])));?></p>
             <p class="m-1"><b>Espécie:</b></span> <?=$dados['nome_especie']?></p>
             <p class="m-1"><b>Raça:</b></span> <?=$dados['raca']?></p>
         </div>

@@ -40,7 +40,7 @@ class Anticio extends model
             return true;
         } else {
             return false;
-            print_r($sql->errorInfo());
+            //print_r($sql->errorInfo());
         }
     }
 
