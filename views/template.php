@@ -12,8 +12,8 @@
 			  src="https://code.jquery.com/jquery-3.5.1.js"
 			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 			  crossorigin="anonymous"></script>
-        <script type="text/javascript" src="<?=BASE_URL?>/assets/js/script.js"></script>
-        <script type="text/javascript" src="<?=BASE_URL?>/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>assets/js/script.js"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>
         
         <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />

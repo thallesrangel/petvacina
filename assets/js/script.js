@@ -46,6 +46,18 @@ $(document).ready(function($){
     });
 
     $('.js-select').select2();
+
+     
+    // ACTIVE STYLE BACK
+    const links = $('.navbar-nav li a');
+
+    $.each(links, function (index, link) {
+        
+        if (link.href == document.URL) {
+            
+            $(this).addClass('active');
+        }
+    });
 });
 
 $('.dropdown-toggle').dropdown('toggle');

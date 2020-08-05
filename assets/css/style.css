@@ -56,6 +56,8 @@ body{
 }
 
 /*
+TABELA COR SIM COR NÃO
+
 .table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
 background-color: #ADD8E6;
@@ -134,4 +136,17 @@ background-color: #a29bfe;
 .registrar{
     margin-left: 20px;
     margin-right: 20px;
+}
+
+
+
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:active{
+    background-color: #dfe6e9;
+}
+
+
+.navbar-nav .nav-item:hover .nav-link {
+    background-color: #f1f2f6;
 }
