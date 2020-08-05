@@ -3,7 +3,7 @@
 
     <?php
         if(empty($lista)) {
-            echo '<h6 class="pl-3 pt-3 mb-0">Não há registros.</h6>';
+            echo '<h6 class="pl-3 pt-3 mb-0">Não há registros. <a href="'.BASE_URL.'animal/registrar">Clique aqui</a> para registrar um animal.</h6>';
         }
     foreach($lista as $item){
     ?>  

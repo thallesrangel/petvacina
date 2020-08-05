@@ -6,7 +6,7 @@
   
     <?php
         if(empty($lista)) {
-        echo '<h6 class="pl-3 pt-3 mb-0">Não há registros.</h6>';
+        echo '<h6 class="pl-3 pt-3 mb-0">Não há registros. Clique em registrar.</h6>';
         }
     foreach($lista as $item){
     ?>  
