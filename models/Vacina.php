@@ -14,6 +14,19 @@ class Vacina extends model
         return $array;
     }
 
+    public function getAll() {
+        $array = array();
+        $sql = "SELECT * FROM tbvacina a
+        WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0";
+        $sql = $this->db->query($sql);
+        
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
 
     public function add($id_animal, $nome_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv)
     {     
