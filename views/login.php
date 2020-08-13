@@ -17,8 +17,8 @@
 <style>
 .login-body{
     background-repeat: no-repeat;
+    background: url('assets/img/background/bg.svg');
     background-position: center;
-    background-size: auto;
     font-family: 'Barlow', sans-serif; 
     background-size: cover;
 }
@@ -26,13 +26,11 @@
     max-width: 340px;
     height: auto;
     background: #FFF;
-    padding: 2%;
-    margin-top: 6%;
     border: 2px solid #ecf0f1; 
     border-radius: 10px;
 }
 </style>
-<body class="login-body">
+<body class="login-body h-100">
 <?php
   require('views/mensagem.php');
   unset($_SESSION["msg"]);
@@ -76,11 +74,14 @@
 </body>
 
 <script>
+/*  
+
     $(document).ready(function(){
         let random = Math.floor((Math.random() * 8) + 1);
         let style = 'assets/img/background/'+random+'.jpg';
         $('.login-body').css('background-image', `url(${style})`);
     });
+*/
 </script>
 
 <!--
