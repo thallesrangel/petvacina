@@ -108,4 +108,22 @@ class Animal extends model
         $sql->execute();
     }
 
+    # Usado em relatório 
+	public function listarReport($proprietario)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.* FROM tbanimal a
+			INNER JOIN tbproprietario b ON (b.id_proprietario = a.id_proprietario)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']."
+        AND b.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $array;
+	}
 } 

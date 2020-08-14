@@ -60,4 +60,24 @@ class Vermifugacao extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+    # Usado em relatório 
+	public function listarReport($proprietario)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.*, c.* FROM tbvermifugacao a
+            INNER JOIN tbanimal b ON (b.id_animal = a.id_animal)
+			INNER JOIN tbproprietario c ON (c.id_proprietario = b.id_proprietario)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']."
+        AND c.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->prepare($sql);
+    
+        if ($sql->execute()) { 
+            $array = $sql->fetchAll();
+        } 
+
+        return $array;
+	}
 }
