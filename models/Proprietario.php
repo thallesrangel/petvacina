@@ -47,7 +47,10 @@ class Proprietario extends model
 
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT a.*, b.*, c.* FROM tbproprietario a
+            INNER JOIN tbestado b ON (b.id_estado = a.id_estado)
+            INNER JOIN tbcidade c ON (c.id_cidade = a.id_cidade)
+        WHERE a.id_usuario = ". $_SESSION['id_usuario']." AND a.flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
