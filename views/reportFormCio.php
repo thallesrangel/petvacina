@@ -19,14 +19,14 @@
             <div class="col-2">
                 <div class="form-group">
                 <span>Data Inicial *</span> 
-                <input type="date" name="data_inicial" date-input="d/m/y h:i:s" class="form-control form-control-sm" required>
+                <input type="text" name="data_inicial" date-input="d/m/y" class="form-control form-control-sm" required>
                 </div>  
             </div>
     
             <div class="col-2">
                 <div class="form-group">
                 <span>Data Final *</span> 
-                <input type="date" name="data_final" date-input="d/m/y h:i:s" class="form-control form-control-sm" required>
+                <input type="text" name="data_final" date-input="d/m/y" class="form-control form-control-sm" required>
                 </div>
             </div>
 

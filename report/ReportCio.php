@@ -17,17 +17,20 @@ class ReportCio extends FPDF
     function footer(){
         $this->SetY(-15);
         $this->SetFont('Arial','',8);
-        $this->Cell(0,10,'Página '.$this->PageNo().'/{nb}',0,0,'C');
-        $this->Cell(0,5,"Usuário: ".$_SESSION['nome_usuario'],0,0,'R');
+        $this->Cell(0,10, utf8_decode('Página').$this->PageNo().'/{nb}',0,0,'C');
+        $this->Cell(0,5,utf8_decode("Usuário: ".$_SESSION['nome_usuario']),0,0,'R');
         $this->Cell(0,15,"Emitido em: ".date("d/m/Y H:i:s"),0,0,'R');
     }
 
     function headerTable() { 
         $this->SetFont('Arial', 'B', 8);
-        $this->Cell(20,8,'ID',1,0,'L');
+        $this->Cell(10,8,'ID',1,0,'L');
         $this->Cell(20,8, utf8_decode('Proprietário'),1,0,'L');
         $this->Cell(20,8,'Animal',1,0,'L');
-        $this->Cell(15,8,'Produto',1,0,'L');
+        $this->Cell(20,8,'Produto',1,0,'L');
+        $this->Cell(20,8,'Dose (ml)',1,0,'L');
+        $this->Cell(20,8, utf8_decode('Veterinário'),1,0,'L');
+        $this->Cell(20,8,'CRMV',1,0,'L');
         $this->Cell(15,8, utf8_decode('Aplicação') ,1,0,'L');
         $this->Cell(15,8, utf8_decode('Próxima') ,1,0,'L');
         $this->Ln();
@@ -47,12 +50,15 @@ class ReportCio extends FPDF
 
         foreach($dados as $value) {
 
-            $this->Cell(20,7, $value['id_anticio'],1,0,'L');
+            $this->Cell(10,7, $value['id_anticio'],1,0,'L');
             $this->Cell(20,7,$value['nome_proprietario'],1,0,'L');
+            $this->Cell(20,7,$value['nome_animal'],1,0,'L');
             $this->Cell(20,7,$value['nome_produto'],1,0,'L');
-            $this->Cell(20,7,date("d/m/Y", strtotime($value['data_aplicacao'])),1,0,'L');
-            $this->Cell(20,7,date("d/m/Y", strtotime($value['data_prox_dose'])),1,0,'L');
- 
+            $this->Cell(20,7,$value['dose'],1,0,'L');
+            $this->Cell(20,7,$value['nome_veterinario'],1,0,'L');
+            $this->Cell(20,7,$value['registro_crmv'],1,0,'L');
+            $this->Cell(15,7,date("d/m/Y", strtotime($value['data_aplicacao'])),1,0,'L');
+            $this->Cell(15,7,date("d/m/Y", strtotime($value['data_prox_dose'])),1,0,'L');
 
             $this->Ln();
         }

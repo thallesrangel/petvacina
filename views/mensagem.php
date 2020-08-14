@@ -43,6 +43,14 @@ if(isset($_SESSION['msg'])){
             </script>";  
             break;
 
+        case "report_sem_post":
+            echo "<script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Aviso',
+                text: 'Necessário preencher para gerar o relatório'
+            })  
+            </script>";  
     }
 }
 ?>
