@@ -1,6 +1,5 @@
 <?php
 
-
 class relatorioController extends Controller 
 {   
     public function index()

@@ -19,10 +19,14 @@
         <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />
         <script src="<?=BASE_URL?>assets/js/select2.min.js"></script>
 
+        <!--
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        -->
         <script src="<?=BASE_URL?>assets/js/jquery.mask.min.js"></script>
-
+        <link href="<?=BASE_URL?>assets/css/multiselect.css" rel="stylesheet" />
+        <script src="<?=BASE_URL?>assets/js/multiselect.min.js"></script>
+       
         <!-- SweetAlert2 -->
         <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">

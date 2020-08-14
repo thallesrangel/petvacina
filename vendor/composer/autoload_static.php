@@ -11,12 +11,20 @@ class ComposerStaticInitb23ad5c55c5969b1bb91afacdadfceac
         array (
             'setasign\\Fpdi\\' => 14,
         ),
+        'F' => 
+        array (
+            'Fpdf\\' => 5,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'setasign\\Fpdi\\' => 
         array (
             0 => __DIR__ . '/..' . '/setasign/fpdi/src',
+        ),
+        'Fpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf',
         ),
     );
 

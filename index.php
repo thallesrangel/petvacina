@@ -13,6 +13,10 @@ spl_autoload_register(function($class){
     else if (file_exists('controllersReport/'.$class.'.php')) {
         require 'controllersReport/'.$class.'.php';
     } 
+
+    else if (file_exists('report/'.$class.'.php')) {
+        require 'report/'.$class.'.php';
+    } 
     
     else if (file_exists('models/'.$class.'.php')){
         require 'models/'.$class.'.php';
