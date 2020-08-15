@@ -30,11 +30,13 @@
     border-radius: 10px;
 }
 </style>
-<body class="login-body h-100">
+<body class="login-body">
 <?php
   require('views/mensagem.php');
   unset($_SESSION["msg"]);
 ?>
+<div class="container h-100">
+<div class="row align-items-center h-100">
     <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
             
         <div class="d-flex justify-content-center">
@@ -71,6 +73,8 @@
             <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso</a></p>
         
     </div>
+    </div>
+</div>
 </body>
 
 <script>
