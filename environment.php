@@ -1,3 +1,3 @@
 <?php
 
-define("ENVIRONMENT", "d");
+define("ENVIRONMENT", "rod");

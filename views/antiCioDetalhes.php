@@ -34,7 +34,7 @@
     <div class="row justify-content-md-center">
         
         <div class="col-md-10 border rounded bg-white p-2">
-            <table class="table table-bordered table-striped ">
+            <table class="table table-bordered table-striped table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col">Produto</th>
