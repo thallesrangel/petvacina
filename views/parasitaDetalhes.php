@@ -23,8 +23,8 @@
 
         <div class="col-sm-12 col-md-3 text-sm-center text-md-left">
             <h4 class="m-1 pt-4"><?=$dados_animal['nome_animal'];?></h4>
-            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>parasita/registrar/<?=$dados_animal['id_animal'];?>"><i class="icon-white" data-feather="plus"></i> Registrar</a>
-            <a class="btn btn-sm btn-primary mb-3" href="#"><i class="icon-white" data-feather="printer"></i> Imprimir</a>
+            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>parasita/registrar/<?=$dados_animal['id_animal'];?>"><span><img src="<?= BASE_URL?>assets/img/icon/plus.svg"> Registrar </span></a>
+            <a class="btn btn-sm btn-primary mb-3" href="#"><span><img src="<?= BASE_URL?>assets/img/icon/printer.svg"> Imprimir </span></a>
         </div>
     
     </div>

@@ -41,49 +41,49 @@
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
-                        <span> <i class="icon-red" data-feather="heart"></i> Animais</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/heart.svg"> Animais</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vacina">
-                        <span><i class="icon-yellow" data-feather="award"></i> Vacinas</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/award.svg"> Vacinas</span>
                         </a>
                     </li>  
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                        <span><i class="icon-green" data-feather="shield"></i> Vermifugação</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/shield.svg"> Vermifugação</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>parasita">
-                        <span><i class="icon-orange" data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/alert-triangle.svg"> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>anticio">
-                        <span><i class="icon-blue" data-feather="pocket"></i> Anti-cio</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/pocket.svg"> Anti-cio</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>higiene">
-                        <span><i class="icon-high-blue" data-feather="scissors"></i> Higiene</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/scissors.svg"> Higiene</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>relatorio">
-                        <span><i class="icon-green" data-feather="file-text"></i> Relatórios</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/file-text.svg"> Relatórios</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i class="icon-yellow" data-feather="users"></i> Proprietários</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/users.svg"> Proprietários</span>
                         </a>
                     </li>
             </a>

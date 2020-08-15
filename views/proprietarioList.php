@@ -3,8 +3,8 @@
         
         <div class="col-md-6 border rounded bg-white p-2">
             <h5 class="p-1 float-left">Proprietários</h5>
-            <a href="<?=BASE_URL?>proprietario/registrar" class="btn btn-sm btn-primary float-right mr-4">Registrar</a>
-            <a target="_blank" class="btn btn-sm btn-primary float-right mr-2" href="<?=BASE_URL?>proprietarioreport/render"><i class="icon-white" data-feather="printer"></i> Imprimir</a>
+            <a href="<?=BASE_URL?>proprietario/registrar" class="btn btn-sm btn-primary float-right mr-4"><span><img src="<?= BASE_URL?>assets/img/icon/plus.svg"> Registrar </span></a>
+            <a target="_blank" class="btn btn-sm btn-primary float-right mr-2" href="<?=BASE_URL?>proprietarioreport/render"><span><img src="<?= BASE_URL?>assets/img/icon/printer.svg"> Imprimir </span></a>
             <table class="table">
             <thead>
                 <tr>
