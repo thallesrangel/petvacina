@@ -23,7 +23,7 @@ class cioreportController extends Controller
         $breadcrumb = [
 			'Início' => '',
 			'Relatório' => 'false',
-			'Pulgas e Carrapatos' => 'false'
+			'Anti-cio' => 'false'
         ];
 
         $proprietarios = new Proprietario();

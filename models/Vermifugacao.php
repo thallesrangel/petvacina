@@ -74,7 +74,8 @@ class Vermifugacao extends model
 
         $sql = $this->db->prepare($sql);
     
-        if ($sql->execute()) { 
+
+        if ($sql->execute()) {  
             $array = $sql->fetchAll();
         } 
 

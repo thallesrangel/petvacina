@@ -41,8 +41,8 @@ class ReportCio extends FPDF
 
         $this->SetFont('Arial', '', 7);
 
-        $data_inicial = preg_replace('#(\d{2})/(\d{2})/(\d{4})\s(.*)#', '$3-$2-$1 $4', $_POST['data_inicial']);
-        $data_final = preg_replace('#(\d{2})/(\d{2})/(\d{4})\s(.*)#', '$3-$2-$1 $4', $_POST['data_final']);
+        $data_inicial = implode('-', array_reverse(explode('/', $_POST['data_inicial'])));
+        $data_final = implode('-', array_reverse(explode('/', $_POST['data_final'])));
         $proprietario = $_POST['proprietario'];
 
         $cio = new Anticio();
@@ -61,8 +61,7 @@ class ReportCio extends FPDF
             $this->Cell(15,7,date("d/m/Y", strtotime($value['data_prox_dose'])),1,0,'L');
 
             $this->Ln();
-        }
-        
+        } 
     }
 }
 

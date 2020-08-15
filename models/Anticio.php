@@ -58,6 +58,7 @@ class Anticio extends model
     # Usado em relatório 
 	public function listarReport($proprietario, $data_inicial, $data_final)
 	{   
+
         $array = array();
        
 		$sql = "SELECT a.*, b.*, c.* FROM tbanticio a
@@ -71,12 +72,11 @@ class Anticio extends model
 		$sql->bindValue(':data_inicial', $data_inicial);
         $sql->bindValue(':data_final', $data_final);
 	
-        $sql->execute();
-      
-        if ($sql->rowCount() > 0) {
+       
+        if ($sql->execute()) {
             $array = $sql->fetchAll(PDO::FETCH_ASSOC);
         }
-
+       
         return $array;
 	}
 }
