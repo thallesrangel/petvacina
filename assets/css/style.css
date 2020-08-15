@@ -68,84 +68,37 @@ background-color: #a29bfe;
 }
 */
 
-
-/* CORES ICONES*/
-
-.icon-red{
-    color: #e74c3c;
-}
-
-.icon-roxo{
-    color: #5352ed;
-}
-.icon-green{
-    color: #2ecc71;
-}
-
-.icon-yellow{
-    color: #f1c40f;
-}
-.icon-orange{
-    color: #e67e22;
-}
-.icon-blue{
-    color: #3498db;
-}
-
-.colo-red{
-    color: #e74c3c;
-}
-.icon-white{
-    width: 18px;
-    height: 18px;
-    color: #FFF;
-}
-.icon-high-blue{
-    color: #45aaf2;
-}
 .icon-gray-submenu{
     color: #bdc3c7;
 }
 .font-14{
     font-size: 14px;
 }
-.icon-gray{
-    color: #95a5a6;
-}
-
 .border-radius{
     border-radius: 12px;
 }
-
 .list-color-text{
     color: #3d3d3d;
 }
 .list-color-text:hover{
     color: #3d3d3d;
 }
-
 .h5-title-list{
     color: #4b4b4b;
 }
-
-
 .bg-cinza{
     background-color: #f5f6fa;
 }
-
 .registrar{
     margin-left: 20px;
     margin-right: 20px;
 }
 
 
-
-
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:active{
     background-color: #dfe6e9;
 }
-
 
 .navbar-nav .nav-item:hover .nav-link {
     background-color: #f1f2f6;

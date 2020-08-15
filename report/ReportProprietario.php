@@ -4,7 +4,8 @@ require 'vendor/autoload.php';
 
 class ReportProprietario extends FPDF
 {  
-    function header(){
+    function header()
+    {
         $this->SetTitle(utf8_decode("Pet Vacina | Report Proprietário"));
         $this->Image(BASE_URL."assets/img/logoLow.png",10,6);
         $this->SetFont('Arial','',12);
@@ -14,7 +15,8 @@ class ReportProprietario extends FPDF
         $this->Cell(276,10, utf8_decode('Quem cuida, vacina.'));
         $this->Ln(15);
     }
-    function footer(){
+    function footer()
+    {
         $this->SetY(-15);
         $this->SetFont('Arial','',8);
         $this->Cell(0,10, utf8_decode('Página').$this->PageNo().'/{nb}',0,0,'C');
@@ -22,7 +24,8 @@ class ReportProprietario extends FPDF
         $this->Cell(0,15,"Emitido em: ".date("d/m/Y H:i:s"),0,0,'R');
     }
 
-    function headerTable() { 
+    function headerTable() 
+    { 
         $this->SetFont('Arial', 'B', 8);
         $this->Cell(10,8,'ID',1,0,'L');
         $this->Cell(20,8, utf8_decode('Proprietário'),1,0,'L');
@@ -35,11 +38,9 @@ class ReportProprietario extends FPDF
         $this->Ln();
     }
 
-    function viewTable(){
-     
-
+    function viewTable()
+    {
         $this->SetFont('Arial', '', 7);
-
 
         $proprietario = new Proprietario();
         $dados = $proprietario->getAll();
