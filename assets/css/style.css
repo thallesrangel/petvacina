@@ -105,7 +105,7 @@ background-color: #a29bfe;
     background-color: #f1f2f6;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .offcanvas-collapse {
         position: fixed;
         top: 56px;
