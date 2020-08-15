@@ -1,3 +1,3 @@
 <?php
 
-define("ENVIRONMENT", "dv");
+define("ENVIRONMENT", "d");
