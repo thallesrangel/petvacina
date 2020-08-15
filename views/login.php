@@ -35,46 +35,46 @@
   require('views/mensagem.php');
   unset($_SESSION["msg"]);
 ?>
-<div class="container h-100">
-<div class="row align-items-center h-100">
-    <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
-            
-        <div class="d-flex justify-content-center">
-            <img class="img-fluid" src="<?=BASE_URL . 'assets/img/logo.png'?>">
-            <span>Alfa</span>
-        </div>
-        
-        <br>
-
-        <form action="<?=BASE_URL.'login/logar'?>" method="POST" id="form" autocomplete="off">
-
-            <div class="form-group">
-                <label>E-mail</label>
-                <input class="form-control" type="email" name="email" placeholder="Digite seu e-mail"
-                    autocomplete="off" id="campo" required/>
-            </div>
-
-            <div class="form-group">
-                <label>Senha</label>
-                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" required/>
-            </div>
-
-            <div class="row">
-
-                <div class="col-6">
-                        <button type="submit" class="btn btn-sm btn-block btn-primary p-2">Entrar</button>
-                </div>	
-        </form>
-                <div class="col-6">
-                        <a href="<?=BASE_URL?>usuario/registrar" class="btn btn-sm btn-block btn-secondary p-2">Registre-se</a>
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
+                    
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" src="<?=BASE_URL . 'assets/img/logo.png'?>">
+                    <span>Alfa</span>
                 </div>
-            
+                
+                <br>
+
+                <form action="<?=BASE_URL.'login/logar'?>" method="POST" id="form" autocomplete="off">
+
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input class="form-control" type="email" name="email" placeholder="Digite seu e-mail"
+                            autocomplete="off" id="campo" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" required/>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                                <button type="submit" class="btn btn-sm btn-block btn-primary p-2">Entrar</button>
+                        </div>	
+                </form>
+                        <div class="col-6">
+                                <a href="<?=BASE_URL?>usuario/registrar" class="btn btn-sm btn-block btn-secondary p-2">Registre-se</a>
+                        </div>
+                    
+                    </div>
+                    <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso</a></p>
+                
             </div>
-            <p class="mt-3"><a class="d-flex justify-content-center" href="#">Recuperar acesso</a></p>
-        
+        </div>
     </div>
-    </div>
-</div>
 </body>
 
 <script>
