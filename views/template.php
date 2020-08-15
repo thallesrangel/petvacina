@@ -13,6 +13,8 @@
 			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 			  crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?=BASE_URL?>assets/js/script.js"></script>
+        <script type="text/javascript" src="<?=BASE_URL?>assets/js/responsive.js"></script>
+
         <script type="text/javascript" src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>
         
@@ -33,7 +35,7 @@
     <body>
 
     <div class="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-text mx-5 m-2">
                     <img width="170px" src="<?=BASE_URL?>/assets/img/logo.png"/> 
@@ -89,12 +91,17 @@
             </a>
         </ul>
 
+
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-
-                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top">
                 
-                    <ul class="navbar-nav ml-auto">
+                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top">
+             
+                    <ul class="navbar-nav ml-auto"> 
+                    <!-- BUTTON RESPONSIVO-->
+                    <button class="btn btn-dark" type="button" id="navToggle" data-toggle="offcanvas">
+                       <span>=</span>
+                    </button>
 
                         <a class="nav-link" href="<?=BASE_URL?>">
                             <i class="icon-gray" width="22" data-feather="home"></i>
