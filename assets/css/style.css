@@ -105,10 +105,18 @@ background-color: #a29bfe;
     background-color: #f1f2f6;
 }
 
+/* btn responsive */
+#navToggle{
+    display:none;
+}
+
 @media (max-width: 700px) {
+    #navToggle{
+        display:block;
+    }
     .offcanvas-collapse {
         position: fixed;
-        top: 56px;
+        top: 20px;
         bottom: 0;
         right: 100%;
         left: -300px;
@@ -118,7 +126,7 @@ background-color: #a29bfe;
         overflow-y: auto;
         visibility: hidden;
         transition-timing-function: ease-in-out;
-        transition-duration: .3s;
+        transition-duration: .2s;
         transition-property: left, visibility;
         z-index: 999;
     }

@@ -95,33 +95,34 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 
-                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top">
+                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top w-100 ">
              
-                    <ul class="navbar-nav ml-auto"> 
-                    <!-- BUTTON RESPONSIVO-->
-                    <button class="btn btn-dark" type="button" id="navToggle" data-toggle="offcanvas">
-                       <span>=</span>
-                    </button>
-
-                        <a class="nav-link" href="<?=BASE_URL?>">
+                    <ul class="list-inline ml-auto">
+                        <a class="list-inline-item" href="<?=BASE_URL?>">
                             <i class="icon-gray" width="22" data-feather="home"></i>
                         </a>
 
-                        <a class="nav-link mr-3" href="#">
+                        <a class="list-inline-item mr-3" href="#">
                             <i class="icon-gray" width="22" data-feather="bell"></i>
                         </a>
 
-                        <div class="nav-link btn-group">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       
+                        <a class="list-inline-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span><?=$_SESSION['nome_usuario']?></span>
                         </a>
                         
-                        <div class="dropdown-menu dropdown-menu-right mt-4">
+                        <div class="list-inline-item dropdown-menu dropdown-menu-right mt-4">
                             <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="user"></i> Perfil</a>
                             <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="log-out"></i> Sair</a>
                         </div>
-                        </div>
+                        
+            
                     </ul>
+
+                    <!-- BUTTON RESPONSIVO-->
+                    <button class="list-inline-item btn btn-sm btn-dark" type="button" id="navToggle" data-toggle="offcanvas">
+                            <span>=</span>
+                    </button>
                 </nav>
                 
                 
