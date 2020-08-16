@@ -16,8 +16,26 @@ class parasitaController extends Controller
         ];
 
         $animais = new Animal();
+        // Paginação
+        $offset = 0;
+        $limit = 10;
+        $total = $animais->getTotal();
+        // total Paginas
+        $dados['paginas'] = ceil($total/$limit);
+        // Pagina Atual
+        $dados['paginaAtual'] = 1;
 
-        $dados['lista'] = $animais->getAllResumido();
+        if(!empty($_GET['p'])) {
+            $dados['paginaAtual'] = $_GET['p'];
+        }
+
+        $offset = ($dados['paginaAtual'] * $limit) - $limit;
+        
+        //Limitar os link antes depois
+        $dados['max_links'] = 1;
+        
+        $dados['lista'] = $animais->getAllResumido($offset, $limit);
+       
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('parasitaList', $dados);
     }

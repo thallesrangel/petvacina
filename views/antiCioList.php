@@ -18,3 +18,8 @@
 ?>
 
 </div>
+
+
+<?php
+require ('paginacao.php');
+?>

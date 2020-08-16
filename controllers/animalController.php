@@ -17,15 +17,13 @@ class animalController extends Controller
         ];
 
         $animais = new Animal();
+        
         // Paginação
         $offset = 0;
-       
         $limit = 10;
         $total = $animais->getTotal();
         // total Paginas
         $dados['paginas'] = ceil($total/$limit);
-
-
         // Pagina Atual
         $dados['paginaAtual'] = 1;
 
