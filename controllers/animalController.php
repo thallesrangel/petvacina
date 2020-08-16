@@ -17,8 +17,20 @@ class animalController extends Controller
         ];
 
         $animais = new Animal();
-        
-        $dados['lista'] = $animais->getAllResumido();
+        // Paginação
+        $offset = 0;
+        $limit = 10;
+        $total = $animais->getTotal();
+        $dados['paginas'] = ceil($total/$limit);
+        $dados['paginaAtual'] = 1;
+
+        if(!empty($_GET['p'])) {
+            $dados['paginaAtual'] = $_GET['p'];
+        }
+
+        $offset = ($dados['paginaAtual'] * $limit)- $limit;
+       
+        $dados['lista'] = $animais->getAllResumido($offset, $limit);
 
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalList', $dados);

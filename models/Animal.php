@@ -63,9 +63,9 @@ class Animal extends model
 
 
     // Retorna todos os animais so o nome 
-    public function getAllResumido() {
+    public function getAllResumido($offset, $limit) {
         $array = array();
-        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 LIMIT ".$offset.", ".$limit."";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -73,6 +73,15 @@ class Animal extends model
         }
 
         return $array;
+    }
+    // Retonra a quantidade total de registros para paginar
+    public function getTotal() 
+    {
+        $sql = "SELECT count(*) as c FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+        $sql = $sql->fetch();
+
+        return $sql['c'];
     }
 
     public function getAll() {

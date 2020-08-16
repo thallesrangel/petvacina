@@ -18,6 +18,19 @@
     </a>
     <?php
     }
-?>
-
+    ?>
 </div>
+
+
+<div class="container">
+        <ul class="pagination">
+            <?php
+            for ($q = 1; $q <= $paginas; $q++):?>
+                <?php if($paginaAtual == $q): ?>
+                    <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>animal/?p=<?= $q;?>"> <b><?= $q;?></b> </a></li>
+                <?php else: ?>
+                <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>animal/?p=<?= $q;?>"> <?= $q;?> </a></li>
+                <?php endif; ?>
+            <?php endfor;?>
+        </ul>
+    </div>
