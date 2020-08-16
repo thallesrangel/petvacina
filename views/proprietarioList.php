@@ -31,7 +31,3 @@
         </div>
     </div>
 </div>
-
-<?php
-require ('paginacao.php');
-?>
