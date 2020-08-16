@@ -1,14 +1,14 @@
 <?php
 
-if(!isset($_SESSION['id_usuario'])) {
-    header("Location:".BASE_URL."login");
-    die();   
-}
 
 class HomeController extends Controller
 {   
     public function index() 
     {   
+        if(empty($_SESSION['id_usuario'])) {
+            header("Location:".BASE_URL."login");
+        }
+        
         $breadcrumb = [
 			'Início' => 'false',
         ];

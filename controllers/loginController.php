@@ -1,11 +1,7 @@
 <?php
 
-if(isset($_SESSION['id_usuario'])) {
-    header("Location:".BASE_URL."");
-}
-
 class loginController extends Controller 
-{   
+{       
     public function index() {
         $this->loadView('login');
     }
@@ -53,7 +49,7 @@ class loginController extends Controller
         
         session_destroy();
 
-        if( isset($_SESSION['id_usuario'])){
+        if(empty($_SESSION['id_usuario'])) {
             header("Location:".BASE_URL."login");
         }
     }
