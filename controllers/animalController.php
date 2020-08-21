@@ -87,14 +87,15 @@ class animalController extends Controller
         $sexo = $_POST['sexo'];
         $pelagem = $_POST['pelagem'];
         $proprietario = $_POST['proprietario'];
-
+        $flag_castrado = $_POST['castrado'];
+        $flag_filhotes =  $_POST['filhotes'];
         $numero_microchip = $_POST['numero_microchip'] == "" ? null : $_POST['numero_microchip'];
         $data_microchip = $_POST['data_microchip'] == "" ? null : implode('-', array_reverse(explode('/', $_POST['data_microchip'])));
         $local_implatacao = $_POST['local_implatacao'] == "" ? null : $_POST['local_implatacao'];
 
         $animal = new Animal();
         
-        if ($animal->add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $numero_microchip, $data_microchip, $local_implatacao)) {
+        if ($animal->add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."animal");
         } 

@@ -134,7 +134,7 @@
                         </ul>
                     </div>
                 
-                    <div class="container">
+                    <div id="body" class="container">
                         <?php
                         require('views/mensagem.php');
                         unset($_SESSION["msg"]);

@@ -2,7 +2,7 @@
 class Animal extends model 
 {
      
-    public function add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $numero_microchip, $data_microchip, $local_implatacao)
+    public function add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)
     {     
 
         if (isset($_FILES['arquivo']) && !empty($_FILES['arquivo']['tmp_name'])) {
@@ -18,8 +18,8 @@ class Animal extends model
           }
         }
         
-        $sql = "INSERT INTO tbanimal (id_usuario, nome_animal, identificacao_animal, data_nascimento, id_especie, raca, sexo, pelagem, id_proprietario, microchip, data_implementacao, local_implementacao, url, data_registro) 
-        VALUES(:id_usuario, :nome_animal, :identificacao_animal, :data_nascimento, :id_especie, :raca, :sexo, :pelagem, :id_proprietario, :microchip, :data_implementacao, :local_implementacao, :url, :data_registro)";
+        $sql = "INSERT INTO tbanimal (id_usuario, nome_animal, identificacao_animal, data_nascimento, id_especie, raca, sexo, pelagem, id_proprietario, flag_castrado, flag_filhotes, microchip, data_implantacao, local_implantacao, url, data_registro) 
+        VALUES(:id_usuario, :nome_animal, :identificacao_animal, :data_nascimento, :id_especie, :raca, :sexo, :pelagem, :id_proprietario, :flag_castrado, :flag_filhotes, :microchip, :data_implantacao, :local_implantacao, :url, :data_registro)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
@@ -31,16 +31,21 @@ class Animal extends model
         $sql->bindValue(':sexo', $sexo);
         $sql->bindValue(':pelagem', $pelagem);
         $sql->bindValue(':id_proprietario', $proprietario);
+        $sql->bindValue(':flag_castrado', $flag_castrado);
+        $sql->bindValue(':flag_filhotes', $flag_filhotes);
         $sql->bindValue(':microchip', $numero_microchip);
-        $sql->bindValue(':data_implementacao', $data_microchip);
-        $sql->bindValue(':local_implementacao', $local_implatacao);
+        $sql->bindValue(':data_implantacao', $data_microchip);
+        $sql->bindValue(':local_implantacao', $local_implatacao);
         $sql->bindValue(':url', $url);
         $sql->bindValue(':data_registro', date('y-m-d')); 
 
-        $sql->execute();
-
-        if( $sql ) {
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
             return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
         }
     }    
     
