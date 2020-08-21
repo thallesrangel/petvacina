@@ -2,9 +2,8 @@
 
 class Anticio extends model 
 {   
-
-     # Retorna vacinas especificas de um animal
-     public function getEspecifico($id) {
+     # Retorna anticio específico
+    public function getEspecifico($id) {
         $array = array();
         $sql = "SELECT * FROM tbanticio WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
@@ -78,5 +77,44 @@ class Anticio extends model
         }
        
         return $array;
-	}
+    }
+    
+
+    // Retorna anticio especifico para editar
+    public function getEspecificoDado($id)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbanticio WHERE id_anticio = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function edit($idAnticio, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
+    {   
+        $sql = "UPDATE tbanticio SET id_anticio = :id_anticio, nome_produto = :nome_produto, dose = :dose, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
+        nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
+        WHERE id_anticio = :id_anticio";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_anticio', $idAnticio);
+        $sql->bindValue(':nome_produto',$nome_produto);
+        $sql->bindValue(':dose',$dose);
+        $sql->bindValue(':data_aplicacao',$data_aplicacao);
+        $sql->bindValue(':data_prox_dose',$data_prox_dose);
+        $sql->bindValue(':nome_veterinario',$nome_veterinario);
+        $sql->bindValue(':registro_crmv',$registro_crmv);
+        
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
+        }
+    }
 }

@@ -97,4 +97,47 @@ class vermifugacaoController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."vermifugacao");
     }
+
+    public function editar($idVermifugacao)
+    {   
+        $dados = array();
+    
+        if (!empty($idVermifugacao)) {
+            
+            $vermifugacao = new Vermifugacao();
+          
+            // Usado para editar
+            if (!empty($_POST['id_vermifugacao'])) {
+                
+                $nome_produto = $_POST['nome_produto'];
+                $dose = $_POST['dose'];
+                $peso = $_POST['peso_animal'];
+                $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
+                $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+                $nome_veterinario = $_POST['nome_veterinario'];
+                $registro_crmv = $_POST['registro_crmv'];
+
+                $vermifugacao->edit($idVermifugacao, $nome_produto, $dose, $peso, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
+                
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."vermifugacao");
+            } else {
+                
+                $breadcrumb = [
+                    'Início' => '',
+                    'Vermifugação' => 'vermifugacao',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $vermifugacao->getEspecificoDado($idVermifugacao);
+                
+                if (isset($dados['info'][0]['id_vermifugacao'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate('vermifugacaoEditar',$dados);
+                }
+            }
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

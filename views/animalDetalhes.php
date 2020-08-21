@@ -19,7 +19,7 @@
             <a href="<?=BASE_URL?>animal/deletar/<?=$dados['id_animal']?>"><i class="icon-red" data-feather="trash"></i></a>
         </div>
 
-        <div class="col-sm-12 col-md-3 pt-2">
+        <div class="col-sm-12 col-md-3 dpt-5">
             <p class="m-1"><b>Identificação:</b></span> <?=$dados['identificacao_animal']?></p>  
             <p class="m-1"><b>Nascimento:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_nascimento'])));?></p>
             <p class="m-1"><b>Espécie:</b></span> <?=$dados['nome_especie']?></p>
@@ -27,7 +27,7 @@
             <p class="m-1"><b>Filhotes:</b></span> <?=$dados['flag_filhotes'] == 1 ? 'Sim' : 'Não'?></p>
         </div>
 
-        <div class="col-sm-12 col-md-3 pt-2">
+        <div class="col-sm-12 col-md-3 pt-5">
            
             <p class="m-1"><b>Proprietário:</b></span> <?=$dados['nome_proprietario']?></p>
             <p class="m-1"><b>Sexo:</b></span> <?=$dados['sexo'] == 1 ? 'Macho' : 'Fêmea'?></p>
@@ -38,7 +38,7 @@
         </div>
 
         <?php if(isset($dados['microchip'])) { ?>
-        <div class="col-sm-12 col-md-3 pt-2">
+        <div class="col-sm-12 col-md-3 pt-5">
             <p class="m-0"><b>Microchip:</b></span> <?=$dados['microchip']?></p>
             <p class="m-0"><b>Data Implantação:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_implementacao'])));?></p>
             <p class="m-0"><b>Local Implantação:</b></span> <?=$dados['local_implementacao']?></p>
@@ -48,7 +48,7 @@
     
     </div>
 
-    <div class="row justify-content-center">
+    <div class="col-sm-12 row justify-content-center">
         <a class="btn btn-primary ml-2" href="<?=BASE_URL."vacina/detalhes/".$dados['id_animal']?>">Cartão de Vacinação</a>
         <a class="btn btn-primary ml-2" href="<?=BASE_URL."vermifugacao/detalhes/".$dados['id_animal']?>">Cartão de Vermifugação</a>
     </div>

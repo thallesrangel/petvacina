@@ -99,4 +99,47 @@ class anticioController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."anticio");
     }
+
+
+    public function editar($idAnticio)
+    {   
+        $dados = array();
+    
+        if (!empty($idAnticio)) {
+ 
+            $anticio = new Anticio();
+          
+            // Usado para editar
+            if(!empty($_POST['id_anticio'])) {
+        
+                $nome_produto = $_POST['nome_produto'];
+                $dose = $_POST['dose'];
+                $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
+                $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+                $nome_veterinario = $_POST['nome_veterinario'];
+                $registro_crmv = $_POST['registro_crmv'];
+
+                $anticio->edit($idAnticio, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
+
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."anticio");
+            } else {
+
+                $breadcrumb = [
+                    'Início' => '',
+                    'Anti-cio' => 'anticio',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $anticio->getEspecificoDado($idAnticio);
+              
+                if (isset($dados['info'][0]['id_anticio'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate('antiCioEditar',$dados);
+                }
+            }
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

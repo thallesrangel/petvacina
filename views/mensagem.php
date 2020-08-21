@@ -50,7 +50,18 @@ if(isset($_SESSION['msg'])){
                 title: 'Aviso',
                 text: 'Necessário preencher para gerar o relatório'
             })  
-            </script>";  
+            </script>";
+
+        case "editado_sucesso":
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso',
+                text: 'Registro alterado com sucesso.'
+            })  
+            </script>";
+            
+            
     }
 }
 ?>
