@@ -10,11 +10,11 @@ class Animal extends model
   
           if (in_array($_FILES['arquivo']['type'], $permitidos)) {
               
-              $url = md5(time().rand(0,999)). '.jpg';
-  
-              # Salvando arquivo no servidor
-              move_uploaded_file($_FILES['arquivo']['tmp_name'], 'assets/img/galeria/'.$url);
-              # Salvando no banco de dados
+            $url = md5(time().rand(0,999)). '.jpg';
+
+            # Salvando arquivo no servidor
+            move_uploaded_file($_FILES['arquivo']['tmp_name'], 'assets/img/galeria/'.$url);
+            # Salvando no banco de dados
           }
         }
         
