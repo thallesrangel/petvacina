@@ -3,9 +3,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="PetVacina">
+        <meta name="description" content="PetGestor">
         <meta name="author" content="Thalles Rangel Lopes">
-        <title>Pet Vacina</title>
+        <title>Pet Gestor</title>
         <script src="<?=BASE_URL?>assets/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
@@ -22,7 +22,7 @@
         <!-- SweetAlert2 -->
         <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
-        
+        <link rel='icon' href="<?=BASE_URL?>assets/img/favicon.png" type='image/x-icon' sizes="16x16" />
 </head>
     <body class="bg-cinza">
     <?php

@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 class ReportCio extends FPDF
 {  
     function header(){
-        $this->SetTitle("Pet Vacina | Report Anti-cio");
+        $this->SetTitle("Pet Gestor | Report Anti-cio");
         $this->Image(BASE_URL."assets/img/logoLow.png",10,6);
         $this->SetFont('Arial','',12);
         $this->Cell(276,5, utf8_decode("Relatório Anti-cio"),0,0,'C');

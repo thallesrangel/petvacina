@@ -6,7 +6,7 @@ class ReportProprietario extends FPDF
 {  
     function header()
     {
-        $this->SetTitle(utf8_decode("Pet Vacina | Report Proprietário"));
+        $this->SetTitle(utf8_decode("Pet Gestor| Report Proprietário"));
         $this->Image(BASE_URL."assets/img/logoLow.png",10,6);
         $this->SetFont('Arial','',12);
         $this->Cell(276,5, utf8_decode("Relatório Proprietário"),0,0,'C');

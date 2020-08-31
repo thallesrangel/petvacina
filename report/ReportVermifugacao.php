@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 class ReportVermifugacao extends FPDF
 {  
     function header(){
-        $this->SetTitle(utf8_decode("Pet Vacina | Report Vermifugação"));
+        $this->SetTitle(utf8_decode("Pet Gestor | Report Vermifugação"));
         $this->Image(BASE_URL."assets/img/logoLow.png",10,6);
         $this->SetFont('Arial','',12);
         $this->Cell(276,5, utf8_decode("Relatório Vermifugação"),0,0,'C');
