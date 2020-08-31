@@ -1,5 +1,6 @@
 
 <?php
+
     $qtd_animais_dados = [];
     $qtd_vacinas_dados = [];
     $qtd_vermifugacao_dados = [];

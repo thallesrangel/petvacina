@@ -47,7 +47,7 @@ class loginController extends Controller
 
     public function logout() {
         
-        session_destroy();
+        unset($_SESSION);
 
         if(empty($_SESSION['id_usuario'])) {
             header("Location:".BASE_URL."login");
