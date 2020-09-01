@@ -10,42 +10,47 @@
     <form method="POST" class="p-2" action="<?=BASE_URL?>vacina/registrar_save/<?=$url[2];?>">
         <div class="row">
         
-            <div class="col-md-3">
-                <label for="vacina">Vacina *</labe>
+            <div class="col-sm-12 col-md-3">
+                <label for="vacina">Vacina *</label>
                 <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina">
             </div>
 
-            <div class="col-md-3">
-                <label for="dose">Dose *</labe>
-                <input class="quantidade" id="dose" type="text" class="form-control form-control-sm" name="dose">
+            <div class="col-sm-12 col-md-3">
+                <label for="dose">Dose (ml) *</label><br>
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
+            </div>
+
+            <div class="col-sm-12 col-md-3">
+                <label for="aplicacao">Data Aplicação *</label>
+                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
             </div>
 
         </div>
 
         <div class="row">
 
-            <div class="col-md-3">
-                <label for="aplicacao">Data Aplicação *</labe>
-                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
-            </div>
-
-            <div class="col-md-3">
-                <label for="revacinacao">Data Revacinação</labe>
+            <div class="col-sm-12 col-md-3">
+                <label for="revacinacao">Data Revacinação</label>
                 <input id="revacinacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_revacinacao">
             </div>
 
-            <div class="col-md-3">
-                <label for="veterinario">Médico Veterinário</labe>
+            <div class="col-sm-12 col-md-3">
+                <label for="veterinario">Médico Veterinário</label>
                 <input id="veterinario" type="text" class="form-control form-control-sm" name="nome_veterinario">
             </div>
 
-            <div class="col-md-2">
-                <label for="registro_crmv">Registro CRMV</labe>
+            <div class="col-sm-12 col-md-3">
+                <label for="registro_crmv">Registro CRMV</label>
                 <input id="registro_crmv" type="text" class="form-control form-control-sm" name="registro_crmv">
             </div>
+
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Registrar">
-        <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
+        <div class="row mt-4">
+            <div class="col-12">
+                <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
+                <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
+            </div>
+        </div>
     </form> 
 </div>
