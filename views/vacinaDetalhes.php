@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th scope="col">Vacina</th>
-                    <th scope="col">Dose</th>
+                    <th scope="col">Dose (ml)</th>
                     <th scope="col">Aplicação</th>
                     <th scope="col">Revacinação</th>
                     <th scope="col">Médico Veterinário</th>
@@ -53,7 +53,7 @@
                     <td><span class="quantidade"><?=$item['dose']?></span></td>
                     <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></span></td>
                     <td><?=$item['data_revacinacao'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_revacinacao']))?></td>
-                    <td><?=$item['nome_veterinario'] == null ? 'Veterinário Indefinido' : $item['nome_veterinario']?></td>
+                    <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
 
                     <td>
