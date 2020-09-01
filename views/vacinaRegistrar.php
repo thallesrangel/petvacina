@@ -15,21 +15,21 @@
                 <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina">
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="dose">Dose (ml) *</label><br>
                 <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="aplicacao">Data Aplicação *</label>
                 <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
             </div>
 
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="revacinacao">Data Revacinação</label>
                 <input id="revacinacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_revacinacao">
             </div>
@@ -39,7 +39,7 @@
                 <input id="veterinario" type="text" class="form-control form-control-sm" name="nome_veterinario">
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="registro_crmv">Registro CRMV</label>
                 <input id="registro_crmv" type="text" class="form-control form-control-sm" name="registro_crmv">
             </div>
