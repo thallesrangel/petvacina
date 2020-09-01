@@ -4,7 +4,7 @@ class Vacina extends model
     # Retorna vacinas especificas de um animal
     public function getEspecifico($id) {
         $array = array();
-        $sql = "SELECT * FROM tbvacina WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT * FROM tbvacina WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY data_aplicacao DESC";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
