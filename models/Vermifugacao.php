@@ -102,13 +102,15 @@ class Vermifugacao extends model
         return $array;
     }
  
-    public function edit($idVermigucacao, $nome_produto, $dose, $peso, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
+    public function edit($idVermifugacao, $nome_produto, $dose, $peso, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
     {   
-        $sql = "UPDATE tbvermifugacao SET id_vermifugacao = :id_vermifugacao, nome_produto = :nome_produto, dose = :dose, peso = :peso, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
+        $sql = "UPDATE tbvermifugacao SET id_vermifugacao = :id_vermifugacao, id_peso_unidade = :id_peso_unidade, nome_produto = :nome_produto, dose = :dose, peso = :peso, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
         WHERE id_vermifugacao = :id_vermifugacao";
+        
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_vermifugacao', $idVermigucacao);
+        $sql->bindValue(':id_vermifugacao', $idVermifugacao);
+        $sql->bindValue(':id_peso_unidade', $id_peso_unidade);
         $sql->bindValue(':nome_produto',$nome_produto);
         $sql->bindValue(':dose',$dose);
         $sql->bindValue(':peso',$peso);

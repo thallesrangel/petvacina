@@ -115,13 +115,14 @@ class vermifugacaoController extends Controller
                 
                 $nome_produto = $_POST['nome_produto'];
                 $dose = $_POST['dose'];
+                $id_peso_unidade = $_POST['id_peso_unidade'];
                 $peso = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
                 $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
                 $nome_veterinario = $_POST['nome_veterinario'];
                 $registro_crmv = $_POST['registro_crmv'];
 
-                $vermifugacao->edit($idVermifugacao, $nome_produto, $dose, $peso, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
+                $vermifugacao->edit($idVermifugacao, $nome_produto, $dose, $peso, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
                 
                 $_SESSION['msg'] = 'editado_sucesso';
                 header("Location: ".BASE_URL."vermifugacao");
@@ -135,6 +136,9 @@ class vermifugacaoController extends Controller
                 ];
 
                 $dados['info'] = $vermifugacao->getEspecificoDado($idVermifugacao);
+                
+                $unPeso = new PesoUnidade();
+                $dados['unPeso'] = $unPeso->getAll();        
                 
                 if (isset($dados['info'][0]['id_vermifugacao'])) {
                     $this->setBreadCrumb($breadcrumb);

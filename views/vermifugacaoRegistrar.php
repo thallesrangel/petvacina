@@ -16,12 +16,12 @@
 
             <div class="col-md-3">
                 <label for="dose">Dose aplicada (ml) *</labe>
-                <input id="dose" type="text" class="form-control form-control-sm" name="dose">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
             </div>
 
             <div class="col-md-3">
                 <label for="peso">Peso do Animal *</labe>
-                <input id="peso" type="text" class="form-control form-control-sm" name="peso_animal">
+                <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal">
             </div>
 
             <div class="col-md-2">
