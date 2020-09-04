@@ -90,6 +90,24 @@
                         <span><img src="<?= BASE_URL?>assets/img/icon/users.svg"> Proprietários</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <span><img src="<?= BASE_URL?>assets/img/icon/peso.svg"> Peso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Altura</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <span><img src="<?= BASE_URL?>assets/img/icon/fornecedor.svg"> Fornecedor</span>
+                        </a>
+                    </li>
             </a>
         </ul>
 

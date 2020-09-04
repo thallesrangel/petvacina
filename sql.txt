@@ -218,3 +218,17 @@ create table tbhigiene(
     FOREIGN KEY (id_higiene_tipo) REFERENCES tbhigiene_tipo(id_higiene_tipo),
     FOREIGN KEY (id_prestador) REFERENCES tbprestador(id_prestador)
 )
+
+tbfornecedor_tipo(
+    id_fornecedor_tipo int primary key AUTO_INCREMENT,
+    fornecedor_tipo varchar(100)
+)
+-- tipo (pessoa física ou jurídica)
+
+create table tbfornecedor
+{
+    id_fornecedor int primary key AUTO_INCREMENT,
+    nome_fornecedor varcar(220) not null,
+    id_fornecedor_tipo int not null,
+    flag_excluido int default 0
+}
