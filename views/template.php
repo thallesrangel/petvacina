@@ -92,19 +92,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <a class="nav-link" href="<?=BASE_URL?>peso">
                         <span><img src="<?= BASE_URL?>assets/img/icon/peso.svg"> Peso</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <a class="nav-link" href="<?=BASE_URL?>altura">
                         <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Altura</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>proprietario">
+                        <a class="nav-link" href="<?=BASE_URL?>fornecedor">
                         <span><img src="<?= BASE_URL?>assets/img/icon/fornecedor.svg"> Fornecedor</span>
                         </a>
                     </li>
