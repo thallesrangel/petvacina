@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th scope="col">Produto</th>
-                    <th scope="col">Dose</th>
+                    <th scope="col">Dose (ml)</th>
                     <th scope="col">Aplicação</th>
                     <th scope="col">Próxima Dose</th>
                     <th scope="col">Veterinário</th>
@@ -50,7 +50,7 @@
             <?php foreach($lista as $item) { ?>
                 <tr>
                     <td><?=$item['nome_produto']?></td>
-                    <td><?=$item['dose']?></td>
+                    <td class="quantidade"><?=$item['dose']?></td>
                     <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></td>
                     <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_prox_dose']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>

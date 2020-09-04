@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th scope="col">Produto</th>
-                    <th scope="col">Dose</th>
+                    <th scope="col">Dose (ml)</th>
                     <th scope="col">Peso</th>
                     <th scope="col">Aplicação</th>
                     <th scope="col">Próxima Dose</th>
@@ -52,7 +52,7 @@
                 <tr>
                     <td><?=$item['nome_produto']?></td>
                     <td class="quantidade"><?=$item['dose']?></td>
-                    <td class="quantidade"><?=$item['peso']?></td>
+                    <td><span class="quantidade"><?=$item['peso']?></span> <?=$item['peso_unidade']?></td>
                     <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></td>
                     <td><?=$item['data_prox_dose'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_prox_dose']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>

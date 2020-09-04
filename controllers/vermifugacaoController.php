@@ -47,6 +47,9 @@ class vermifugacaoController extends Controller
 
         $dados = [];
 
+        $unPeso = new PesoUnidade();
+        $dados['unPeso'] = $unPeso->getAll();
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vermifugacaoRegistrar', $dados);
     }
@@ -55,8 +58,9 @@ class vermifugacaoController extends Controller
     {
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
-        $dose = $_POST['dose'];
+        $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
         $peso_animal = $_POST['peso_animal'];
+        $id_peso_unidade = $_POST['id_peso_unidade'];
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
         $nome_veterinario = $_POST['nome_veterinario'];
@@ -64,7 +68,7 @@ class vermifugacaoController extends Controller
 
         $vermifugacao = new Vermifugacao();
          
-        if ($vermifugacao->add($id_animal, $nome_produto, $dose, $peso_animal, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+        if ($vermifugacao->add($id_animal, $nome_produto, $dose, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."vermifugacao/detalhes/".$id_animal);
         } 
@@ -111,7 +115,7 @@ class vermifugacaoController extends Controller
                 
                 $nome_produto = $_POST['nome_produto'];
                 $dose = $_POST['dose'];
-                $peso = $_POST['peso_animal'];
+                $peso = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
                 $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
                 $nome_veterinario = $_POST['nome_veterinario'];
@@ -121,6 +125,7 @@ class vermifugacaoController extends Controller
                 
                 $_SESSION['msg'] = 'editado_sucesso';
                 header("Location: ".BASE_URL."vermifugacao");
+
             } else {
                 
                 $breadcrumb = [
@@ -136,6 +141,7 @@ class vermifugacaoController extends Controller
                     $this->loadTemplate('vermifugacaoEditar',$dados);
                 }
             }
+            
         } else {
             header("Location: ".BASE_URL);
         }

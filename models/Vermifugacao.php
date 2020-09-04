@@ -5,7 +5,9 @@ class Vermifugacao extends model
     public function getEspecifico($id)
     {
         $array = array();
-        $sql = "SELECT * FROM tbvermifugacao WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY data_aplicacao DESC";
+        $sql = "SELECT a.*, b.* FROM tbvermifugacao a
+        JOIN tbpeso_unidade b ON (a.id_peso_unidade = b.id_peso_unidade)
+        WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY data_aplicacao DESC";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -15,14 +17,15 @@ class Vermifugacao extends model
         return $array;
     }
 
-    public function add($id_animal, $nome_produto, $dose, $peso_animal, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
+    public function add($id_animal, $nome_produto, $dose, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
     {     
-        $sql = "INSERT INTO tbvermifugacao(id_usuario, id_animal, nome_produto, dose, peso, data_aplicacao, data_prox_dose, nome_veterinario, registro_crmv,data_registro) 
-        VALUES(:id_usuario, :id_animal, :nome_produto, :dose, :peso, :data_aplicacao, :data_prox_dose, :nome_veterinario,:registro_crmv, :data_registro)";
+        $sql = "INSERT INTO tbvermifugacao(id_usuario, id_animal, id_peso_unidade, nome_produto, dose, peso, data_aplicacao, data_prox_dose, nome_veterinario, registro_crmv,data_registro) 
+        VALUES(:id_usuario, :id_animal, :id_peso_unidade, :nome_produto, :dose, :peso, :data_aplicacao, :data_prox_dose, :nome_veterinario,:registro_crmv, :data_registro)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario',$_SESSION['id_usuario']);
         $sql->bindValue(':id_animal', $id_animal);
+        $sql->bindValue(':id_peso_unidade', $id_peso_unidade);
         $sql->bindValue(':nome_produto', $nome_produto);
         $sql->bindValue(':dose', $dose);
         $sql->bindValue(':peso', $peso_animal);
@@ -32,10 +35,13 @@ class Vermifugacao extends model
         $sql->bindValue(':registro_crmv', $registro_crmv);
         $sql->bindValue(':data_registro', date('y-m-d')); 
 
-        $sql->execute();
-
-        if ($sql) {
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
             return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
         }
     }    
 

@@ -15,22 +15,36 @@
             </div>
 
             <div class="col-md-3">
-                <label for="dose">Dose aplicada *</labe>
+                <label for="dose">Dose aplicada (ml) *</labe>
                 <input id="dose" type="text" class="form-control form-control-sm" name="dose">
             </div>
 
             <div class="col-md-3">
-                <label for="peso">Peso do Animal*</labe>
+                <label for="peso">Peso do Animal *</labe>
                 <input id="peso" type="text" class="form-control form-control-sm" name="peso_animal">
             </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <span>Espécie *</span>
+                    <select class="form-control form-control-sm" name="id_peso_unidade" required>
+                        <?php
+                        foreach($unPeso as $item){
+                        ?>
+                        <option value="<?= $item['id_peso_unidade'] ?>"> <?= $item['peso_unidade']?> </option>
+                        <?php }?>
+                    </select>
+                </div>  
+            </div>
+
+        </div>
+
+        <div class="row">
 
             <div class="col-md-3">
                 <label for="aplicacao">Data Aplicação *</labe>
                 <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
             </div>
-        </div>
-
-        <div class="row">
 
             <div class="col-md-3">
                 <label for="data_prox_dose">Próxima Dose</labe>

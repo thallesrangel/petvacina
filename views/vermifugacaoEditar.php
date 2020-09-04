@@ -25,7 +25,7 @@
 
             <div class="col-md-3">
                 <label for="dose">Dose aplicada *</labe>
-                <input id="dose" type="text" class="form-control form-control-sm" value="<?= $dados['dose'] ?>" name="dose">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" value="<?= $dados['dose'] ?>" name="dose">
             </div>
 
             <div class="col-md-3">
