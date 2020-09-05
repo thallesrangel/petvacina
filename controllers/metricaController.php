@@ -103,4 +103,57 @@ class metricaController extends Controller
       header("Location: ".BASE_URL."metrica");
     }
     
+
+
+
+    public function editar($idMetricaAnimal)
+    {   
+        $dados = array();
+    
+        if (!empty($idMetricaAnimal)) {
+            
+            $peso = new Metrica();
+          
+            // Usado para editar
+            if (!empty($_POST['id_metrica_animal'])) {
+                
+                $idMetrica = $_POST['id_metrica_animal'];
+                $altura_animal = str_replace(',', '.',str_replace('.', '', $_POST['altura_animal']));
+                $id_metrica_unidade_altura = $_POST['id_metrica_unidade_altura'];
+                $comprimento_animal = str_replace(',', '.',str_replace('.', '', $_POST['comprimento_animal']));
+                $id_metrica_unidade_comprimento = $_POST['id_metrica_unidade_comprimento'];
+                $data_medida = implode('-', array_reverse(explode('/', $_POST['data_medicao'])));
+                $data_remedida = implode('-', array_reverse(explode('/', $_POST['data_remedicao'])));
+        
+                $peso->edit($idMetrica, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida);
+                
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."metrica");
+
+            } else {
+                
+                $breadcrumb = [
+                    'Início' => '',
+                    'Métrica do Animal' => 'metrica',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $peso->getEspecificoDado($idMetricaAnimal);
+                
+                $unMetrica = new MetricaUnidade();
+                $dados['unMetrica'] = $unMetrica->getAll();        
+                
+                if (isset($dados['info'][0]['id_metrica_animal'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate("metricaEditar",$dados);
+                } else {
+                    // Mostrar que não foi encontrado OU JÁ EXCLUÍDO pois não há nada no banco de dados
+                }
+            }
+            
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
+
 }

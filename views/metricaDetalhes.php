@@ -50,7 +50,7 @@
                     <td><span class="quantidade"><?=$item['altura']?></span> <?=$item['un_altura']?></td>
                     <td><span class="quantidade"><?=$item['comprimento']?></span> <?=$item['un_comprimento']?></td>
                     <td><?=date("d/m/Y", strtotime($item['data_medida']))?></td>
-                    <td><?=$item['data_medida'] == null ? 'Sem repesagem' : date("d/m/Y", strtotime($item['data_medida']))?></td>
+                    <td><?=$item['data_medida'] == null ? 'Sem repesagem' : date("d/m/Y", strtotime($item['data_remedida']))?></td>
                     <td>
                         <a href="<?=BASE_URL?>metrica/editar/<?=$item['id_metrica_animal']?>"><i class="icon" data-feather="edit"></i><a> 
                         <a href="<?=BASE_URL?>metrica/deletar/<?=$item['id_metrica_animal']?>"><i class="icon-red" data-feather="trash"></i></a>

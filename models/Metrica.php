@@ -21,7 +21,7 @@ class Metrica extends model
     public function getEspecificoDado($idAlturaAnimal)
     {
         $array = array();
-        $sql = "SELECT * FROM tbmetrica_animal WHERE id_altura_animal = ".$idAlturaAnimal." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT * FROM tbmetrica_animal WHERE id_metrica_animal = ".$idAlturaAnimal." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -57,15 +57,17 @@ class Metrica extends model
         }
     }   
 
-    public function edit($idAltura, $altura_animal, $id_altura_unidade, $data_medida, $data_remedida)
+    public function edit($idMetrica, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida)
     {   
-        $sql = "UPDATE tbmetrica_animal SET altura = :altura, id_altura_unidade = :id_altura_unidade, data_medida = :data_medida, data_remedida = :data_remedida
-        WHERE id_altura_animal = :id_altura_animal";
+        $sql = "UPDATE tbmetrica_animal SET altura = :altura, id_metrica_unidade_altura = :id_metrica_unidade_altura, comprimento = :comprimento, id_metrica_unidade_comprimento = :id_metrica_unidade_comprimento, data_medida = :data_medida, data_remedida = :data_remedida
+        WHERE id_metrica_animal = :id_metrica_animal";
         
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_altura_animal', $idAltura);
+        $sql->bindValue(':id_metrica_animal', $idMetrica);
         $sql->bindValue(':altura',$altura_animal);
-        $sql->bindValue(':id_altura_unidade', $id_altura_unidade);
+        $sql->bindValue(':id_metrica_unidade_altura', $id_metrica_unidade_altura);
+        $sql->bindValue(':comprimento',$comprimento_animal);
+        $sql->bindValue(':id_metrica_unidade_comprimento', $id_metrica_unidade_comprimento);
         $sql->bindValue(':data_medida',$data_medida);
         $sql->bindValue(':data_remedida',$data_remedida);
   
