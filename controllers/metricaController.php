@@ -53,6 +53,10 @@ class metricaController extends Controller
         $metrica = new Metrica();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
+        if(!$animal->getEspecifico($id)) {
+            $_SESSION['msg'] = 'id_nao_encontrado';
+            header("Location:".BASE_URL."metrica");
+        }
         $dados['lista'] = $metrica->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);
@@ -102,9 +106,6 @@ class metricaController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."metrica");
     }
-    
-
-
 
     public function editar($idMetricaAnimal)
     {   

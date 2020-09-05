@@ -60,6 +60,16 @@ if(isset($_SESSION['msg'])){
                 text: 'Registro alterado com sucesso.'
             })  
             </script>";
+
+        case "id_nao_encontrado":
+            echo "<script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Aviso',
+                text: 'Não há informações para este ID.'
+            })  
+            </script>";
+                
             
             
     }
