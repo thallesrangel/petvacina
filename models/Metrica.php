@@ -42,7 +42,7 @@ class Metrica extends model
         $sql->bindValue(':id_animal', $idAnimal);
         $sql->bindValue(':altura', $altura_animal);
         $sql->bindValue(':id_metrica_unidade_altura', $id_metrica_unidade_altura); 
-        $sql->bindValue(':comprimento', $altura_animal);
+        $sql->bindValue(':comprimento', $comprimento_animal);
         $sql->bindValue(':id_metrica_unidade_comprimento', $id_metrica_unidade_comprimento);     
         $sql->bindValue(':data_medida', $data_medida);
         $sql->bindValue(':data_remedida', $data_remedida);

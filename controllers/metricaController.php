@@ -93,7 +93,6 @@ class metricaController extends Controller
         } 
     }
 
-
     public function deletar($idMetricaAnimal)
     {
       if (!empty($idMetricaAnimal)) {
