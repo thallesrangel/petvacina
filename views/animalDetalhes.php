@@ -49,8 +49,8 @@
     </div>
 
     <div class="col-sm-12 row justify-content-center">
-        <a class="btn btn-primary ml-2" href="<?=BASE_URL."vacina/detalhes/".$dados['id_animal']?>">Cartão de Vacinação</a>
-        <a class="btn btn-primary ml-2" href="<?=BASE_URL."vermifugacao/detalhes/".$dados['id_animal']?>">Cartão de Vermifugação</a>
+        <a class="btn btn-sm btn-primary ml-2" href="<?=BASE_URL."vacina/detalhes/".$dados['id_animal']?>">Cartão de Vacinação</a>
+        <a class="btn btn-sm btn-primary ml-2" href="<?=BASE_URL."vermifugacao/detalhes/".$dados['id_animal']?>">Cartão de Vermifugação</a>
     </div>
     </div>
     </div>
