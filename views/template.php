@@ -98,7 +98,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=BASE_URL?>altura">
+                        <a class="nav-link" href="<?=BASE_URL?>metrica">
                         <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Altura</span>
                         </a>
                     </li>
