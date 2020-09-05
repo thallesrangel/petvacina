@@ -101,24 +101,24 @@ class pesoController extends Controller
     }
 
 
-    public function editar($idPeso)
+    public function editar($idPesoAnimal)
     {   
         $dados = array();
     
-        if (!empty($idPeso)) {
+        if (!empty($idPesoAnimal)) {
             
             $peso = new Peso();
           
             // Usado para editar
-            if (!empty($_POST['id_peso'])) {
+            if (!empty($_POST['id_peso_animal'])) {
                 
-                
-                $peso = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
+                $idPeso = $_POST['id_peso_animal'];
+                $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
                 $id_peso_unidade = $_POST['id_peso_unidade'];
                 $data_pesagem = implode('-', array_reverse(explode('/', $_POST['data_pesagem'])));
                 $data_repesagem = implode('-', array_reverse(explode('/', $_POST['data_repesagem'])));
         
-                $peso->edit($idPeso, $peso, $id_peso_unidade, $data_pesagem, $data_repesagem);
+                $peso->edit($idPeso, $peso_animal, $id_peso_unidade, $data_pesagem, $data_repesagem);
                 
                 $_SESSION['msg'] = 'editado_sucesso';
                 header("Location: ".BASE_URL."peso");
@@ -131,7 +131,7 @@ class pesoController extends Controller
                     'Editar' => 'false'
                 ];
 
-                $dados['info'] = $peso->getEspecificoDado($idPeso);
+                $dados['info'] = $peso->getEspecificoDado($idPesoAnimal);
                 
                 $unPeso = new PesoUnidade();
                 $dados['unPeso'] = $unPeso->getAll();        

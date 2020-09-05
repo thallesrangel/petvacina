@@ -1,3 +1,12 @@
+<?php
+    $dados = [];
+    
+    foreach($info as $item ){
+        $dados = $item;
+    }
+?>
+
+
 <div class="container bg-white rounded h-75">
     <div class="d-sm-flex align-items-center justify-content-between mb-1 pt-2">
         <h4 class="ml-2 gray-color">Editar Peso do Animal</h4>
@@ -9,7 +18,9 @@
 
     <form method="POST" class="p-2" action="<?=BASE_URL?>peso/editar/<?=$url[2];?>">
         <div class="row">
-        
+
+            <input type="hidden" class="form-control form-control-sm" value="<?= $url[2]; ?>" name="id_peso_animal">
+
             <div class="col-md-3 col-sm-12">
                 <label for="peso">Peso do Animal *</labe>
                 <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal" value="<?=$item['peso']?>">
@@ -22,7 +33,7 @@
                         <?php
                         foreach($unPeso as $item){
              
-                        if ($idFornecedorBD == $idFornecedor) {
+                        if ($item['id_peso_unidade'] == $dados['id_peso_unidade']) {
                                 $selected = 'selected';
                             } else {
                                 $selected = '';
@@ -39,12 +50,12 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="aplicacao">Pesagem *</labe>
-                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_pesagem" value="<?= $item['data_pesagem']?>">
+                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_pesagem" value="<?= date("d/m/Y", strtotime($dados['data_pesagem'])) ?>">
             </div>
 
             <div class="col-md-3 col-sm-12">
                 <label for="data_prox_dose">Repesagem</labe>
-                <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_repesagem" value="<?= $item['data_repesagem']?>">
+                <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_repesagem" value="<?= date("d/m/Y", strtotime($dados['data_repesagem'])) ?>">
             </div>
         </div>
      

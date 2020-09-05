@@ -48,10 +48,32 @@ class Peso extends model
             //echo $count . ' rows updated properly!';
             return true;
         } else {
+            return false;
+            //print_r($sql->errorInfo());
+        }
+    }   
+
+    public function edit($idPeso, $peso_animal, $id_peso_unidade, $data_pesagem, $data_repesagem)
+    {   
+        $sql = "UPDATE tbpeso_animal SET  peso = :peso, id_peso_unidade = :id_peso_unidade, data_pesagem = :data_pesagem, data_repesagem = :data_repesagem
+        WHERE id_peso_animal = :id_peso_animal";
+        
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_peso_animal', $idPeso);
+        $sql->bindValue(':peso',$peso_animal);
+        $sql->bindValue(':id_peso_unidade', $id_peso_unidade);
+        $sql->bindValue(':data_pesagem',$data_pesagem);
+        $sql->bindValue(':data_repesagem',$data_repesagem);
+  
+        if ($sql->execute()) {  
+            $count = $sql->rowCount();
+            echo $count . ' rows updated properly!';
+            //return true;
+        } else {
             //return false;
             print_r($sql->errorInfo());
         }
-    }   
+    }
 
     public function delete($idPesoAnimal)
     {
