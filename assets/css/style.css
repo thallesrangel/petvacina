@@ -5,6 +5,7 @@ body{
 
 .wrapper{
     display: flex;
+    height: 100%;
 }
 .nav-link{
     color: #3d3d3d;
@@ -12,10 +13,16 @@ body{
 .nav-link:hover{
     color: #3d3d3d;
 }
+.navbar-nav {
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    height: 100%;
+}
 .sidebar .nav-item .nav-link{
     text-align: left;
-    padding: 1rem;
+    padding: 14px;
     width: 14rem;
+    
 }
 
 .gray-color{
@@ -30,7 +37,7 @@ body{
     border: 1px solid #2980b9 !important;
 }
 .sidebar{
-    width: 14rem !important;
+    width: 16rem !important;
 }
 .navbar-nav{
     display: flex;

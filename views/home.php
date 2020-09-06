@@ -22,7 +22,7 @@
     <div class="row justify-content-center">
 
         <div class="col-sm-12 col-md-4">
-            <div class="card m-4 border-left-primary shadow h-100 py-2">
+            <div class="card m-4 border-left-primary shadow py-2">
                 <div class="card-body text-center">
                     <img src="<?=BASE_URL?>assets/img/pata.png" width="75" height="75" class="img-responsive">
                     <h3><?= $qtd_animais_dados['qtd'] ?></h3>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4">
-            <div class="card m-4 border-left-primary shadow h-100 py-2">
+            <div class="card m-4 border-left-primary shadow py-2">
                 <div class="card-body text-center">
                     <img src="<?=BASE_URL?>assets/img/seringa.png" width="75" height="75" class="img-responsive">
                     <h3><?= $qtd_vacinas_dados['qtd'] ?></h3>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4">
-            <div class="card m-4 border-left-primary shadow h-100 py-2">
+            <div class="card m-4 border-left-primary shadow py-2">
                 <div class="card-body text-center">
                     <img src="<?=BASE_URL?>assets/img/escudo.png" width="75" height="75" class="img-responsive">
                     <h3><?= $qtd_vermifugacao_dados['qtd'] ?></h3>
