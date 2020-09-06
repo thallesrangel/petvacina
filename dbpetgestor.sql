@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 05/09/2020 às 20:24
+-- Tempo de geração: 06/09/2020 às 14:46
 -- Versão do servidor: 10.4.11-MariaDB
 -- Versão do PHP: 7.4.6
 
@@ -92,7 +92,8 @@ INSERT INTO `tbanticio` (`id_anticio`, `id_usuario`, `id_animal`, `nome_produto`
 (14, 17, 1, 'Prod', 20.00, '2020-08-06', '2020-08-27', 'med vet', '2929', '2020-08-21', 0),
 (15, 17, 4, '111', 100.00, '2020-08-01', '2020-08-02', 'med 1', '20 1', '2020-08-21', 0),
 (16, 17, 4, 'v2020', 300.00, '2020-08-19', '2020-08-18', 'med ai', '20202', '2020-08-21', 0),
-(17, 16, 5, 'Anticion', 20.00, '2020-09-01', '2020-09-04', 'André', '02238', '2020-09-04', 0);
+(17, 16, 5, 'Anticion', 20.00, '2020-09-01', '2020-09-04', 'André', '02238', '2020-09-04', 0),
+(18, 25, 10, 'V9', 20.00, '2020-09-06', '2020-09-23', '', '', '2020-09-06', 0);
 
 -- --------------------------------------------------------
 
@@ -5746,6 +5747,50 @@ INSERT INTO `tbestado` (`id_estado`, `nome_estado`, `uf`, `id_pais`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `tbfornecedor`
+--
+
+CREATE TABLE `tbfornecedor` (
+  `id_fornecedor` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nome_fornecedor` varchar(220) NOT NULL,
+  `id_fornecedor_tipo` int(11) NOT NULL,
+  `flag_excluido` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `tbfornecedor`
+--
+
+INSERT INTO `tbfornecedor` (`id_fornecedor`, `id_usuario`, `nome_fornecedor`, `id_fornecedor_tipo`, `flag_excluido`) VALUES
+(1, 25, 'Clínica São Camilo', 1, 0),
+(2, 25, 'Center Pet', 3, 1),
+(3, 25, 'PetVaso', 1, 0),
+(4, 25, 'VapPet', 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tbfornecedor_tipo`
+--
+
+CREATE TABLE `tbfornecedor_tipo` (
+  `id_fornecedor_tipo` int(11) NOT NULL,
+  `fornecedor_tipo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `tbfornecedor_tipo`
+--
+
+INSERT INTO `tbfornecedor_tipo` (`id_fornecedor_tipo`, `fornecedor_tipo`) VALUES
+(1, 'Serviço e Produto'),
+(2, 'Serviço'),
+(3, 'Produto');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `tbhigiene`
 --
 
@@ -5754,12 +5799,21 @@ CREATE TABLE `tbhigiene` (
   `id_usuario` int(11) NOT NULL,
   `id_animal` int(11) NOT NULL,
   `id_higiene_tipo` int(11) NOT NULL,
-  `id_prestador` int(11) NOT NULL,
+  `id_fornecedor` int(11) NOT NULL,
   `data_servico` date NOT NULL,
   `data_prox_servico` date DEFAULT NULL,
   `data_registro` date NOT NULL,
   `flag_excluido` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `tbhigiene`
+--
+
+INSERT INTO `tbhigiene` (`id_higiene`, `id_usuario`, `id_animal`, `id_higiene_tipo`, `id_fornecedor`, `data_servico`, `data_prox_servico`, `data_registro`, `flag_excluido`) VALUES
+(1, 25, 10, 1, 1, '2020-09-05', NULL, '2020-09-06', 0),
+(2, 25, 10, 1, 1, '2020-09-05', '2020-09-25', '2020-09-06', 1),
+(3, 25, 10, 1, 3, '2020-09-05', '2020-09-25', '2020-09-06', 0);
 
 -- --------------------------------------------------------
 
@@ -5812,7 +5866,7 @@ INSERT INTO `tbmetrica_animal` (`id_metrica_animal`, `id_usuario`, `id_animal`, 
 (2, 25, 10, 65.00, 3, 65.00, 1, '2020-09-05', '2020-09-25', 1),
 (3, 25, 10, 89.00, 3, 89.00, 1, '2020-09-01', '2020-09-23', 1),
 (4, 25, 10, 69.00, 3, 1.00, 1, '2020-09-01', '2020-09-25', 1),
-(5, 25, 10, 169.00, 1, 1.00, 1, '2020-09-05', '2020-09-26', 0);
+(5, 25, 10, 1.00, 1, 2.00, 1, '2020-09-01', '2020-09-02', 0);
 
 -- --------------------------------------------------------
 
@@ -5880,7 +5934,8 @@ CREATE TABLE `tbparasita` (
 
 INSERT INTO `tbparasita` (`id_parasita`, `id_usuario`, `id_animal`, `nome_produto`, `dose`, `data_aplicacao`, `data_prox_dose`, `nome_veterinario`, `registro_crmv`, `data_registro`, `flag_excluido`) VALUES
 (5, 16, 5, 'PetBrilho', 20.00, '2020-09-01', '2020-09-03', 'André', '0212', '2020-09-04', 0),
-(6, 16, 5, 'PRODUTO', 20.00, '2020-09-03', '2020-09-04', 'medico vet', '', '2020-09-04', 0);
+(6, 16, 5, 'PRODUTO', 20.00, '2020-09-03', '2020-09-04', 'medico vet', '', '2020-09-04', 0),
+(7, 25, 10, 'Produto', 20.00, '2020-09-06', '2020-09-30', 'pet', '213123', '2020-09-06', 0);
 
 -- --------------------------------------------------------
 
@@ -5909,7 +5964,8 @@ INSERT INTO `tbpeso_animal` (`id_peso_animal`, `id_usuario`, `id_animal`, `peso`
 (3, 25, 9, 10.00, 1, '2020-09-01', '2020-09-30', 0),
 (4, 25, 9, 20.00, 1, '2020-09-29', '2020-09-30', 1),
 (5, 25, 9, 100.00, 1, '2020-09-01', '2020-09-30', 0),
-(6, 25, 9, 10.00, 2, '2020-09-02', '2020-09-03', 0);
+(6, 25, 9, 10.00, 2, '2020-09-02', '2020-09-03', 0),
+(7, 25, 10, 10.00, 1, '2020-09-01', '2020-11-04', 0);
 
 -- --------------------------------------------------------
 
@@ -5929,48 +5985,6 @@ CREATE TABLE `tbpeso_unidade` (
 INSERT INTO `tbpeso_unidade` (`id_peso_unidade`, `peso_unidade`) VALUES
 (1, 'Kg'),
 (2, 'g');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tbprestador`
---
-
-CREATE TABLE `tbprestador` (
-  `id_prestador` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `id_prestador_tipo` int(11) NOT NULL,
-  `nome_prestador` varchar(220) NOT NULL,
-  `data_registro` date NOT NULL,
-  `flag_excluido` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Despejando dados para a tabela `tbprestador`
---
-
-INSERT INTO `tbprestador` (`id_prestador`, `id_usuario`, `id_prestador_tipo`, `nome_prestador`, `data_registro`, `flag_excluido`) VALUES
-(1, 1, 1, 'Em casa', '2020-07-28', 0);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tbprestador_tipo`
---
-
-CREATE TABLE `tbprestador_tipo` (
-  `id_prestador_tipo` int(11) NOT NULL,
-  `prestador_tipo` varchar(220) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Despejando dados para a tabela `tbprestador_tipo`
---
-
-INSERT INTO `tbprestador_tipo` (`id_prestador_tipo`, `prestador_tipo`) VALUES
-(1, 'Produto e Serviço'),
-(2, 'Produto'),
-(3, 'Serviço');
 
 -- --------------------------------------------------------
 
@@ -6166,6 +6180,20 @@ ALTER TABLE `tbestado`
   ADD KEY `id_pais` (`id_pais`);
 
 --
+-- Índices de tabela `tbfornecedor`
+--
+ALTER TABLE `tbfornecedor`
+  ADD PRIMARY KEY (`id_fornecedor`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_fornecedor_tipo` (`id_fornecedor_tipo`);
+
+--
+-- Índices de tabela `tbfornecedor_tipo`
+--
+ALTER TABLE `tbfornecedor_tipo`
+  ADD PRIMARY KEY (`id_fornecedor_tipo`);
+
+--
 -- Índices de tabela `tbhigiene`
 --
 ALTER TABLE `tbhigiene`
@@ -6173,7 +6201,7 @@ ALTER TABLE `tbhigiene`
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_animal` (`id_animal`),
   ADD KEY `id_higiene_tipo` (`id_higiene_tipo`),
-  ADD KEY `id_prestador` (`id_prestador`);
+  ADD KEY `id_fornecedor` (`id_fornecedor`);
 
 --
 -- Índices de tabela `tbhigiene_tipo`
@@ -6227,20 +6255,6 @@ ALTER TABLE `tbpeso_unidade`
   ADD PRIMARY KEY (`id_peso_unidade`);
 
 --
--- Índices de tabela `tbprestador`
---
-ALTER TABLE `tbprestador`
-  ADD PRIMARY KEY (`id_prestador`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_prestador_tipo` (`id_prestador_tipo`);
-
---
--- Índices de tabela `tbprestador_tipo`
---
-ALTER TABLE `tbprestador_tipo`
-  ADD PRIMARY KEY (`id_prestador_tipo`);
-
---
 -- Índices de tabela `tbproprietario`
 --
 ALTER TABLE `tbproprietario`
@@ -6288,7 +6302,7 @@ ALTER TABLE `tbanimal`
 -- AUTO_INCREMENT de tabela `tbanticio`
 --
 ALTER TABLE `tbanticio`
-  MODIFY `id_anticio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_anticio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `tbcidade`
@@ -6309,10 +6323,22 @@ ALTER TABLE `tbestado`
   MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
+-- AUTO_INCREMENT de tabela `tbfornecedor`
+--
+ALTER TABLE `tbfornecedor`
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `tbfornecedor_tipo`
+--
+ALTER TABLE `tbfornecedor_tipo`
+  MODIFY `id_fornecedor_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `tbhigiene`
 --
 ALTER TABLE `tbhigiene`
-  MODIFY `id_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbhigiene_tipo`
@@ -6342,31 +6368,19 @@ ALTER TABLE `tbpais`
 -- AUTO_INCREMENT de tabela `tbparasita`
 --
 ALTER TABLE `tbparasita`
-  MODIFY `id_parasita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_parasita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tbpeso_animal`
 --
 ALTER TABLE `tbpeso_animal`
-  MODIFY `id_peso_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_peso_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tbpeso_unidade`
 --
 ALTER TABLE `tbpeso_unidade`
   MODIFY `id_peso_unidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `tbprestador`
---
-ALTER TABLE `tbprestador`
-  MODIFY `id_prestador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `tbprestador_tipo`
---
-ALTER TABLE `tbprestador_tipo`
-  MODIFY `id_prestador_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbproprietario`
@@ -6424,13 +6438,20 @@ ALTER TABLE `tbestado`
   ADD CONSTRAINT `tbestado_ibfk_1` FOREIGN KEY (`id_pais`) REFERENCES `tbpais` (`id_pais`);
 
 --
+-- Restrições para tabelas `tbfornecedor`
+--
+ALTER TABLE `tbfornecedor`
+  ADD CONSTRAINT `tbfornecedor_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tbusuario` (`id_usuario`),
+  ADD CONSTRAINT `tbfornecedor_ibfk_2` FOREIGN KEY (`id_fornecedor_tipo`) REFERENCES `tbfornecedor_tipo` (`id_fornecedor_tipo`);
+
+--
 -- Restrições para tabelas `tbhigiene`
 --
 ALTER TABLE `tbhigiene`
   ADD CONSTRAINT `tbhigiene_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tbusuario` (`id_usuario`),
   ADD CONSTRAINT `tbhigiene_ibfk_2` FOREIGN KEY (`id_animal`) REFERENCES `tbanimal` (`id_animal`),
   ADD CONSTRAINT `tbhigiene_ibfk_3` FOREIGN KEY (`id_higiene_tipo`) REFERENCES `tbhigiene_tipo` (`id_higiene_tipo`),
-  ADD CONSTRAINT `tbhigiene_ibfk_4` FOREIGN KEY (`id_prestador`) REFERENCES `tbprestador` (`id_prestador`);
+  ADD CONSTRAINT `tbhigiene_ibfk_4` FOREIGN KEY (`id_fornecedor`) REFERENCES `tbfornecedor` (`id_fornecedor`);
 
 --
 -- Restrições para tabelas `tbmetrica_animal`
