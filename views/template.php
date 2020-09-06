@@ -114,7 +114,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 
-                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-3 static-top w-100 ">
+                <nav class="navbar navbar-expand-lg shadow-sm bg-white static-top w-100 p-1">
              
                     <ul class="list-inline ml-auto">
 
@@ -127,11 +127,11 @@
                         </a>
 
                        
-                        <a class="list-inline-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="list-inline-item dropdown-toggle mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span><?=$_SESSION['nome_usuario']?></span>
                         </a>
                         
-                        <div class="list-inline-item dropdown-menu dropdown-menu-right mt-3">
+                        <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
                             <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/user.svg"> Perfil</a>
                             <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/log-out.svg"> Sair</a>
                         </div>
@@ -146,7 +146,7 @@
                 
                 
                     <div class="container">
-                        <ul class="nav p-2 pl-3 breadcrumb">
+                        <ul class="nav mt-2 p-2 pl-3 breadcrumb">
                             <li class='nav-item'>
                                 <?php $this->addBreadCrumb(); ?>
                             </li> 
