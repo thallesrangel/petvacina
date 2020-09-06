@@ -64,9 +64,9 @@ class higieneController extends Controller
 			'Registrar' => 'false'
         ];
 
-        $prestador = new Prestador();
+        $fornecedor = new Fornecedor();
         $higiene_tipo = new HigieneTipo();
-        $dados['prestador'] = $prestador->getAll();
+        $dados['fornecedor'] = $fornecedor->getAll();
         $dados['higiene_tipo'] = $higiene_tipo->getAll();
 
         $this->setBreadCrumb($breadcrumb);
@@ -77,13 +77,13 @@ class higieneController extends Controller
     {   
         $id_animal = $idAnimal;
         $id_higiene_tipo = $_POST['id_higiene_tipo'];
-        $id_prestador = $_POST['id_prestador'];
+        $id_fornecedor = $_POST['id_fornecedor'];
         $data_servico = implode('-', array_reverse(explode('/', $_POST['data_servico'])));
         $data_prox_servico =  $_POST['data_prox_servico'] ? implode('-', array_reverse(explode('/', $_POST['data_prox_servico']))) : null;
 
         $higiene = new Higiene();
         
-        if ($higiene->add($id_animal, $id_higiene_tipo, $id_prestador, $data_servico, $data_prox_servico)) {
+        if ($higiene->add($id_animal, $id_higiene_tipo, $id_fornecedor, $data_servico, $data_prox_servico)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."higiene/detalhes/".$idAnimal);
         } 

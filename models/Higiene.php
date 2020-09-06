@@ -6,7 +6,7 @@ class Higiene extends model
         $array = array();
         $sql = "SELECT a.*, b.*, c.* FROM tbhigiene a 
         INNER JOIN tbhigiene_tipo b ON (b.id_higiene_tipo = a.id_higiene_tipo)
-        INNER JOIN tbprestador c ON (c.id_prestador = a.id_prestador)
+        INNER JOIN tbfornecedor c ON (c.id_fornecedor = a.id_fornecedor)
         WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0";
         $sql = $this->db->query($sql);
 
@@ -17,17 +17,17 @@ class Higiene extends model
         return $array;
     }
 
-    public function add($id_animal, $id_higiene_tipo, $id_prestador, $data_servico, $data_prox_servico)
+    public function add($id_animal, $id_higiene_tipo, $id_fornecedor, $data_servico, $data_prox_servico)
     {     
         
-        $sql = "INSERT INTO tbhigiene (id_usuario, id_animal, id_higiene_tipo, id_prestador, data_servico, data_prox_servico, data_registro) 
-        VALUES(:id_usuario, :id_animal, :id_higiene_tipo, :id_prestador, :data_servico, :data_prox_servico, :data_registro)";
+        $sql = "INSERT INTO tbhigiene (id_usuario, id_animal, id_higiene_tipo, id_fornecedor, data_servico, data_prox_servico, data_registro) 
+        VALUES(:id_usuario, :id_animal, :id_higiene_tipo, :id_fornecedor, :data_servico, :data_prox_servico, :data_registro)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
         $sql->bindValue(':id_animal', $id_animal);
         $sql->bindValue(':id_higiene_tipo', $id_higiene_tipo);
-        $sql->bindValue(':id_prestador', $id_prestador);
+        $sql->bindValue(':id_fornecedor', $id_fornecedor);
         $sql->bindValue(':data_servico', $data_servico);
         $sql->bindValue(':data_prox_servico', $data_prox_servico);
         $sql->bindValue(':data_registro', date('y-m-d')); 

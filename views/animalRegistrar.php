@@ -4,25 +4,23 @@
     </div>
     <form enctype="multipart/form-data" method="POST" class="p-2" action="<?=BASE_URL?>animal/registrar_save">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="nome">Nome Animal *</labe>
                 <input id="nome" type="text" class="form-control form-control-sm" name="nome_animal" required>
             </div>
 
-            <div class="col-md-3">
-                <div class="form-group">
-                    <span>Proprietário *</span>
-                    <select class="form-control form-control-sm js-select" name="proprietario" required>
-                        <?php
-                        foreach($proprietario as $item){
-                        ?>
-                        <option value="<?= $item['id_proprietario'] ?>"> <?= $item['nome_proprietario'] ." ". $item['sobrenome_proprietario']?> </option>
-                        <?php }?>
-                    </select>
-                </div>  
+            <div class="col-sm-12 col-md-3 form-group">
+                <span>Proprietário *</span>
+                <select class="form-control form-control-sm js-select" name="proprietario" required>
+                    <?php
+                    foreach($proprietario as $item){
+                    ?>
+                    <option value="<?= $item['id_proprietario'] ?>"> <?= $item['nome_proprietario'] ." ". $item['sobrenome_proprietario']?> </option>
+                    <?php }?>
+                </select>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="identificacao">Identificação</labe>
                 <input id="identificacao" type="text" class="form-control form-control-sm" name="identificacao">
             </div>
@@ -35,34 +33,32 @@
         </div>
         
         <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <span>Espécie *</span>
-                    <select class="form-control form-control-sm js-select" name="id_especie" required>
-                        <?php
-                        foreach($especies as $item){
-                        ?>
-                        <option value="<?= $item['id_especie'] ?>"> <?= $item['nome_especie']?> </option>
-                        <?php }?>
-                    </select>
-                </div>  
+            <div class="col-sm-12 col-md-3 form-group">
+                <span>Espécie *</span>
+                <select class="form-control form-control-sm js-select" name="id_especie" required>
+                    <?php
+                    foreach($especies as $item){
+                    ?>
+                    <option value="<?= $item['id_especie'] ?>"> <?= $item['nome_especie']?> </option>
+                    <?php }?>
+                </select>
             </div>
             
-
-            <div class="form-group col-3">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="raca">Raça</label>
                 <input id="raca" type="text" class="form-control form-control-sm" name="raca">
             </div>
 
-            <div class="form-group col-3">
-                <label for="pelagem">Pelagem / Escama *</label>
-                <input id="pelagem" type="text" name="pelagem" class="form-control form-control-sm" required>
+            <div class="col-sm-12 col-md-3 form-group">
+                    <label for="pelagem">Pelagem / Escama *</label>
+                    <input id="pelagem" type="text" name="pelagem" class="form-control form-control-sm" required>
             </div>
 
         </div>
 
         <div class="row">
-            <div class="form-group col-3">
+        
+            <div class="col-sm-12 col-md-3 form-group">
                 <p>Sexo *</p>
                 <div class="custom-control custom-radio float-left mr-1">
                     <input type="radio" id="sexoM" name="sexo" class="custom-control-input" value="1" checked>
@@ -76,7 +72,7 @@
             </div>
 
 
-            <div class="form-group col-3">
+            <div class="col-sm-12 col-md-3 form-group">
                 <p>Castrado?</p>
                 <div class="custom-control custom-radio float-left mr-1">
                     <input type="radio" id="castradoS" name="castrado" class="custom-control-input" value="1" checked>
@@ -90,7 +86,7 @@
             </div>
 
 
-            <div class="form-group col-2">
+            <div class="col-sm-12 col-md-3 form-group">
                 <p>Possui Filhotes? *</p>
                 <div class="custom-control custom-radio float-left mr-1">
                     <input type="radio" id="filhotes1" name="filhotes" class="custom-control-input" value="1">
@@ -103,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="form-group col-2">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label id="img">Imagem</labe>
                 <input for="img" type="file" name="arquivo">
             </div>
@@ -111,17 +107,17 @@
         </div>
 
         <div class="row">
-            <div class="form-group col-2">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="microchip">Microchip</label>
                 <input id="microchip" type="text" name="numero_microchip" class="form-control form-control-sm">
             </div>
 
-            <div class="form-group col-3">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="data_microchip">Data de implantação</labe>
                 <input  id="data_microchip" type="text" date-input="d/m/y" name="data_microchip" class="form-control form-control-sm">
             </div>
 
-            <div class="form-group col-2">
+            <div class="col-sm-12 col-md-3 form-group">
                 <label for="local_implatacao">Local de implantação</label>
                 <input id="local_implatacao" type="text" name="local_implatacao" class="form-control form-control-sm">
             </div>

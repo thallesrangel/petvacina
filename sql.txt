@@ -163,38 +163,7 @@ create table tbanticio(
     FOREIGN KEY (id_animal) REFERENCES tbanimal(id_animal)
 )
 
-
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-create table tbprestador_tipo(
-    id_prestador_tipo int PRIMARY KEY AUTO_INCREMENT,
-    prestador_tipo varchar(220) not null
-)
-
--- INSERT PADRAO
-
-INSERT INTO `tbprestador_tipo` (`id_prestador_tipo`, `prestador_tipo`) VALUES (NULL, 'Produto e Servi�o'), (NULL, 'Produto'), (NULL, 'Servi�o');
-
-
-
-create table tbprestador(
-    id_prestador int PRIMARY KEY AUTO_INCREMENT,
-    id_usuario int not null,
-    id_prestador_tipo int not null,
-    nome_prestador varchar(220) not null,
-    data_registro date not null,
-    flag_excluido int default 0 not null,
-    FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
-    FOREIGN KEY (id_prestador_tipo) REFERENCES tbprestador_tipo(id_prestador_tipo)
-)
-
---- INSER PADRAO
-
-INSERT INTO `tbprestador` (`id_prestador`, `id_usuario`, `id_prestador_tipo`, `nome_prestador`, `data_registro`, `flag_excluido`) VALUES (NULL, '1', '1', 'Em casa', '2020-07-28', '0');
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 create table tbhigiene_tipo(
   id_higiene_tipo int primary key AUTO_INCREMENT,
@@ -205,14 +174,12 @@ create table tbhigiene_tipo(
 
 INSERT INTO `tbhigiene_tipo` (`id_higiene_tipo`, `higiene_tipo`) VALUES (NULL, 'Banho'), (NULL, 'Banho e Tosa'), (NULL, 'Tosa');
 
-
-
 create table tbhigiene(
     id_higiene int PRIMARY KEY AUTO_INCREMENT,
     id_usuario int not null,
     id_animal int not null,
     id_higiene_tipo int not null,
-    id_prestador int not null,
+    id_fornecedor int not null,
     data_servico date not null,
     data_prox_servico date null,
     data_registro date not null,
@@ -220,7 +187,7 @@ create table tbhigiene(
     FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
     FOREIGN KEY (id_animal) REFERENCES tbanimal(id_animal),
     FOREIGN KEY (id_higiene_tipo) REFERENCES tbhigiene_tipo(id_higiene_tipo),
-    FOREIGN KEY (id_prestador) REFERENCES tbprestador(id_prestador)
+    FOREIGN KEY (id_fornecedor REFERENCES tbfornecedor(id_fornecedor)
 )
 
 create table tbpeso_animal(
@@ -266,18 +233,18 @@ create table tbmetrica_animal(
     FOREIGN KEY(id_metrica_unidade_comprimento) REFERENCES tbmetrica_unidade(id_metrica_unidade)
 )
 
-tbfornecedor_tipo(
+create table tbfornecedor_tipo(
     id_fornecedor_tipo int primary key AUTO_INCREMENT,
-    fornecedor_tipo varchar(100)
+    fornecedor_tipo varchar(100) not null
 )
 -- tipo (pessoa física ou jurídica)
 
-create table tbfornecedor
-{
+create table tbfornecedor(
     id_fornecedor int primary key AUTO_INCREMENT,
-    nome_fornecedor varcar(220) not null,
+    id_usuario int not null,
+    nome_fornecedor varchar(220) not null,
     id_fornecedor_tipo int not null,
-    flag_excluido int default 0
-}
-
-
+    flag_excluido int default 0,
+    FOREIGN KEY(id_usuario) REFERENCES tbusuario(id_usuario),
+    FOREIGN KEY(id_fornecedor_tipo) REFERENCES tbfornecedor_tipo(id_fornecedor_tipo)
+)

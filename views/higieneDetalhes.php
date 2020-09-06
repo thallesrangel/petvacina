@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th scope="col">Tipo</th>
-                    <th scope="col">Prestador</th>
+                    <th scope="col">Fornecedor</th>
                     <th scope="col">Data Serviço</th>
                     <th scope="col">Próximo Serviço</th>
                     <th scope="col">Ações</th>
@@ -48,7 +48,7 @@
             <?php foreach($lista as $item) { ?>
                 <tr>
                     <td><?=$item['higiene_tipo']?></td>
-                    <td><?=$item['nome_prestador']?></td>
+                    <td><?=$item['nome_fornecedor']?></td>
                     <td><?=date("d/m/Y", strtotime($item['data_servico']))?></td>
                     <td><?=$item['data_prox_servico'] == null ? 'Indefinido' : date("d/m/Y", strtotime($item['data_prox_servico']))?></td>
                     <td>

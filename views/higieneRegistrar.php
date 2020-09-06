@@ -11,12 +11,12 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
-                    <span>Prestador *</span>
-                    <select class="form-control form-control-sm js-select" name="id_prestador" required>
+                    <span>Fornecedor *</span>
+                    <select class="form-control form-control-sm js-select" name="id_fornecedor" required>
                         <?php
-                        foreach($prestador as $item){
+                        foreach($fornecedor as $item){
                         ?>
-                        <option value="<?= $item['id_prestador'] ?>"> <?= $item['nome_prestador']?></option>
+                        <option value="<?= $item['id_fornecedor'] ?>"> <?= $item['nome_fornecedor']?></option>
                         <?php }?>
                     </select>
                 </div>  
