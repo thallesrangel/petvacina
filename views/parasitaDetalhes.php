@@ -56,8 +56,8 @@
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
                     <td>
-                        <a href="<?=BASE_URL?>parasita/editar/<?=$item['id_parasita']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>parasita/deletar/<?=$item['id_parasita']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>parasita/editar/<?=$item['id_parasita']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>parasita/deletar/<?=$item['id_parasita']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
                     </td>
                 </tr>
             <?php

@@ -23,8 +23,8 @@
 
         <div class="col-sm-12 col-md-3 text-sm-center text-md-left">
             <h4 class="m-1 pt-4"><?=$dados_animal['nome_animal'];?></h4>
-            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>vermifugacao/registrar/<?=$dados_animal['id_animal'];?>"><i class="icon-white" data-feather="plus"></i> Vermifugar</a>
-            <a class="btn btn-sm btn-primary mb-3" href="#"><i class="icon-white" data-feather="printer"></i> Imprimir</a>
+            <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>vermifugacao/registrar/<?=$dados_animal['id_animal'];?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/plus.svg"> Vermifugar</a>
+            <a class="btn btn-sm btn-primary mb-3" href="#"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/printer.svg">Imprimir</a>
         </div>
     
     </div>
@@ -58,8 +58,8 @@
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
                     <td>
-                        <a href="<?=BASE_URL?>vermifugacao/editar/<?=$item['id_vermifugacao']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>vermifugacao/deletar/<?=$item['id_vermifugacao']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>vermifugacao/editar/<?=$item['id_vermifugacao']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>vermifugacao/deletar/<?=$item['id_vermifugacao']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
                     </td>
                 </tr>
             <?php

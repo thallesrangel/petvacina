@@ -19,8 +19,8 @@
                 <td><?=$item['nome_proprietario'] . " " .$item['sobrenome_proprietario']?></td>
                 <td><?=$item['email']?></td>
                     <td>
-                        <a href="<?=BASE_URL?>proprietario/editar/<?=$item['id_proprietario']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>proprietario/deletar/<?=$item['id_proprietario']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>proprietario/editar/<?=$item['id_proprietario']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>proprietario/deletar/<?=$item['id_proprietario']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg">/a>
                     </td>
                 </tr>
             <?php

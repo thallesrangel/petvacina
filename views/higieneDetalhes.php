@@ -52,8 +52,8 @@
                     <td><?=date("d/m/Y", strtotime($item['data_servico']))?></td>
                     <td><?=$item['data_prox_servico'] == null ? 'Indefinido' : date("d/m/Y", strtotime($item['data_prox_servico']))?></td>
                     <td>
-                        <a href="<?=BASE_URL?>higiene/editar/<?=$item['id_higiene']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>higiene/deletar/<?=$item['id_higiene']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>higiene/editar/<?=$item['id_higiene']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>higiene/deletar/<?=$item['id_higiene']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
                     </td>
                 </tr>
             <?php

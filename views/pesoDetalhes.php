@@ -50,8 +50,8 @@
                     <td><?=date("d/m/Y", strtotime($item['data_pesagem']))?></td>
                     <td><?=$item['data_repesagem'] == null ? 'Sem repesagem' : date("d/m/Y", strtotime($item['data_repesagem']))?></td>
                     <td>
-                        <a href="<?=BASE_URL?>peso/editar/<?=$item['id_peso_animal']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>peso/deletar/<?=$item['id_peso_animal']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>peso/editar/<?=$item['id_peso_animal']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>peso/deletar/<?=$item['id_peso_animal']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
                     </td>
                 </tr>
             <?php

@@ -15,8 +15,8 @@
             <img src="<?=BASE_URL?>assets/img/galeria/<?=$item['url'] == null ? 'padrao.png': $item['url'];?>" width="120" height="120" class="rounded-circle mt-3 mb-2 border border-light">
            <p><?=$dados['nome_animal']?></p>
 
-           <a href="<?=BASE_URL?>animal/editar/<?=$dados['id_animal']?>"><i class="icon" data-feather="edit"></i><a> 
-            <a href="<?=BASE_URL?>animal/deletar/<?=$dados['id_animal']?>"><i class="icon-red" data-feather="trash"></i></a>
+           <a href="<?=BASE_URL?>animal/editar/<?=$dados['id_animal']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+            <a href="<?=BASE_URL?>animal/deletar/<?=$dados['id_animal']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
         </div>
 
         <div class="col-sm-12 col-md-3 pt-4">

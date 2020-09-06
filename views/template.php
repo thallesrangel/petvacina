@@ -28,7 +28,6 @@
         <link href="<?=BASE_URL?>assets/css/multiselect.css" rel="stylesheet" />
         <script src="<?=BASE_URL?>assets/js/multiselect.min.js"></script>
        
-        <!-- SweetAlert2 -->
         <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
 
@@ -99,7 +98,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>metrica">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Altura</span>
+                        <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Métrica</span>
                         </a>
                     </li>
 
@@ -115,15 +114,16 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 
-                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-4 static-top w-100 ">
+                <nav class="navbar navbar-expand-lg shadow-sm bg-white mb-3 static-top w-100 ">
              
                     <ul class="list-inline ml-auto">
+
                         <a class="list-inline-item" href="<?=BASE_URL?>">
-                            <i class="icon-gray" width="22" data-feather="home"></i>
+                            <img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/home.svg">
                         </a>
 
                         <a class="list-inline-item mr-3" href="#">
-                            <i class="icon-gray" width="22" data-feather="bell"></i>
+                            <img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/bell.svg">
                         </a>
 
                        
@@ -131,12 +131,11 @@
                             <span><?=$_SESSION['nome_usuario']?></span>
                         </a>
                         
-                        <div class="list-inline-item dropdown-menu dropdown-menu-right mt-4">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="user"></i> Perfil</a>
-                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-gray-submenu" width="22" data-feather="log-out"></i> Sair</a>
+                        <div class="list-inline-item dropdown-menu dropdown-menu-right mt-3">
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/user.svg"> Perfil</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/log-out.svg"> Sair</a>
                         </div>
                         
-            
                     </ul>
 
                     <!-- BUTTON RESPONSIVO-->
@@ -156,9 +155,10 @@
                 
                     <div id="body" class="container">
                         <?php
-                        require('views/mensagem.php');
-                        unset($_SESSION["msg"]);
-                        $this->loadViewInTemplate($viewName, $dados);?>
+                            require('views/mensagem.php');
+                            unset($_SESSION["msg"]);
+                            $this->loadViewInTemplate($viewName, $dados);
+                        ?>
                     </div>
             </div>
         </div>

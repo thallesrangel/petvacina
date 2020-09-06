@@ -19,8 +19,8 @@
                 <td><?=$item['nome_fornecedor']?></td>
                 <td><?=$item['fornecedor_tipo']?></td>
                     <td>
-                        <a href="<?=BASE_URL?>fornecedor/editar/<?=$item['id_fornecedor']?>"><i class="icon" data-feather="edit"></i><a> 
-                        <a href="<?=BASE_URL?>fornecedor/deletar/<?=$item['id_fornecedor']?>"><i class="icon-red" data-feather="trash"></i></a>
+                        <a href="<?=BASE_URL?>fornecedor/editar/<?=$item['id_fornecedor']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/edit.svg"><a> 
+                        <a href="<?=BASE_URL?>fornecedor/deletar/<?=$item['id_fornecedor']?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/trash.svg"></a>
                     </td>
                 </tr>
             <?php
