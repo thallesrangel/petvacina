@@ -25,10 +25,10 @@ class Vermifugacao extends model
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario',$_SESSION['id_usuario']);
         $sql->bindValue(':id_animal', $id_animal);
-        $sql->bindValue(':id_peso_unidade', $id_peso_unidade);
         $sql->bindValue(':nome_produto', $nome_produto);
         $sql->bindValue(':dose', $dose);
         $sql->bindValue(':peso', $peso_animal);
+        $sql->bindValue(':id_peso_unidade', $id_peso_unidade);
         $sql->bindValue(':data_aplicacao', $data_aplicacao);
         $sql->bindValue(':data_prox_dose', $data_prox_dose);
         $sql->bindValue(':nome_veterinario', $nome_veterinario);

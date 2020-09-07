@@ -59,10 +59,10 @@ class vermifugacaoController extends Controller
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
         $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
-        $peso_animal = $_POST['peso_animal'];
+        $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
         $id_peso_unidade = $_POST['id_peso_unidade'];
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
-        $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+        $data_prox_dose = $_POST['data_revacinacao'] ? implode('-', array_reverse(explode('/', $_POST['data_prox_dose']))) : null;
         $nome_veterinario = $_POST['nome_veterinario'];
         $registro_crmv = $_POST['registro_crmv'];
 

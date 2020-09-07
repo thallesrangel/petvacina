@@ -17,7 +17,7 @@
 
             <div class="col-sm-12 col-md-2">
                 <label for="dose">Dose (ml) *</label><br>
-                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" placeholder="0.000,00">
             </div>
 
             <div class="col-sm-12 col-md-2">
