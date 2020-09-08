@@ -87,7 +87,7 @@ class metricaController extends Controller
         $comprimento_animal = str_replace(',', '.',str_replace('.', '', $_POST['comprimento_animal']));
         $id_metrica_unidade_comprimento = $_POST['id_metrica_unidade_comprimento'];
         $data_medida = implode('-', array_reverse(explode('/', $_POST['data_medicao'])));
-        $data_remedida = implode('-', array_reverse(explode('/', $_POST['data_remedicao'])));
+        $data_remedida = $_POST['data_remedicao'] ? implode('-', array_reverse(explode('/', $_POST['data_remedicao']))) : null;
      
         $metrica = new Metrica();
          

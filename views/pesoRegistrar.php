@@ -30,7 +30,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="aplicacao">Pesagem *</labe>
-                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_pesagem">
+                <input id="aplicacao" type="text" date-input="d/m/y" class="form-control form-control-sm" name="data_pesagem" value="<?=date("d/m/Y")?>">
             </div>
 
             <div class="col-md-3 col-sm-12">
@@ -40,8 +40,8 @@
         </div>
      
 
-        <input class="btn btn-primary" type="submit" value="Registrar">
-        <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
+        <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
+        <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
 
 </div>

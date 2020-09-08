@@ -50,7 +50,7 @@
 
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Registrar">
-        <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
+        <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
+        <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
 </div>

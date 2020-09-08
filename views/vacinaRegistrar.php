@@ -22,7 +22,7 @@
 
             <div class="col-sm-12 col-md-2">
                 <label for="aplicacao">Data Aplicação *</label>
-                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao">
+                <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao" value="<?=date("d/m/Y")?>">
             </div>
 
         </div>

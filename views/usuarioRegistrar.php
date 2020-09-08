@@ -79,8 +79,8 @@
                     </div>
                 </div>
 
-                <input class="ml-4 mt-3 btn btn-primary" type="submit" value="Registrar">
-                <a class="ml-4 mt-3 btn btn-link" href="<?=BASE_URL?>login">Voltar</a>
+                <input class="ml-4 mt-3 btn btn-sm btn-primary" type="submit" value="Registrar">
+                <a class="ml-4 mt-3 btn btn-sm btn-link" href="<?=BASE_URL?>login">Voltar</a>
             </form>
         </div>
         <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'usuario'; ?>';</script>

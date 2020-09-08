@@ -82,8 +82,8 @@
 
 
     
-        <input class="btn btn-primary" type="submit" value="Registrar">
-        <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
+        <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
+        <a class="btn btn-sm  btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
     <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'proprietario'; ?>';</script>
 </div>

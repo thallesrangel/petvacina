@@ -59,7 +59,7 @@ class anticioController extends Controller
     {   
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
-        $dose = $_POST['dose'];
+        $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
         $nome_veterinario = $_POST['nome_veterinario'];

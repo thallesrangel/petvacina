@@ -18,7 +18,7 @@
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
                     <span>Und Altura *</span>
-                    <select class="form-control form-control-sm" name="id_metrica_unidade_altura" required>
+                    <select class="form-control form-control-sm" name="id_metrica_unidade_altura" required >
                         <?php
                         foreach($unMetrica as $item){
                         ?>
@@ -36,7 +36,7 @@
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
                     <span>Und Comprimento *</span>
-                    <select class="form-control form-control-sm" name="id_metrica_unidade_comprimento" required>
+                    <select class="form-control form-control-sm" name="id_metrica_unidade_comprimento" required >
                         <?php
                         foreach($unMetrica as $item){
                         ?>
@@ -48,7 +48,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="medicao">Data Medição *</labe>
-                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao">
+                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" required>
             </div>
 
             <div class="col-md-3 col-sm-12">
@@ -58,8 +58,8 @@
         </div>
      
 
-        <input class="btn btn-primary" type="submit" value="Registrar">
-        <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
+        <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
+        <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
 
 </div>

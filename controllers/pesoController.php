@@ -80,7 +80,7 @@ class pesoController extends Controller
         $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
         $id_peso_unidade = $_POST['id_peso_unidade'];
         $data_pesagem = implode('-', array_reverse(explode('/', $_POST['data_pesagem'])));
-        $data_repesagem = implode('-', array_reverse(explode('/', $_POST['data_repesagem'])));
+        $data_repesagem = $_POST['data_repesagem'] ? implode('-', array_reverse(explode('/', $_POST['data_repesagem']))) : null;
      
         $peso = new Peso();
          
