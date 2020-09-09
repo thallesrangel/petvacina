@@ -49,7 +49,9 @@ class parasitaController extends Controller
         ];
 
         $dados = [];
-        
+        $unPeso = new PesoUnidade();
+        $dados['unPeso'] = $unPeso->getAll();
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('parasitaRegistrar', $dados);
     }
@@ -58,7 +60,11 @@ class parasitaController extends Controller
     {   
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
-        $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose'])); 
+        $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
+
+        $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
+        $id_peso_unidade = $_POST['id_peso_unidade'];
+
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_prox_dose = $_POST['data_prox_dose'] ? implode('-', array_reverse(explode('/', $_POST['data_prox_dose']))) : null;
         $nome_veterinario = $_POST['nome_veterinario'];
@@ -66,7 +72,7 @@ class parasitaController extends Controller
 
         $vacina = new Parasita();
         
-        if ($vacina->add($id_animal, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+        if ($vacina->add($id_animal, $nome_produto, $dose, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."parasita/detalhes/".$id_animal);
         } 

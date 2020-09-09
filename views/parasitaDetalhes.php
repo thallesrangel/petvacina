@@ -37,13 +37,14 @@
             <table class="table table-bordered table-striped table-responsive-sm">
             <thead>
                 <tr>
-                    <th scope="col">Produto</th>
-                    <th scope="col">Dose (ml)</th>
-                    <th scope="col">Aplicação</th>
-                    <th scope="col">Reaplicação</th>
-                    <th scope="col">Veterinário</th>
-                    <th title="Conselho Regional de Medicina Veterinária" scope="col">CRMV</th>
-                    <th scope="col">Ações</th>
+                    <th>Produto</th>
+                    <th>Dose (ml)</th>
+                    <th>Peso</th>
+                    <th>Aplicação</th>
+                    <th>Reaplicação</th>
+                    <th>Veterinário</th>
+                    <th title="Conselho Regional de Medicina Veterinária">CRMV</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +52,7 @@
                 <tr>
                     <td><?=$item['nome_produto']?></td>
                     <td class="quantidade"><?=$item['dose']?></td>
+                    <td><span class="quantidade"><?=$item['peso']?></span> <?=$item['peso_unidade']?></td>
                     <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></td>
                     <td><?=$item['data_prox_dose'] == null ? 'Não' : date("d/m/Y", strtotime($item['data_prox_dose']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
