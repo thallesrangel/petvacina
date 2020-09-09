@@ -75,12 +75,12 @@
             <div class="col-sm-12 col-md-3 form-group">
                 <p>Castrado?</p>
                 <div class="custom-control custom-radio float-left mr-1">
-                    <input type="radio" id="castradoS" name="castrado" class="custom-control-input" value="1" checked>
+                    <input type="radio" id="castradoS" name="castrado" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="castradoS">Sim</label>
                 </div>
 
                 <div class="custom-control custom-radio float-left ml-1">
-                    <input type="radio" id="castradoN" name="castrado" class="custom-control-input" value="2">
+                    <input type="radio" id="castradoN" name="castrado" class="custom-control-input" value="2" checked>
                     <label class="custom-control-label" for="castradoN" checked>Não</label>
                 </div>
             </div>

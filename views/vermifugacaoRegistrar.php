@@ -26,7 +26,7 @@
 
             <div class="col-md-2">
                 <div class="form-group">
-                    <span>Espécie *</span>
+                    <span>Un Peso *</span>
                     <select class="form-control form-control-sm" name="id_peso_unidade" required>
                         <?php
                         foreach($unPeso as $item){
