@@ -52,7 +52,7 @@
                     <td><?=$item['titulo_vacina']?></td>
                     <td><span class="quantidade"><?=$item['dose']?></span></td>
                     <td><?=date("d/m/Y", strtotime($item['data_aplicacao']))?></span></td>
-                    <td><?=$item['data_revacinacao'] == null ? 'Sem renovação' : date("d/m/Y", strtotime($item['data_revacinacao']))?></td>
+                    <td><?=$item['data_revacinacao'] == null ? 'Não' : date("d/m/Y", strtotime($item['data_revacinacao']))?></td>
                     <td><?=$item['nome_veterinario'] == null ? 'Indefinido' : $item['nome_veterinario']?></td>
                     <td><?=$item['registro_crmv'] == null ? 'Indefinido' : $item['registro_crmv']?></td>
 
