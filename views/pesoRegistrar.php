@@ -12,13 +12,13 @@
         
             <div class="col-md-3 col-sm-12">
                 <label for="peso">Peso do Animal *</labe>
-                <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal">
+                <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
                     <span>Unidade Peso *</span>
-                    <select class="form-control form-control-sm" name="id_peso_unidade" required>
+                    <select class="form-control form-control-sm" name="id_peso_unidade" required >
                         <?php
                         foreach($unPeso as $item){
                         ?>

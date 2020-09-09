@@ -12,7 +12,7 @@
         
             <div class="col-md-3 col-sm-12">
                 <label for="fornecedor">Fornecedor *</labe>
-                <input id="fornecedor" type="text" class="form-control form-control-sm" name="nome_fornecedor">
+                <input id="fornecedor" type="text" class="form-control form-control-sm" name="nome_fornecedor" required>
             </div>
 
             <div class="col-sm-12 col-md-2">

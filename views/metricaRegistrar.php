@@ -12,7 +12,7 @@
         
             <div class="col-md-3 col-sm-12">
                 <label for="altura">Altura do Animal *</labe>
-                <input id="altura" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="altura_animal">
+                <input id="altura" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="altura_animal" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
@@ -30,7 +30,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="comprimento">Comprimento do Animal *</labe>
-                <input id="comprimento" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="comprimento_animal">
+                <input id="comprimento" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="comprimento_animal" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
@@ -48,7 +48,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="medicao">Data Medição *</labe>
-                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" value="<?=date("d/m/Y")?> required>
+                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" value="<?=date("d/m/Y")?>" required>
             </div>
 
             <div class="col-md-3 col-sm-12">

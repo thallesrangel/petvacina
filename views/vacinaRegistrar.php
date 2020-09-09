@@ -12,12 +12,12 @@
         
             <div class="col-sm-12 col-md-3">
                 <label for="vacina">Vacina *</label>
-                <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina">
+                <input id="vacina" type="text" class="form-control form-control-sm" name="nome_vacina" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
                 <label for="dose">Dose (ml) *</label><br>
-                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" placeholder="0.000,00">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" placeholder="0.000,00" required >
             </div>
 
             <div class="col-sm-12 col-md-2">

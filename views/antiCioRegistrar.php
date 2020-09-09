@@ -11,12 +11,12 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="produto">Produto *</labe>
-                <input id="produto" type="text" class="form-control form-control-sm" name="nome_produto">
+                <input id="produto" type="text" class="form-control form-control-sm" name="nome_produto" required />
             </div>
 
             <div class="col-md-3">
                 <label for="dose">Dose *</labe>
-                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" required />
             </div>
 
             

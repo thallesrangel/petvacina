@@ -11,17 +11,17 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="produto">Produto *</labe>
-                <input id="produto" type="text" class="form-control form-control-sm" name="nome_produto">
+                <input id="produto" type="text" class="form-control form-control-sm" name="nome_produto" required />
             </div>
 
             <div class="col-md-3">
                 <label for="dose">Dose aplicada (ml) *</labe>
-                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose">
+                <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" required />
             </div>
 
             <div class="col-md-3">
                 <label for="peso">Peso do Animal *</labe>
-                <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal">
+                <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal" required />
             </div>
 
             <div class="col-md-2">

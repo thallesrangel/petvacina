@@ -37,7 +37,7 @@
             <div class="col-sm-12 col-md-3">
                 <label for="estado">Estado *</label>
                 
-                <select class="form-control form-control-sm js-select" name="endereco_estado" onchange="pegarCidades(this)" required>
+                <select class="form-control form-control-sm js-select" name="endereco_estado" onchange="pegarCidades(this)" required >
                     <?php
                     foreach($estado as $item){
                     ?>
@@ -48,7 +48,7 @@
     
             <div class="col-sm-12 col-md-3">
                         <label for="cidade">Cidade *</label>
-                        <select id="cidade" class="form-control form-control-sm js-select" name="endereco_cidade" required>
+                        <select id="cidade" class="form-control form-control-sm js-select" name="endereco_cidade" required >
                         </select>
                     </div>
 
