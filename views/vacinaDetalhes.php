@@ -40,7 +40,7 @@
                     <th scope="col">Vacina</th>
                     <th scope="col">Dose (ml)</th>
                     <th scope="col">Aplicação</th>
-                    <th scope="col">Revacinação</th>
+                    <th scope="col">Reaplicação</th>
                     <th scope="col">Médico Veterinário</th>
                     <th scope="col">CRMV</th>
                     <th scope="col">Ações</th>

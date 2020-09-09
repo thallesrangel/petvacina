@@ -41,7 +41,7 @@
                     <th scope="col">Dose (ml)</th>
                     <th scope="col">Peso</th>
                     <th scope="col">Aplicação</th>
-                    <th scope="col">Próxima Dose</th>
+                    <th scope="col">Reaplicação</th>
                     <th scope="col">Veterinário</th>
                     <th title="Conselho Regional de Medicina Veterinária" scope="col">CRMV</th>
                     <th scope="col">Ações</th>
