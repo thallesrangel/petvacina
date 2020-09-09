@@ -9,7 +9,7 @@
 
     <form method="POST" class="p-2" action="<?=BASE_URL?>higiene/registrar_save/<?=$url[2];?>">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3">
                 <div class="form-group">
                     <span>Fornecedor *</span>
                     <select class="form-control form-control-sm js-select" name="id_fornecedor" required>
@@ -22,7 +22,7 @@
                 </div>  
             </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3">
                 <div class="form-group">
                     <span>Tipo Serviço *</span>
                     <select class="form-control form-control-sm js-select" name="id_higiene_tipo" required>
@@ -34,6 +34,7 @@
                     </select>
                 </div>  
             </div>
+            
         
         </div>
 

@@ -48,7 +48,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="medicao">Data Medição *</labe>
-                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" required>
+                <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" value="<?=date("d/m/Y")?> required>
             </div>
 
             <div class="col-md-3 col-sm-12">
