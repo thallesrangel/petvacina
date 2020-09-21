@@ -15,7 +15,7 @@
             </div>
 
             <div class="col-md-3">
-                <label for="dose">Dose *</labe>
+                <label for="dose">Dose (ml) *</labe>
                 <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" required />
             </div>
 

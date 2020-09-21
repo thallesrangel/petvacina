@@ -20,7 +20,7 @@
                 </select>
             </div>
             
-            <div class="col-sm-12 col-md-3 form-group">
+            <div class="col-sm-12 col-md-2 form-group">
                 <label for="identificacao">Identificação</labe>
                 <input id="identificacao" type="text" class="form-control form-control-sm" name="identificacao">
             </div>

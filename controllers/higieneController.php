@@ -4,10 +4,9 @@ class higieneController extends Controller
 {   
     public function index() 
     {   
-        
         $breadcrumb = [
 			'Início' => '',
-			'Banho e Tosa' => 'false',
+			'Higiene' => 'false',
 			'Listagem' => 'false'
         ];
         
@@ -42,7 +41,7 @@ class higieneController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Banho e Tosa' => 'higiene',
+			'Higiene' => 'higiene',
 			'Detalhes' => 'false'
         ];
         
@@ -60,7 +59,7 @@ class higieneController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Banho e Tosa' => 'higiene',
+			'Higiene' => 'higiene',
 			'Registrar' => 'false'
         ];
 

@@ -114,7 +114,7 @@ class vermifugacaoController extends Controller
             if (!empty($_POST['id_vermifugacao'])) {
                 
                 $nome_produto = $_POST['nome_produto'];
-                $dose = $_POST['dose'];
+                $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $id_peso_unidade = $_POST['id_peso_unidade'];
                 $peso = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
