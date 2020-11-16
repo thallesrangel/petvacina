@@ -53,6 +53,7 @@ class Peso extends model
         }
     }   
 
+
     public function edit($idPeso, $peso_animal, $id_peso_unidade, $data_pesagem, $data_repesagem)
     {   
         $sql = "UPDATE tbpeso_animal SET  peso = :peso, id_peso_unidade = :id_peso_unidade, data_pesagem = :data_pesagem, data_repesagem = :data_repesagem
@@ -75,6 +76,7 @@ class Peso extends model
         }
     }
 
+    
     public function delete($idPesoAnimal)
     {
         $sql = "UPDATE tbpeso_animal SET flag_excluido = :flag_excluido WHERE id_peso_animal = :id_peso_animal";

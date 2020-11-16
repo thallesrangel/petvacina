@@ -6,6 +6,7 @@
 	<link rel='icon' href='<?= BASE_URL?>assets/icon/icon.png' type='image/x-icon' sizes="16x16" />
 	<title>Pet Gestor</title>
 </head>
+
 <div id="notfound">
 		<div class="notfound">
 			<div class="notfound-404">
@@ -18,4 +19,4 @@
 				<a target="_blank" href="#"><img class="img-fluid pt-2" src="<?=BASE_URL?>assets/img/icon/instagram.svg"></a>
 			</div>
 		</div>
-	</div>
+</div>

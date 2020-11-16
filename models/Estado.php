@@ -1,4 +1,5 @@
 <?php
+
 class Estado extends model 
 {
     public function getAll() {

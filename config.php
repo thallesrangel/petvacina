@@ -5,7 +5,7 @@ require "environment.php";
 $config = array();
 
 if(ENVIRONMENT == 'dev') {
-    define("BASE_URL", "http://localhost:8080/petgestor/");
+    define("BASE_URL", "http://localhost/petgestor/");
     $config['dbname'] = 'dbpetgestor';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';

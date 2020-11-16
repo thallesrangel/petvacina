@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location:".BASE_URL."login");
     die();   
 }
@@ -18,13 +18,15 @@ class animalController extends Controller
 
         $animais = new Animal();
         
-        // Paginação
+        # Paginação
         $offset = 0;
         $limit = 10;
         $total = $animais->getTotal();
-        // total Paginas
+        
+        # Total Paginas
         $dados['paginas'] = ceil($total/$limit);
-        // Pagina Atual
+        
+        # Pagina Atual
         $dados['paginaAtual'] = 1;
 
         if(!empty($_GET['p'])) {
@@ -33,7 +35,7 @@ class animalController extends Controller
 
         $offset = ($dados['paginaAtual'] * $limit) - $limit;
         
-        //Limitar os link antes depois
+        # Limitar os link antes depois
         $dados['max_links'] = 1;
         
         $dados['lista'] = $animais->getAllResumido($offset, $limit);

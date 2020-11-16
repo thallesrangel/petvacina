@@ -2,7 +2,7 @@
 
 class Anticio extends model 
 {   
-     # Retorna anticio específico
+    # Retorna anticio específico
     public function getEspecifico($id) {
         $array = array();
         $sql = "SELECT * FROM tbanticio WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
@@ -53,7 +53,6 @@ class Anticio extends model
     }
 
 
-
     # Usado em relatório 
 	public function listarReport($proprietario, $data_inicial, $data_final)
 	{   
@@ -94,6 +93,7 @@ class Anticio extends model
         return $array;
     }
 
+    
     public function edit($idAnticio, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
     {   
         $sql = "UPDATE tbanticio SET id_anticio = :id_anticio, nome_produto = :nome_produto, dose = :dose, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,

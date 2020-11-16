@@ -21,27 +21,36 @@ body{
     height: 100%;
 }
 
+.sidebar .nav-item{
+    margin: 10px;
+}
+
 .sidebar .nav-item .nav-link{
     text-align: left;
     padding: 14px;
     width: 14rem;
+    border-radius: 4px;
     
 }
 
 .gray-color{
     color: #2f3640 !important;
 }
+
 .btn-primary{
     background-color:#3498db !important;
-    border: 1px solid #3498db !important;
+   border: 1px solid #3498db !important;
 }
+
 .btn-primary:hover{
     background: #2980b9 !important;
     border: 1px solid #2980b9 !important;
 }
+
 .sidebar{
-    width: 16rem !important;
+    width: 20rem !important;
 }
+
 .navbar-nav{
     display: flex;
     flex-direction: column;
@@ -54,6 +63,7 @@ body{
 #content{
     flex: 1 0 auto;  
 }
+
 #content-wrapper{
     background-color: #f8f9fc;
     width: 100%;
@@ -106,11 +116,14 @@ background-color: #a29bfe;
 
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:active{
-    background-color: #dfe6e9;
+    background-color: #4680ff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    color: #FFF;
 }
 
 .navbar-nav .nav-item:hover .nav-link {
     background-color: #f1f2f6;
+    color: #2f3640
 }
 
 /* btn responsive */
