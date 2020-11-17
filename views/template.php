@@ -36,7 +36,7 @@
     <body>
 
     <div class="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse scrollable-element">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-text mx-5 m-2">
                     <img width="170px" src="<?=BASE_URL?>/assets/img/logo.png"/>
@@ -44,67 +44,67 @@
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/heart.svg"> Animais</span>
+                        <span><i data-feather="heart"></i> Animais</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vacina">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/award.svg"> Vacinas</span>
+                        <span><i data-feather="award"></i> Vacinas</span>
                         </a>
                     </li>  
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/shield.svg"> Vermifugação</span>
+                        <span><i data-feather="shield"></i> Vermifugação</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>parasita">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/alert-triangle.svg"> Pulgas e Carrapatos</span>
+                        <span><i data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>anticio">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/pocket.svg"> Anti-cio</span>
+                        <span><i data-feather="pocket"></i> Anti-cio</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>higiene">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/scissors.svg"> Higiene</span>
+                        <span><i data-feather="scissors"></i> Higiene</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>relatorio">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/file-text.svg"> Relatórios</span>
+                        <span><i data-feather="file-text"></i> Relatórios</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/users.svg"> Proprietários</span>
+                        <span><i data-feather="users"></i> Proprietários</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>peso">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/peso.svg"> Peso</span>
+                        <span><i data-feather="sliders"></i> Peso</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>metrica">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/altura.svg"> Métrica</span>
+                        <span><i data-feather="trending-up"></i> Métrica</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>fornecedor">
-                        <span><img src="<?= BASE_URL?>assets/img/icon/fornecedor.svg"> Fornecedor</span>
+                        <span><i data-feather="shopping-bag"></i> Fornecedor</span>
                         </a>
                     </li>
             </a>
@@ -119,11 +119,11 @@
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
-                            <img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/home.svg">
+                        <i data-feather="home"></i>
                         </a>
 
                         <a class="list-inline-item mr-3" href="#">
-                            <img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/bell.svg">
+                        <i data-feather="bell"></i>
                         </a>
 
                        
@@ -132,8 +132,8 @@
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/user.svg"> Perfil</a>
-                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><img class="img-fluid" widht="22" src="<?= BASE_URL?>assets/img/icon/log-out.svg"> Sair</a>
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i data-feather="user"></i> Perfil</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i data-feather="log-out"></i> Sair</a>
                         </div>
                         
                     </ul>

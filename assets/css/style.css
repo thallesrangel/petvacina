@@ -22,7 +22,7 @@ body{
 }
 
 .sidebar .nav-item{
-    margin: 10px;
+    margin-left: 10px;
 }
 
 .sidebar .nav-item .nav-link{
@@ -32,19 +32,22 @@ body{
     border-radius: 4px;
     
 }
+.scrollable-element {
+    scrollbar-width: thin;
+  }
 
 .gray-color{
     color: #2f3640 !important;
 }
 
 .btn-primary{
-    background-color:#3498db !important;
-   border: 1px solid #3498db !important;
+    background-color:#4680ff !important;
+   border: 1px solid #4680ff !important;
 }
 
 .btn-primary:hover{
-    background: #2980b9 !important;
-    border: 1px solid #2980b9 !important;
+    background:#135dff !important;
+    border: 1px solid #135dff !important;
 }
 
 .sidebar{
@@ -137,7 +140,6 @@ background-color: #a29bfe;
     }
     .offcanvas-collapse {
         position: fixed;
-        top: 20px;
         bottom: 0;
         right: 100%;
         left: -300px;
@@ -156,4 +158,9 @@ background-color: #a29bfe;
         left: 0;
         visibility: visible;
     }
+
+    
+.sidebar{
+    width: 16rem !important;
+}
 }
