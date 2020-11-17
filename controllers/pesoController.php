@@ -120,7 +120,7 @@ class pesoController extends Controller
         
                 $peso->edit($idPeso, $peso_animal, $id_peso_unidade, $data_pesagem, $data_repesagem);
                 
-                $_SESSION['msg'] = 'editado_sucesso';
+                $_SESSION['msg'] = "editado_sucesso";
                 header("Location: ".BASE_URL."peso");
 
             } else {

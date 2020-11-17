@@ -64,4 +64,38 @@ class Fornecedor extends model
             //print_r($sql->errorInfo());
         }
     }
+
+    // Retorna anticio especifico para editar
+    public function getEspecificoDado($idFornecedor)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbfornecedor WHERE id_fornecedor = ".$idFornecedor." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function edit($id_fornecedor, $nome_fornecedor, $id_fornecedor_tipo)
+    {   
+        $sql = "UPDATE tbfornecedor SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor";
+        
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_fornecedor', $id_fornecedor);
+        $sql->bindValue(':nome_fornecedor',$nome_fornecedor);
+        $sql->bindValue(':id_fornecedor_tipo', $id_fornecedor_tipo);
+
+  
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
+        }
+    }
 }

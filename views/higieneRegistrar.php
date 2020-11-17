@@ -19,6 +19,7 @@
                         <option value="<?= $item['id_fornecedor'] ?>"> <?= $item['nome_fornecedor']?></option>
                         <?php }?>
                     </select>
+                    <a href="<?= BASE_URL . "fornecedor"?>">Registrar</a>
                 </div>  
             </div>
 
@@ -31,6 +32,7 @@
                         ?>
                         <option value="<?= $item['id_higiene_tipo'] ?>"> <?= $item['higiene_tipo']?></option>
                         <?php }?>
+                        
                     </select>
                 </div>  
             </div>

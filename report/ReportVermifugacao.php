@@ -47,8 +47,8 @@ class ReportVermifugacao extends FPDF
 
         foreach($dados as $value) {
 
-            $this->Cell(20,7,$value['nome_proprietario'],1,0,'L');
-            $this->Cell(20,7,$value['nome_produto'],1,0,'L');
+            $this->Cell(20,7, utf8_decode($value['nome_proprietario']),1,0,'L');
+            $this->Cell(20,7,utf8_decode($value['nome_produto']),1,0,'L');
             $this->Cell(20,7, utf8_decode($value['dose']),1,0,'L');
             $this->Cell(20,7 ,$value['peso'],1,0,'L');
             $this->Cell(20,7, utf8_decode($value['nome_veterinario']),1,0,'L');

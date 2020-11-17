@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="PetVacina">
         <meta name="author" content="Thalles Rangel Lopes">
-        <title>Pet Gestor</title>
+        <title>Pet Gestor | Login</title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
         <script src="<?=BASE_URL?>assets/js/jquery-3.5.1.min.js"></script>
@@ -41,7 +41,6 @@
                     
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" src="<?=BASE_URL . 'assets/img/logo.png'?>">
-                    <span>Alfa</span>
                 </div>
                 
                 <br>

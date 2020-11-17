@@ -67,9 +67,9 @@ class Peso extends model
         $sql->bindValue(':data_repesagem',$data_repesagem);
   
         if ($sql->execute()) {  
-            $count = $sql->rowCount();
-            echo $count . ' rows updated properly!';
-            //return true;
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
         } else {
             //return false;
             print_r($sql->errorInfo());

@@ -60,4 +60,53 @@ class fornecedorController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."fornecedor");
     }
+
+
+    public function editar_salvar(){
+
+            
+        $peso = new Fornecedor();
+          
+        // Usado para editar
+        if (!empty($_POST['id_fornecedor'])) {
+            
+            $idFornecedor = $_POST['id_fornecedor'];
+            $nome_fornecedor = $_POST['nome_fornecedor'];
+            $id_fornecedor_tipo = $_POST['id_fornecedor_tipo'];
+
+    
+            $peso->edit($idFornecedor, $nome_fornecedor, $id_fornecedor_tipo);
+            
+            $_SESSION['msg'] = "editado_sucesso";
+            header("Location: ".BASE_URL."fornecedor");
+        }
+    }
+
+    public function editar($idFornecedor)
+    {   
+        $dados = array();
+    
+        if (!empty($idFornecedor)) {
+ 
+            $fornecedor = new Fornecedor();
+            $fornecedor_tipo = new FornecedorTipo();
+            $breadcrumb = [
+                'Início' => '',
+                'Fornecedor' => 'fornecedor',
+                'Editar' => 'false'
+            ];
+
+            $dados['info'] = $fornecedor->getEspecificoDado($idFornecedor);
+
+            $dados['fornecedorTipo'] = $fornecedor_tipo->getAll(); 
+            
+            if (isset($dados['info'][0]['id_fornecedor'])) {
+                $this->setBreadCrumb($breadcrumb);
+                $this->loadTemplate('fornecedorEditar', $dados);
+            }
+        
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

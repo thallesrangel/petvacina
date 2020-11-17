@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Registrar">
+        <input class="btn btn-primary" type="submit" value="Salvar">
         <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
 
