@@ -97,4 +97,38 @@ class higieneController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."higiene");
     }
+
+
+    
+    public function editar($idHigiene)
+    {   
+        $dados = array();
+    
+        if (!empty($idHigiene)) {
+ 
+            $higiene = new Higiene();
+            $higiene_tipo = new HigieneTipo();
+          
+            $fornecedor = new Fornecedor();
+       
+        
+
+            $breadcrumb = [
+                'Início' => '',
+                'Higiene' => 'higiene',
+                'Editar' => 'false'
+            ];
+
+            $dados['info'] = $higiene->getEspecificoDado($idHigiene);
+            $dados['higiene_tipo'] = $higiene_tipo->getAll();
+            
+            if (isset($dados['info'][0]['id_higiene'])) {
+                $this->setBreadCrumb($breadcrumb);
+                $this->loadTemplate('higieneEditar', $dados);
+            }
+        
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

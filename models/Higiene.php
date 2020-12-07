@@ -50,4 +50,18 @@ class Higiene extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+    // Retorna anticio especifico para editar
+    public function getEspecificoDado($id)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbhigiene WHERE id_higiene = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
 }
