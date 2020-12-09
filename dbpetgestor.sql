@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Dez-2020 às 04:47
+-- Tempo de geração: 09-Dez-2020 às 05:55
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -34,7 +34,7 @@ CREATE TABLE `tbanimal` (
   `identificacao_animal` varchar(100) DEFAULT NULL,
   `data_nascimento` date NOT NULL,
   `id_especie` int(11) NOT NULL,
-  `raca` varchar(150) NOT NULL,
+  `id_raca` int(11) NOT NULL,
   `sexo` int(11) NOT NULL,
   `pelagem` varchar(100) NOT NULL,
   `id_proprietario` int(11) NOT NULL,
@@ -47,6 +47,13 @@ CREATE TABLE `tbanimal` (
   `data_registro` date NOT NULL,
   `flag_excluido` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbanimal`
+--
+
+INSERT INTO `tbanimal` (`id_animal`, `id_usuario`, `nome_animal`, `identificacao_animal`, `data_nascimento`, `id_especie`, `id_raca`, `sexo`, `pelagem`, `id_proprietario`, `flag_castrado`, `flag_filhotes`, `microchip`, `data_implantacao`, `local_implantacao`, `url`, `data_registro`, `flag_excluido`) VALUES
+(1, 29, 'Zulu', '01', '0000-00-00', 1, 2, 1, 'Cinza', 25, 2, 2, NULL, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -5662,7 +5669,7 @@ CREATE TABLE `tbespecie` (
   `id_especie` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `nome_especie` varchar(100) NOT NULL,
-  `flag_excuido` int(11) DEFAULT 0,
+  `flag_excluido` int(11) DEFAULT 0,
   `flag_padrao` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -5670,10 +5677,11 @@ CREATE TABLE `tbespecie` (
 -- Extraindo dados da tabela `tbespecie`
 --
 
-INSERT INTO `tbespecie` (`id_especie`, `id_usuario`, `nome_especie`, `flag_excuido`, `flag_padrao`) VALUES
+INSERT INTO `tbespecie` (`id_especie`, `id_usuario`, `nome_especie`, `flag_excluido`, `flag_padrao`) VALUES
 (1, 1, 'Cachorro', 0, 1),
 (2, 1, 'Gato', 0, 1),
-(3, 1, 'Coelho', 0, 1);
+(3, 1, 'Coelho', 0, 1),
+(4, 29, 'Gado', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5943,7 +5951,8 @@ CREATE TABLE `tbproprietario` (
 --
 
 INSERT INTO `tbproprietario` (`id_proprietario`, `id_usuario`, `nome_proprietario`, `sobrenome_proprietario`, `data_nascimento`, `contato`, `email`, `id_estado`, `id_cidade`, `endereco_bairro`, `endereco_rua`, `endereco_numero`, `endereco_complemento`, `endereco_referencia`, `data_registro`, `flag_excluido`) VALUES
-(1, 1, 'admin', 'pet', NULL, NULL, 'rangelthr@gmail.com', 8, 26, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0);
+(1, 1, 'admin', 'pet', NULL, NULL, 'rangelthr@gmail.com', 8, 26, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0),
+(25, 29, 'Paulo', 'Roberto', NULL, NULL, 'paulo@gmail.com', 8, 24, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -6017,7 +6026,8 @@ CREATE TABLE `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email_usuario`, `senha`, `contato_usuario`, `id_estado`, `id_cidade`, `endereco_usuario_bairro`, `endereco_usuario_rua`, `endereco_usuario_numero`, `data_registro`, `flag_excluido`) VALUES
-(1, 'admin', 'pet', 'rangelthr@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 26, NULL, NULL, NULL, '2020-12-09', 0);
+(1, 'admin', 'pet', 'rangelthr@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 26, NULL, NULL, NULL, '2020-12-09', 0),
+(29, 'Paulo', 'Roberto', 'paulo@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 24, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -6072,6 +6082,7 @@ ALTER TABLE `tbanimal`
   ADD PRIMARY KEY (`id_animal`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_especie` (`id_especie`),
+  ADD KEY `id_raca` (`id_raca`),
   ADD KEY `id_proprietario` (`id_proprietario`);
 
 --
@@ -6229,7 +6240,7 @@ ALTER TABLE `tbvermifugacao`
 -- AUTO_INCREMENT de tabela `tbanimal`
 --
 ALTER TABLE `tbanimal`
-  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbanticio`
@@ -6247,7 +6258,7 @@ ALTER TABLE `tbcidade`
 -- AUTO_INCREMENT de tabela `tbespecie`
 --
 ALTER TABLE `tbespecie`
-  MODIFY `id_especie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_especie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tbestado`
@@ -6319,7 +6330,7 @@ ALTER TABLE `tbpeso_unidade`
 -- AUTO_INCREMENT de tabela `tbproprietario`
 --
 ALTER TABLE `tbproprietario`
-  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `tbraca`
@@ -6331,7 +6342,7 @@ ALTER TABLE `tbraca`
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `tbvacina`
@@ -6355,7 +6366,8 @@ ALTER TABLE `tbvermifugacao`
 ALTER TABLE `tbanimal`
   ADD CONSTRAINT `tbanimal_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tbusuario` (`id_usuario`),
   ADD CONSTRAINT `tbanimal_ibfk_2` FOREIGN KEY (`id_especie`) REFERENCES `tbespecie` (`id_especie`),
-  ADD CONSTRAINT `tbanimal_ibfk_3` FOREIGN KEY (`id_proprietario`) REFERENCES `tbproprietario` (`id_proprietario`);
+  ADD CONSTRAINT `tbanimal_ibfk_3` FOREIGN KEY (`id_raca`) REFERENCES `tbraca` (`id_raca`),
+  ADD CONSTRAINT `tbanimal_ibfk_4` FOREIGN KEY (`id_proprietario`) REFERENCES `tbproprietario` (`id_proprietario`);
 
 --
 -- Limitadores para a tabela `tbanticio`
