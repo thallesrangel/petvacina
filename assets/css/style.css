@@ -162,11 +162,6 @@ background-color: #a29bfe;
     color: #FFF;
 }
 
-.navbar-nav .nav-item:hover .nav-link {
-    background-color: #f1f2f6;
-    color: #2f3640
-}
-
 /* btn responsive */
 #navToggle{
     display:none;
