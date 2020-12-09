@@ -55,8 +55,8 @@
                     </li>  
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <span><i data-feather="award"></i> Registros</span>
+                        <a class="nav-link dropdown-toggle" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <span><i data-feather="award"></i> Cadastros</span>
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li class="nav-item li-sub">

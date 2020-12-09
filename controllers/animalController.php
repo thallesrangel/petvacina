@@ -32,7 +32,7 @@ class animalController extends Controller
         if(!empty($_GET['p'])) {
             $dados['paginaAtual'] = $_GET['p'];
         }
-
+ 
         $offset = ($dados['paginaAtual'] * $limit) - $limit;
         
         # Limitar os link antes depois
