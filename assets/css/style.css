@@ -9,52 +9,83 @@ body{
     display: flex;
     height: 100%;
 }
-.nav-link{
+.nav-link
+{
     color: #3d3d3d;
 }
-.nav-link:hover{
+
+.nav-link:hover
+{
     color: #3d3d3d;
 }
-.navbar-nav {
+
+.navbar-nav
+{
     overflow-y: scroll; 
     overflow-x: hidden;
     height: 100%;
 }
 
-.sidebar .nav-item{
+.sidebar .nav-item
+{
     margin-left: 10px;
 }
 
-.sidebar .nav-item .nav-link{
+.sidebar .nav-item .li-sub
+{
+    padding: 10px;
+}
+
+.sidebar .nav-item .li-sub:hover
+{     
+   color: #333;
+}
+
+.sidebar .nav-item .nav-link
+{
     text-align: left;
     padding: 14px;
     width: 14rem;
     border-radius: 4px;
     
 }
-.scrollable-element {
-    scrollbar-width: thin;
-  }
 
-.gray-color{
+.sidebar .nav-item .href-sub
+{   
+    text-decoration: none;
+    padding: 20px;
+    color: #333 !important;
+}
+
+.scrollable-element
+{
+    scrollbar-width: thin;
+}
+
+.gray-color
+{
     color: #2f3640 !important;
 }
 
-.btn-primary{
+.btn-primary
+{
     background-color:#4680ff !important;
    border: 1px solid #4680ff !important;
 }
 
-.btn-primary:hover{
+.btn-primary:hover
+{
     background:#135dff !important;
     border: 1px solid #135dff !important;
 }
 
-.sidebar{
+.sidebar
+{
     width: 20rem !important;
 }
 
-.navbar-nav{
+.navbar-nav
+{
     display: flex;
     flex-direction: column;
     padding-left: 0;
@@ -63,11 +94,13 @@ body{
     background-color: #FFF;
 }
 
-#content{
+#content
+{
     flex: 1 0 auto;  
 }
 
-#content-wrapper{
+#content-wrapper
+{
     background-color: #f8f9fc;
     width: 100%;
     overflow-x: hidden;
@@ -159,8 +192,8 @@ background-color: #a29bfe;
         visibility: visible;
     }
 
-    
-.sidebar{
-    width: 16rem !important;
-}
+        
+    .sidebar{
+        width: 16rem !important;
+    }
 }

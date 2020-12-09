@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
 	<link type="text/css" rel="stylesheet" href="<?=BASE_URL?>assets/css/404.css" />
 	<link rel='icon' href='<?= BASE_URL?>assets/icon/icon.png' type='image/x-icon' sizes="16x16" />
-	<title>Pet Gestor</title>
+	<title>Pet K</title>
 </head>
 
 <div id="notfound">

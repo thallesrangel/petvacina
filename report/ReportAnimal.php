@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 class ReportAnimal extends FPDF
 {  
     function header(){
-        $this->SetTitle("Pet Gestor | Report Animal");
+        $this->SetTitle("Pet K | Report Animal");
         $this->Image(BASE_URL."assets/img/logoLow.png",10,6);
         $this->SetFont('Arial','',12);
         $this->Cell(276,5, utf8_decode("Relatório Animal"),0,0,'C');

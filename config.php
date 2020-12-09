@@ -4,6 +4,8 @@ require "environment.php";
 
 $config = array();
 
+define('NOME_APP', 'Pet');
+
 if(ENVIRONMENT == 'dev') {
     define("BASE_URL", "http://localhost/petgestor/");
     $config['dbname'] = 'dbpetgestor';
