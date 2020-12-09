@@ -12,7 +12,7 @@ class animalEspecieController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Espécies' => 'false',
+			'Espécie' => 'false',
 			'Listagem' => 'false'
         ];
 
@@ -22,16 +22,43 @@ class animalEspecieController extends Controller
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalEspecieList', $dados);
     }
+
+    public function registrar()
+    {
+        $breadcrumb = [
+			'Início' => '',
+			'Espécie' => 'false',
+			'Registrar' => 'false'
+        ];
+
+        $dados = [];
+
+        $this->setBreadCrumb($breadcrumb);
+        $this->loadTemplate('animalEspecieRegistrar', $dados);
+
+    }
     
-    /*
+    public function registrar_save()
+    {      
+        $nome_especie = $_POST['nome_especie'];
+
+        $animalEspecie = new AnimalEspecie();
+         
+        if ($animalEspecie->add($nome_especie)) {
+            $_SESSION['msg'] = 'registrado';
+            header("Location: ".BASE_URL."animalespecie");
+        } 
+    }
+
+    
     public function deletar($id)
     {
       if(!empty($id)) {
-          $animal = new Animal();
+          $animal = new AnimalEspecie();
           $animal->delete($id);
       }
       $_SESSION['msg'] = 'deletado';
-      header("Location: ".BASE_URL."animal");
+      header("Location: ".BASE_URL."animalespecie");
     }
-    */
+    
 }
