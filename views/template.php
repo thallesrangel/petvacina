@@ -60,7 +60,7 @@
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li class="nav-item li-sub">
-                                <a class="href-sub" href="#">Espécie</a>
+                                <a class="href-sub" href="<?=BASE_URL?>animalespecie">Espécie</a>
                             </li>
                             <li class="nav-item li-sub">
                                 <a class="href-sub" href="#">Raça</a>

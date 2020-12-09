@@ -271,7 +271,8 @@ create table tbespecie(
     id_usuario int not null,
     nome_especie varchar(100)not null,
     flag_excuido int default 0,
-    FOREIGN KEY(id_usuario) tbusuario(id_usuario)
+    flag_padrao int default 0,
+    FOREIGN KEY(id_usuario) REFERENCES tbusuario(id_usuario)
 )
 
 create table tbraca(
@@ -280,6 +281,7 @@ create table tbraca(
     id_especie int not null,
     nome_raca varchar(100) not null,
     flag_excluido int default 0,
-    FOREIGN KEY(id_especie) tbespecie(id_especie),
-    FOREIGN KEY(id_usuario) tbusuario(id_usuario)
+    flag_padrao int default 0,
+    FOREIGN KEY(id_especie) REFERENCES tbespecie(id_especie),
+    FOREIGN KEY(id_usuario) REFERENCES tbusuario(id_usuario)
 )
