@@ -112,7 +112,7 @@ body{
 }
 
 .card-animal:hover{
-    border: 1px solid #3742fa;
+    border: 1px solid #f67280;
 }
 
 /*
@@ -153,7 +153,6 @@ background-color: #a29bfe;
     margin-left: 20px;
     margin-right: 20px;
 }
-
 
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:active{

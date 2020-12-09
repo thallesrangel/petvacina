@@ -35,7 +35,7 @@ class Proprietario extends model
 
     public function getAllResumido() {
         $array = array();
-        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, email FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = "SELECT id_proprietario, nome_proprietario, sobrenome_proprietario, email FROM tbproprietario WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY id_proprietario DESC";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

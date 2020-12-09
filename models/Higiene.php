@@ -2,12 +2,13 @@
 
 class Higiene extends model 
 {   
-    public function getEspecifico($id) {
+    public function getEspecifico($id)
+    {
         $array = array();
         $sql = "SELECT a.*, b.*, c.* FROM tbhigiene a 
         INNER JOIN tbhigiene_tipo b ON (b.id_higiene_tipo = a.id_higiene_tipo)
         INNER JOIN tbfornecedor c ON (c.id_fornecedor = a.id_fornecedor)
-        WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0";
+        WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0 ORDER BY a.data_servico ASC";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {

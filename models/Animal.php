@@ -52,7 +52,7 @@ class Animal extends model
     public function getEspecifico($id)
     {
         $array = array();
-        $sql = "SELECT a.*, b.*, c.*, d.* FROM tbanimal a 
+        $sql = "SELECT a.data_nascimento as nascimento_animal, a.*, b.*, c.*, d.* FROM tbanimal a 
             INNER JOIN tbespecie b ON (b.id_especie = a.id_especie)
             INNER JOIN tbproprietario c ON (c.id_proprietario = a.id_proprietario)
             INNER JOIN tbraca d ON (d.id_raca = a.id_raca)

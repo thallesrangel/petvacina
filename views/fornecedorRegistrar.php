@@ -15,7 +15,7 @@
                 <input id="fornecedor" type="text" class="form-control form-control-sm" name="nome_fornecedor" required>
             </div>
 
-            <div class="col-sm-12 col-md-2">
+            <div class="col-sm-12 col-md-3">
                 <div class="form-group">
                     <span>Fornecedor Tipo *</span>
                     <select class="form-control form-control-sm" name="id_fornecedor_tipo" required>
