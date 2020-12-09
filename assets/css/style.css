@@ -166,6 +166,22 @@ background-color: #a29bfe;
     display:none;
 }
 
+
+.card-report a
+{
+    color: #333;
+    text-decoration: none !important;
+}
+
+.card-report a:hover
+{   
+    border-radius: 4px;
+    background-color: #f8b195 !important;
+    color: #FFF !important;
+    transition: 0.5s;
+}
+
+
 @media (max-width: 700px) {
     #navToggle{
         display:block;
@@ -193,5 +209,10 @@ background-color: #a29bfe;
 
     .sidebar{
         width: 16rem !important;
+    }
+
+    .card-report
+    {
+        margin-top: 10px;
     }
 }
