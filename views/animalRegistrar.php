@@ -10,7 +10,7 @@
             </div>
 
             <div class="col-sm-12 col-md-3 form-group">
-                <span>Proprietário *</span>
+                <span>Proprietário *</span><br>
                 <select class="form-control form-control-sm js-select" name="proprietario" required>
                     <?php
                     foreach($proprietario as $item){
@@ -18,6 +18,7 @@
                     <option value="<?= $item['id_proprietario'] ?>"> <?= $item['nome_proprietario'] ." ". $item['sobrenome_proprietario']?> </option>
                     <?php }?>
                 </select>
+                <a href="<?=BASE_URL?>proprietario">Registrar novo proprietário</a>
             </div>
             
             <div class="col-sm-12 col-md-2 form-group">
@@ -34,7 +35,8 @@
         
         <div class="row">
             <div class="col-sm-12 col-md-3 form-group">
-                <span>Espécie *</span>
+                <span>Espécie *</span><br>
+                
                 <select class="form-control form-control-sm js-select" name="id_especie" onchange="pegarRacasPorEspecie(this)" required>
                     <?php
                     foreach($especies as $item){
@@ -42,6 +44,7 @@
                     <option value="<?= $item['id_especie'] ?>"> <?= $item['nome_especie']?> </option>
                     <?php }?>
                 </select>
+                <a href="<?=BASE_URL?>animalespecie">Registrar nova espécie</a>
             </div>
         
 
@@ -49,6 +52,7 @@
                 <label for="raca">Raça *</label>
                 <select id="raca" class="form-control form-control-sm js-select" name="id_raca" required>
                 </select>
+                <a href="<?=BASE_URL?>animalraca">Registrar nova raça</a>
             </div>
 
             <div class="col-sm-12 col-md-3 form-group">

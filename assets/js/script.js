@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $('.telefone').mask('(00) 00000-0000');
     $('.data').mask("00/00/0000", {placeholder: "__/__/____"});
@@ -101,7 +100,6 @@ function pegarRacasPorEspecie(especie) {
                 console.log(json);
 				html += '<option value="'+json[i].id_raca+'">'+json[i].nome_raca+'</option>';
 			}
-
             $("#raca").html(html);
 		}
 	});
