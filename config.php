@@ -4,7 +4,7 @@ require "environment.php";
 
 $config = array();
 
-define('NOME_APP', 'Pet');
+define("NOME_APP", "Pet Vac");
 
 if(ENVIRONMENT == 'dev') {
     define("BASE_URL", "http://localhost/petgestor/");

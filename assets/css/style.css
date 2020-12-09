@@ -14,6 +14,11 @@ body{
     color: #3d3d3d;
 }
 
+.icon-menu
+{
+    color: #f67280;
+}
+
 .nav-link:hover
 {
     color: #3d3d3d;
@@ -69,14 +74,14 @@ body{
 
 .btn-primary
 {
-    background-color:#4680ff !important;
-   border: 1px solid #4680ff !important;
+    background-color:#f67280 !important;
+   border: 1px solid #f67280 !important;
 }
 
 .btn-primary:hover
 {
-    background:#135dff !important;
-    border: 1px solid #135dff !important;
+    background:#f67280 !important;
+    border: 1px solid #f67280 !important;
 }
 
 .sidebar
@@ -152,7 +157,7 @@ background-color: #a29bfe;
 
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:active{
-    background-color: #4680ff;
+    background-color: #f67280;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
     color: #FFF;
 }

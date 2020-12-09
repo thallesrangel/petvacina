@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="PetK">
         <meta name="author" content="Thalles Rangel Lopes">
-        <title>Pet K</title>
+        <title><?= NOME_APP ?></title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
         <script
@@ -44,19 +44,19 @@
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
-                        <span><i data-feather="heart"></i> Animais</span>
+                        <span><i class="icon-menu" data-feather="heart"></i> Animais</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vacina">
-                        <span><i data-feather="award"></i> Vacinas</span>
+                        <span><i class="icon-menu" data-feather="award"></i> Vacinas</span>
                         </a>
                     </li>  
 
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <span><i data-feather="award"></i> Cadastros</span>
+                            <span><i class="icon-menu" data-feather="award"></i> Cadastros</span>
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li class="nav-item li-sub">
@@ -70,55 +70,55 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                        <span><i data-feather="shield"></i> Vermifugação</span>
+                        <span><i class="icon-menu" data-feather="shield"></i> Vermifugação</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>parasita">
-                        <span><i data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
+                        <span><i class="icon-menu" data-feather="alert-triangle"></i> Pulgas e Carrapatos</span>
                         </a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>anticio">
-                        <span><i data-feather="pocket"></i> Anti-cio</span>
+                        <span><i class="icon-menu" data-feather="pocket"></i> Anti-cio</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>higiene">
-                        <span><i data-feather="scissors"></i> Higiene</span>
+                        <span><i class="icon-menu" data-feather="scissors"></i> Higiene</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>relatorio">
-                        <span><i data-feather="file-text"></i> Relatórios</span>
+                        <span><i class="icon-menu" data-feather="file-text"></i> Relatórios</span>
                         </a>
                     </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>proprietario">
-                        <span><i data-feather="users"></i> Proprietários</span>
+                        <span><i class="icon-menu" data-feather="users"></i> Proprietários</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>peso">
-                        <span><i data-feather="sliders"></i> Peso</span>
+                        <span><i class="icon-menu" data-feather="sliders"></i> Peso</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>metrica">
-                        <span><i data-feather="trending-up"></i> Métrica</span>
+                        <span><i class="icon-menu" data-feather="trending-up"></i> Métrica</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>fornecedor">
-                        <span><i data-feather="shopping-bag"></i> Fornecedor</span>
+                        <span><i class="icon-menu" data-feather="shopping-bag"></i> Fornecedor</span>
                         </a>
                     </li>
             </a>
@@ -133,11 +133,11 @@
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
-                        <i data-feather="home"></i>
+                        <i class="icon-menu" data-feather="home"></i>
                         </a>
 
                         <a class="list-inline-item mr-3" href="#">
-                        <i data-feather="bell"></i>
+                        <i class="icon-menu" data-feather="bell"></i>
                         </a>
 
                        
@@ -146,8 +146,8 @@
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i data-feather="user"></i> Perfil</a>
-                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i data-feather="log-out"></i> Sair</a>
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="user"></i> Perfil</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="log-out"></i> Sair</a>
                         </div>
                         
                     </ul>
