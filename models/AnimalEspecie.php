@@ -41,4 +41,20 @@ class AnimalEspecie extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+    public function getEspecie($idEstado)
+    {
+        $array = array();
+
+		$sql = "SELECT * FROM tbraca WHERE id_especie = :id_especie";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_especie", $idEstado);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+		return $array;
+    }
+
 }

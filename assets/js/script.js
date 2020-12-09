@@ -85,3 +85,24 @@ function pegarCidades(obj) {
 		}
 	});
 }
+
+
+function pegarRacasPorEspecie(especie) {
+    var item = especie.value;
+    $.ajax({
+		url:BASE_URL+"/pegarracasporespecie",
+		type:'POST',
+		data:{id_especie:item},
+		dataType:'json',
+		success:function(json) {
+			var html = '';
+
+			for(var i in json) {
+                console.log(json);
+				html += '<option value="'+json[i].id_raca+'">'+json[i].nome_raca+'</option>';
+			}
+
+            $("#raca").html(html);
+		}
+	});
+}

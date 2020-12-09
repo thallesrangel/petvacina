@@ -2,7 +2,7 @@
 class Animal extends model 
 {
      
-    public function add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)
+    public function add($nome_animal, $identificacao, $data_nascimento, $id_especie, $id_raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)
     {     
 
         if (isset($_FILES['arquivo']) && !empty($_FILES['arquivo']['tmp_name'])) {
@@ -18,8 +18,8 @@ class Animal extends model
           }
         }
         
-        $sql = "INSERT INTO tbanimal (id_usuario, nome_animal, identificacao_animal, data_nascimento, id_especie, raca, sexo, pelagem, id_proprietario, flag_castrado, flag_filhotes, microchip, data_implantacao, local_implantacao, url, data_registro) 
-        VALUES(:id_usuario, :nome_animal, :identificacao_animal, :data_nascimento, :id_especie, :raca, :sexo, :pelagem, :id_proprietario, :flag_castrado, :flag_filhotes, :microchip, :data_implantacao, :local_implantacao, :url, :data_registro)";
+        $sql = "INSERT INTO tbanimal (id_usuario, nome_animal, identificacao_animal, data_nascimento, id_especie, id_raca, sexo, pelagem, id_proprietario, flag_castrado, flag_filhotes, microchip, data_implantacao, local_implantacao, url, data_registro) 
+        VALUES(:id_usuario, :nome_animal, :identificacao_animal, :data_nascimento, :id_especie, :id_raca, :sexo, :pelagem, :id_proprietario, :flag_castrado, :flag_filhotes, :microchip, :data_implantacao, :local_implantacao, :url, :data_registro)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
@@ -27,7 +27,7 @@ class Animal extends model
         $sql->bindValue(':identificacao_animal', $identificacao);
         $sql->bindValue(':data_nascimento', $data_nascimento);
         $sql->bindValue(':id_especie', 1);
-        $sql->bindValue(':raca', $raca);
+        $sql->bindValue(':id_raca', $id_raca);
         $sql->bindValue(':sexo', $sexo);
         $sql->bindValue(':pelagem', $pelagem);
         $sql->bindValue(':id_proprietario', $proprietario);
@@ -49,11 +49,13 @@ class Animal extends model
         }
     }    
     
-    public function getEspecifico($id){
+    public function getEspecifico($id)
+    {
         $array = array();
-        $sql = "SELECT a.*, b.*, c.* FROM tbanimal a 
+        $sql = "SELECT a.*, b.*, c.*, d.* FROM tbanimal a 
             INNER JOIN tbespecie b ON (b.id_especie = a.id_especie)
             INNER JOIN tbproprietario c ON (c.id_proprietario = a.id_proprietario)
+            INNER JOIN tbraca d ON (d.id_raca = a.id_raca)
         WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']."";
      
         $sql = $this->db->query($sql);
@@ -63,12 +65,12 @@ class Animal extends model
         }
 
         return $array;
-
     }
 
 
     // Retorna todos os animais so o nome 
-    public function getAllResumido($offset, $limit) {
+    public function getAllResumido($offset, $limit)
+    {
         $array = array();
         $sql = "SELECT id_animal, nome_animal, url FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 LIMIT ".$offset.", ".$limit."";
         $sql = $this->db->query($sql);
@@ -79,6 +81,7 @@ class Animal extends model
 
         return $array;
     }
+
     // Retonra a quantidade total de registros para paginar
     public function getTotal() 
     {
@@ -89,7 +92,8 @@ class Animal extends model
         return $sql['c'];
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         $array = array();
         $sql = "SELECT * FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
@@ -101,7 +105,8 @@ class Animal extends model
         return $array;
     }
 
-    public function count() {
+    public function count()
+    {
         $array = array();
         $sql = "SELECT count(*) as qtd FROM tbanimal WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
@@ -111,15 +116,6 @@ class Animal extends model
         }
 
         return $array;
-    }
-
-    public function delete($id)
-    {
-        $sql = "UPDATE tbanimal SET flag_excluido = :flag_excluido WHERE id_animal = :id_animal";
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_animal', $id, PDO::PARAM_INT);
-        $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
-        $sql->execute();
     }
 
     # Usado em relatório 
@@ -139,5 +135,14 @@ class Animal extends model
         }
 
         return $array;
-	}
+    }
+    
+    public function delete($id)
+    {
+        $sql = "UPDATE tbanimal SET flag_excluido = :flag_excluido WHERE id_animal = :id_animal";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_animal', $id, PDO::PARAM_INT);
+        $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
+        $sql->execute();
+    }
 } 

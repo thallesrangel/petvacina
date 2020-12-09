@@ -23,7 +23,7 @@
             <p class="m-1"><b>Identificação:</b></span> <?=$dados['identificacao_animal']?></p>  
             <p class="m-1"><b>Nascimento:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_nascimento'])));?></p>
             <p class="m-1"><b>Espécie:</b></span> <?=$dados['nome_especie']?></p>
-            <p class="m-1"><b>Raça:</b></span> <?=$dados['raca']?></p>
+            <p class="m-1"><b>Raça:</b></span> <?=$dados['nome_raca']?></p>
             <p class="m-1"><b>Filhotes:</b></span> <?=$dados['flag_filhotes'] == 1 ? 'Sim' : 'Não'?></p>
         </div>
 

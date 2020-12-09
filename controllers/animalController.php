@@ -39,7 +39,6 @@ class animalController extends Controller
         $dados['max_links'] = 1;
         
         $dados['lista'] = $animais->getAllResumido($offset, $limit);
-
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalList', $dados);
     }
@@ -85,7 +84,7 @@ class animalController extends Controller
         $identificacao = $_POST['identificacao'];
         $data_nascimento = implode('-', array_reverse(explode('/', $_POST['data_nascimento'])));
         $id_especie = $_POST['id_especie'];
-        $raca = $_POST['raca'];
+        $id_raca = $_POST['id_raca'];
         $sexo = $_POST['sexo'];
         $pelagem = $_POST['pelagem'];
         $proprietario = $_POST['proprietario'];
@@ -97,7 +96,7 @@ class animalController extends Controller
 
         $animal = new Animal();
         
-        if ($animal->add($nome_animal, $identificacao, $data_nascimento, $id_especie, $raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)) {
+        if ($animal->add($nome_animal, $identificacao, $data_nascimento, $id_especie, $id_raca, $sexo, $pelagem, $proprietario, $flag_castrado, $flag_filhotes, $numero_microchip, $data_microchip, $local_implatacao)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."animal");
         } 
@@ -111,5 +110,19 @@ class animalController extends Controller
       }
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."animal");
+    }
+
+    // Retorna as raças via Ajax apos selecionar o id_raca e enviar via POST (view registrar animal)
+    public function pegarracasporespecie() {
+    
+        if (isset($_POST['id_especie'])) {
+            
+            $idEspecie = $_POST['id_especie'];
+            $especie = new AnimalEspecie();
+            $array = $especie->getEspecie($idEspecie);
+
+            echo json_encode($array);
+            exit;
+        }
     }
 }

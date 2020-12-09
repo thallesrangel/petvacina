@@ -59,7 +59,7 @@ create table tbanimal(
     identificacao_animal varchar(100) null, 
     data_nascimento date not null,
     id_especie int not null,
-    raca varchar(150) not null,
+    id_raca int not null,
     sexo int not null,
     pelagem varchar(100) not null,
     id_proprietario int not null,
@@ -73,6 +73,7 @@ create table tbanimal(
     flag_excluido int default 0 not null,
     FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
     FOREIGN KEY (id_especie) REFERENCES tbespecie(id_especie),
+    FOREIGN KEY (id_raca) REFERENCES tbraca(id_raca),
     FOREIGN KEY (id_proprietario) REFERENCES tbproprietario(id_proprietario)
 )
 

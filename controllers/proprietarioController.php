@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location:".BASE_URL."login");
     die();   
 }
