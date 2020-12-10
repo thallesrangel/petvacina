@@ -68,4 +68,38 @@ class Proprietario extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+    // Retorna anticio especifico para editar
+    public function getEspecificoDado($idProprietario)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbproprietario WHERE id_proprietario = ".$idProprietario." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function edit($id_proprietario, $nome_fornecedor, $id_fornecedor_tipo)
+    {   
+        $sql = "UPDATE tbproprietario SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor";
+        
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_proprietario', $id_fornecedor);
+        $sql->bindValue(':nome_fornecedor',$nome_fornecedor);
+        $sql->bindValue(':id_fornecedor_tipo', $id_fornecedor_tipo);
+
+  
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
+        }
+    }
 }

@@ -85,5 +85,61 @@ class proprietarioController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."proprietario");
     }
+
+
+    public function editar($idProprietario)
+    {   
+        $dados = array();
+    
+        if (!empty($idProprietario)) {
+            
+            $proprietario = new Proprietario();
+          
+            // Usado para editar
+            if (!empty($_POST['id_proprietario'])) {
+                
+                    $nome_proprietario = $_POST['nome_proprietario'];
+                    $sobrenome_proprietario = $_POST['sobrenome_proprietario'];
+                    $data_nascimento = $_POST['data_nascimento'] ? implode('-', array_reverse(explode('/', $_POST['data_nascimento']))) : null;
+                    $contato = $_POST['contato'];
+                    $email = $_POST['email'];
+                    $endereco_estado = $_POST['endereco_estado'];
+                    $endereco_cidade = $_POST['endereco_cidade'];
+                    $endereco_bairro = $_POST['endereco_bairro'];
+                    $endereco_rua = $_POST['endereco_rua'];
+                    $endereco_numero = $_POST['endereco_numero'];
+                    $endereco_complemento = $_POST['endereco_complemento'];
+                    $endereco_referencia = $_POST['endereco_referencia'];
+
+                $proprietario->edit($idParasita, $nome_proprietario, $sobrenome_proprietario, $data_nascimento, $contato, $email, $endereco_estado, $endereco_cidade, $endereco_bairro, $endereco_rua, $endereco_numero, $endereco_complemento, $endereco_referencia);
+                
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."proprietario");
+
+            } else {
+                
+                $breadcrumb = [
+                    'Início' => '',
+                    'Proprietário' => 'proprietario',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $proprietario->getEspecificoDado($idProprietario);
+                
+                $dados['id_estado'] = $proprietario->getAll();
+                
+                $estado = new Estado();
+                $dados['estado'] = $estado->getAll();
+
+                if (isset($dados['info'][0]['id_proprietario'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate('proprietarioEditar',$dados);
+                }
+            }
+            
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
     
 }
