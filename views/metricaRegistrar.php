@@ -35,7 +35,7 @@
 
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
-                    <span>Und Comprimento *</span>
+                    <span title="Unidade de Comprimento">Comprimento *</span>
                     <select class="form-control form-control-sm" name="id_metrica_unidade_comprimento" required >
                         <?php
                         foreach($unMetrica as $item){
