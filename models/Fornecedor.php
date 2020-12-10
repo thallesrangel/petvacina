@@ -98,4 +98,22 @@ class Fornecedor extends model
             //print_r($sql->errorInfo());
         }
     }
+
+    # Usado em relatório 
+	public function listarReport($fornecedorTipo)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.* FROM tbfornecedor a
+            INNER JOIN tbfornecedor_tipo b ON (b.id_fornecedor_tipo = a.id_fornecedor_tipo)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND b.id_fornecedor_tipo IN(".implode(',', $fornecedorTipo).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $array;
+    }
 }
