@@ -42,13 +42,13 @@ class AnimalEspecie extends model
         $sql->execute();
     }
 
-    public function getEspecie($idEstado)
+    public function getEspecie($idEspecie)
     {
         $array = array();
 
 		$sql = "SELECT * FROM tbraca WHERE id_especie = :id_especie";
 		$sql = $this->db->prepare($sql);
-		$sql->bindValue(":id_especie", $idEstado);
+		$sql->bindValue(":id_especie", $idEspecie);
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
@@ -56,5 +56,39 @@ class AnimalEspecie extends model
 		}
 		return $array;
     }
+
+        // Retorna anticio especifico para editar
+        public function getEspecificoDado($idEspecie)
+        {
+            $array = array();
+            $sql = "SELECT * FROM tbfornecedor WHERE id_fornecedor = ".$idEspecie." AND flag_excluido = 0 AND id_usuario = ".$_SESSION['id_usuario']." OR flag_padrao = 1";
+            $sql = $this->db->query($sql);
+    
+            if ($sql->rowCount() > 0) {
+                $array = $sql->fetchAll();
+            }
+    
+            return $array;
+        }
+    
+        public function edit($id_especie, $nome_especie)
+        {   
+            $sql = "UPDATE tbespecie SET nome_especie = :nome_especie WHERE id_especie = :id_especie";
+            
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':id_especie', $id_especie);
+            $sql->bindValue(':nome_especie',$nome_especie);
+
+    
+      
+            if ($sql->execute()) {  
+                //$count = $sql->rowCount();
+                //echo $count . ' rows updated properly!';
+                return true;
+            } else {
+                return false;
+                //print_r($sql->errorInfo());
+            }
+        }
 
 }

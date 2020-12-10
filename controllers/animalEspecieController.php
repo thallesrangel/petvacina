@@ -61,4 +61,49 @@ class animalEspecieController extends Controller
       header("Location: ".BASE_URL."animalespecie");
     }
     
+
+    public function editar_salvar(){
+
+            
+        $animalEspecie = new AnimalEspecie();
+          
+        // Usado para editar
+        if (!empty($_POST['id_especie'])) {
+            
+            $idEspecie = $_POST['id_especie'];
+            $nome_especie = $_POST['nome_especie'];
+    
+            $animalEspecie->edit($idEspecie, $nome_especie);
+            
+            $_SESSION['msg'] = "editado_sucesso";
+            header("Location: ".BASE_URL."animalespecie");
+        }
+    }
+
+    public function editar($idEspecie)
+    {   
+        $dados = array();
+    
+        if (!empty($idEspecie)) {
+ 
+            $animalEspecie = new AnimalEspecie();
+  
+            $breadcrumb = [
+                'Início' => '',
+                'Espécie' => 'animalespecie',
+                'Editar' => 'false'
+            ];
+
+            $dados['info'] = $animalEspecie->getEspecificoDado($idEspecie);
+
+            
+            if (isset($dados['info'][0]['id_especie'])) {
+                $this->setBreadCrumb($breadcrumb);
+                $this->loadTemplate('animalEspecieEditar', $dados);
+            }
+        
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }
