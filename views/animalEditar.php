@@ -62,7 +62,7 @@
             <div class="col-md-3">
                     <div class="form-group">
                         <span>Espécie *</span>
-                        <select class="form-control form-control-sm js-select" name="id_especie" required>
+                        <select id="especie" class="form-control form-control-sm js-select" onchange="pegarRacasPorEspecie(this)" name="id_especie" required>
                             <?php
                             foreach ($especies as $item){
                 
@@ -83,7 +83,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <span>Raça *</span>
-                        <select class="form-control form-control-sm js-select" name="id_raca" required>
+                        <select id="raca" class="form-control form-control-sm js-select" name="id_raca" required>
                             <?php
                             foreach ($racas as $item){
                 
@@ -177,5 +177,5 @@
         <input class="btn btn-primary" type="submit" value="Salvar">
         <a class="btn btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
-
+    <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'animal'; ?>';</script>
 </div>

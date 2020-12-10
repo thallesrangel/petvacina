@@ -66,6 +66,7 @@ $('.dropdown-toggle').dropdown('toggle');
 
 function pegarCidades(obj) {
     var item = obj.value;
+
 	$.ajax({
 		url:BASE_URL+"/pegarcidades",
 		type:'POST',
@@ -81,12 +82,15 @@ function pegarCidades(obj) {
 
 			$("#cidade").html(html);
 		}
-	}).change();;
+	});
 }
 
 
 function pegarRacasPorEspecie(especie) {
+
+    //var item = $('#especie').trigger("change").val();
     var item = especie.value;
+
     $.ajax({
 		url:BASE_URL+"/pegarracasporespecie",
 		type:'POST',
