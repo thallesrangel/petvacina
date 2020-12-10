@@ -42,13 +42,21 @@
 
         <div class="row text-center mt-4">
             <div class="col-md-3 col-sm-12">
-                    <div class="card-report card">
-                        <a href="<?=BASE_URL?>fornecedorreport">
-                            <div class="card-body">Fornecedor</div>
-                        </a>
-                    </div>
+                <div class="card-report card">
+                    <a href="<?=BASE_URL?>fornecedorreport">
+                        <div class="card-body">Fornecedor</div>
+                    </a>
                 </div>
             </div>
-    </div>
+            
+            <div class="col-md-3 col-sm-12">
+                <div class="card-report card">
+                    <a href="<?=BASE_URL?>parasitareport">
+                        <div class="card-body">Pulgas e Carrapatos</div>
+                    </a>
+                </div>
+            </div>
+        </div>
 
+    </div>
 </div>
