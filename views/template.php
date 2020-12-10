@@ -38,7 +38,7 @@
     <div class="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse scrollable-element">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class="sidebar-brand-text mx-5 m-2">
+                <div class="sidebar-brand-text mx-5 m-3">
                     <img src="<?=BASE_URL?>/assets/img/logo.png"/>
                 </div>
             

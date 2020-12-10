@@ -101,4 +101,49 @@ class vacinaController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."vacina/detalhes/");
     }
+
+    public function editar($idVacina)
+    {   
+        $dados = array();
+    
+        if (!empty($idVacina)) {
+            
+            $vacina = new Vacina();
+          
+            // Usado para editar
+            if (!empty($_POST['id_vacina'])) {
+                
+                $idVacina = $_POST['id_vacina'];
+                $titulo_vacina = $_POST['titulo_vacina'];
+                $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
+                $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
+                $data_revacinacao = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+                $nome_veterinario = $_POST['nome_veterinario'];
+                $registro_crmv = $_POST['registro_crmv'];
+
+                $vermifugacao->edit($idVacina, $titulo_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv);
+                
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."vacina");
+
+            } else {
+                
+                $breadcrumb = [
+                    'Início' => '',
+                    'Vacina' => 'animal',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $vacina->getEspecificoDado($idVacina);
+                
+                if (isset($dados['info'][0]['id_vacina'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate('vacinaEditar',$dados);
+                }
+            }
+            
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

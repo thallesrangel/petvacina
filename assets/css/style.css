@@ -153,11 +153,15 @@ background-color: #a29bfe;
     margin-left: 20px;
     margin-right: 20px;
 }
-
 .navbar-nav .nav-item .nav-link.active,
 .navbar-nav .nav-item .nav-link:active{
     background-color: #f67280;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    color: #FFF;
+}
+
+.navbar-nav .nav-item .nav-link.active .icon-menu
+{
     color: #FFF;
 }
 
