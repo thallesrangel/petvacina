@@ -40,8 +40,8 @@
         <?php if(isset($dados['microchip'])) { ?>
         <div class="col-sm-12 col-md-3 pt-4">
             <p class="m-0"><b>Microchip:</b></span> <?=$dados['microchip']?></p>
-            <p class="m-0"><b>Data Implantação:</b></span> <?= implode('/', array_reverse(explode('-', $dados['data_implementacao'])));?></p>
-            <p class="m-0"><b>Local Implantação:</b></span> <?=$dados['local_implementacao']?></p>
+            <p class="m-0"><b>Data Implantação:</b></span> <?= $dados['data_implantacao'] ? implode('/', array_reverse(explode('-', $dados['data_implantacao']))) : "";?></p>
+            <p class="m-0"><b>Local Implantação:</b></span> <?=$dados['local_implantacao']?></p>
         </div>
         <?php } ?>
 
