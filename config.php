@@ -7,7 +7,7 @@ $config = array();
 define("NOME_APP", "Petvac");
 
 if(ENVIRONMENT == 'dev') {
-    define("BASE_URL", "http://localhost/petgestor/");
+    define("BASE_URL", "http://localhost/petvac/");
     $config['dbname'] = 'dbpetgestor';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';

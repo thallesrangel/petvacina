@@ -50,13 +50,13 @@ class ReportAnimal extends FPDF
 
             $this->Cell(20,7,$value['nome_proprietario'],1,0,'L');
             $this->Cell(20,7,$value['nome_animal'],1,0,'L');
-            $this->Cell(20,7, utf8_decode($value['raca']),1,0,'L');
+            $this->Cell(20,7, utf8_decode($value['id_raca']),1,0,'L');
             $this->Cell(12,7, utf8_decode($value['sexo'] == 1 ? 'Macho' : 'Fêmea'),1,0,'L');  
             $this->Cell(20,7,$value['pelagem'],1,0,'L');
             $this->Cell(20,7,date("d/m/Y", strtotime($value['data_nascimento'])),1,0,'L');
             $this->Cell(20,7, utf8_decode($value['microchip']),1,0,'L');
-            $this->Cell(20,7, utf8_decode($value['local_implementacao']),1,0,'L');
-            $this->Cell(20,7, date("d/m/Y", strtotime($value['data_implementacao'])),1,0,'L');
+            $this->Cell(20,7, utf8_decode($value['local_implantacao']),1,0,'L');
+            $this->Cell(20,7, date("d/m/Y", strtotime($value['data_implantacao'])),1,0,'L');
             $this->Cell(20,7, date("d/m/Y", strtotime($value['data_registro'])),1,0,'L');
 
             $this->Ln();

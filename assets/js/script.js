@@ -61,9 +61,6 @@ $(document).ready(function($){
 
 $('.dropdown-toggle').dropdown('toggle');
 
-
-
-
 function pegarCidades(obj) {
     var item = obj.value;
 
@@ -85,6 +82,26 @@ function pegarCidades(obj) {
 	});
 }
 
+$(document).ready(function(){
+    var item = $('#especieAnimal').trigger("change").val();
+
+    $.ajax({
+		url:BASE_URL+"/pegarracasporespecie",
+		type:'POST',
+		data:{id_especie:item},
+		dataType:'json',
+		success:function(json) {
+			var html = '';
+
+			for(var i in json) {
+                console.log(json);
+				html += '<option value="'+json[i].id_raca+'">'+json[i].nome_raca+'</option>';
+			}
+            $("#racaAnimal").html(html);
+		}
+	});
+});
+
 
 function pegarRacasPorEspecie(especie) {
 
@@ -103,7 +120,7 @@ function pegarRacasPorEspecie(especie) {
                 console.log(json);
 				html += '<option value="'+json[i].id_raca+'">'+json[i].nome_raca+'</option>';
 			}
-            $("#raca").html(html);
+            $("#racaAnimal").html(html);
 		}
 	});
 }

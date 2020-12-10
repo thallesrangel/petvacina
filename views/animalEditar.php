@@ -62,7 +62,7 @@
             <div class="col-md-3">
                     <div class="form-group">
                         <span>Espécie *</span>
-                        <select id="especie" class="form-control form-control-sm js-select" onchange="pegarRacasPorEspecie(this)" name="id_especie" required>
+                        <select id="especieAnimal" class="form-control form-control-sm js-select" onchange="pegarRacasPorEspecie(this)" name="id_especie" required>
                             <?php
                             foreach ($especies as $item){
                 
@@ -83,7 +83,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <span>Raça *</span>
-                        <select id="raca" class="form-control form-control-sm js-select" name="id_raca" required>
+                        <select id="racaAnimal" class="form-control form-control-sm js-select" name="id_raca" required>
                             <?php
                             foreach ($racas as $item){
                 

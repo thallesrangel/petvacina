@@ -65,4 +65,25 @@ class Higiene extends model
 
         return $array;
     }
+
+    # Usado em relatório 
+	public function listarReport($proprietario)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.*, c.*, d.*, e.* FROM tbhigiene a
+            INNER JOIN tbanimal b ON (b.id_animal = a.id_animal)
+            INNER JOIN tbhigiene_tipo c ON (c.id_higiene_tipo = a.id_higiene_tipo)
+            INNER JOIN tbproprietario d ON (d.id_proprietario = b.id_proprietario)
+            INNER JOIN tbfornecedor e ON (e.id_fornecedor = a.id_fornecedor)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND b.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $array;
+    }
 }
