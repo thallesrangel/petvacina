@@ -26,7 +26,7 @@ class Animal extends model
         $sql->bindValue(':nome_animal', $nome_animal);
         $sql->bindValue(':identificacao_animal', $identificacao);
         $sql->bindValue(':data_nascimento', $data_nascimento);
-        $sql->bindValue(':id_especie', 1);
+        $sql->bindValue(':id_especie', $id_especie);
         $sql->bindValue(':id_raca', $id_raca);
         $sql->bindValue(':sexo', $sexo);
         $sql->bindValue(':pelagem', $pelagem);
@@ -144,5 +144,45 @@ class Animal extends model
         $sql->bindValue(':id_animal', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
+    }
+
+
+
+    // Retorna Métrica especifico para editar
+    public function getEspecificoDado($idAnimal)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbanimal WHERE id_animal = ".$idAnimal." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function edit($idMetrica, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida)
+    {   
+        $sql = "UPDATE tbmetrica_animal SET altura = :altura, id_metrica_unidade_altura = :id_metrica_unidade_altura, comprimento = :comprimento, id_metrica_unidade_comprimento = :id_metrica_unidade_comprimento, data_medida = :data_medida, data_remedida = :data_remedida
+        WHERE id_metrica_animal = :id_metrica_animal";
+        
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_metrica_animal', $idMetrica);
+        $sql->bindValue(':altura',$altura_animal);
+        $sql->bindValue(':id_metrica_unidade_altura', $id_metrica_unidade_altura);
+        $sql->bindValue(':comprimento',$comprimento_animal);
+        $sql->bindValue(':id_metrica_unidade_comprimento', $id_metrica_unidade_comprimento);
+        $sql->bindValue(':data_medida',$data_medida);
+        $sql->bindValue(':data_remedida',$data_remedida);
+  
+        if ($sql->execute()) {  
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
+        } else {
+            return false;
+            //print_r($sql->errorInfo());
+        }
     }
 } 

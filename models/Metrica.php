@@ -17,21 +17,6 @@ class Metrica extends model
         return $array;
     }
 
-    // Retorna anticio especifico para editar
-    public function getEspecificoDado($idAlturaAnimal)
-    {
-        $array = array();
-        $sql = "SELECT * FROM tbmetrica_animal WHERE id_metrica_animal = ".$idAlturaAnimal." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
-        $sql = $this->db->query($sql);
-
-        if ($sql->rowCount() > 0) {
-            $array = $sql->fetchAll();
-        }
-
-        return $array;
-    }
- 
-        
     public function add($idAnimal, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida)
     {     
         $sql = "INSERT INTO tbmetrica_animal(id_usuario, id_animal, altura, id_metrica_unidade_altura, comprimento, id_metrica_unidade_comprimento, data_medida, data_remedida) 
@@ -55,7 +40,21 @@ class Metrica extends model
             return false;
             //print_r($sql->errorInfo());
         }
-    }   
+    }  
+
+    // Retorna Métrica especifico para editar
+    public function getEspecificoDado($idAlturaAnimal)
+    {
+        $array = array();
+        $sql = "SELECT * FROM tbmetrica_animal WHERE id_metrica_animal = ".$idAlturaAnimal." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
 
     public function edit($idMetrica, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida)
     {   

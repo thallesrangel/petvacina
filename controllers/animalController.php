@@ -158,7 +158,13 @@ class animalController extends Controller
                 ];
 
                 $dados['info'] = $animal->getEspecificoDado($idAnimal);
+
+                $proprietarios = new Proprietario();
+                $dados['proprietarios'] = $proprietarios->getAll();
                 
+                $especies = new AnimalEspecie();
+                $dados['especies'] = $especies->getAll();
+
                 if (isset($dados['info'][0]['id_animal'])) {
                     $this->setBreadCrumb($breadcrumb);
                     $this->loadTemplate('animalEditar',$dados);
