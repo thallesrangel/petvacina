@@ -117,11 +117,11 @@ class vacinaController extends Controller
                 $titulo_vacina = $_POST['titulo_vacina'];
                 $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
-                $data_revacinacao = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+                $data_revacinacao = implode('-', array_reverse(explode('/', $_POST['data_revacinacao'])));
                 $nome_veterinario = $_POST['nome_veterinario'];
                 $registro_crmv = $_POST['registro_crmv'];
 
-                $vermifugacao->edit($idVacina, $titulo_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv);
+                $vacina->edit($idVacina, $titulo_vacina, $dose, $data_aplicacao, $data_revacinacao, $nome_veterinario, $registro_crmv);
                 
                 $_SESSION['msg'] = 'editado_sucesso';
                 header("Location: ".BASE_URL."vacina");

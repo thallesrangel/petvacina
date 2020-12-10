@@ -57,4 +57,43 @@ class Parasita extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+        // Retorna vacina especifico para editar
+        public function getEspecificoDado($idParasita)
+        {
+            $array = array();
+            $sql = "SELECT * FROM tbparasita WHERE id_parasita = ".$idParasita." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
+            $sql = $this->db->query($sql);
+    
+            if ($sql->rowCount() > 0) {
+                $array = $sql->fetchAll();
+            }
+    
+            return $array;
+        }
+    
+        public function edit($idParasita, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)
+        {   
+            $sql = "UPDATE tbvacina SET id_parasita = :id_parasita, nome_produto = :nome_produto, dose = :dose, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
+            nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
+            WHERE id_parasita = :id_parasita";
+            
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':id_parasita', $idParasita);
+            $sql->bindValue(':nome_produto',$nome_produto);
+            $sql->bindValue(':dose',$dose);
+            $sql->bindValue(':data_aplicacao',$data_aplicacao);
+            $sql->bindValue(':data_prox_dose',$data_prox_dose);
+            $sql->bindValue(':nome_veterinario',$nome_veterinario);
+            $sql->bindValue(':registro_crmv',$registro_crmv);
+            
+            if ($sql->execute()) {  
+                $count = $sql->rowCount();
+                echo $count . 'Feito!';
+                //return true;
+            } else {
+                //return false;
+                print_r($sql->errorInfo());
+            }
+        }
 }

@@ -104,4 +104,52 @@ class parasitaController extends Controller
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."parasita");
     }
+
+    public function editar($idParasita)
+    {   
+        $dados = array();
+    
+        if (!empty($idParasita)) {
+            
+            $parasita = new Parasita();
+          
+            // Usado para editar
+            if (!empty($_POST['id_parasita'])) {
+                
+                $idParasita = $_POST['id_parasita'];
+                $nome_produto = $_POST['nome_produto'];
+                $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
+                $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
+                $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
+                $nome_veterinario = $_POST['nome_veterinario'];
+                $registro_crmv = $_POST['registro_crmv'];
+
+                $parasita->edit($idParasita, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
+                
+                $_SESSION['msg'] = 'editado_sucesso';
+                header("Location: ".BASE_URL."parasita");
+
+            } else {
+                
+                $breadcrumb = [
+                    'Início' => '',
+                    'Parasita' => 'parasita',
+                    'Editar' => 'false'
+                ];
+
+                $dados['info'] = $parasita->getEspecificoDado($idParasita);
+                
+                $unPeso = new PesoUnidade();
+                $dados['unPeso'] = $unPeso->getAll();
+
+                if (isset($dados['info'][0]['id_parasita'])) {
+                    $this->setBreadCrumb($breadcrumb);
+                    $this->loadTemplate('parasitaEditar',$dados);
+                }
+            }
+            
+        } else {
+            header("Location: ".BASE_URL);
+        }
+    }
 }

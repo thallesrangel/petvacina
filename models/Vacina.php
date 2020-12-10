@@ -96,10 +96,10 @@ class Vacina extends model
     {   
         $sql = "UPDATE tbvacina SET id_vacina = :id_vacina, titulo_vacina = :titulo_vacina, dose = :dose, data_aplicacao = :data_aplicacao, data_revacinacao = :data_revacinacao,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
-        WHERE id_vermifugacao = :id_vermifugacao";
+        WHERE id_vacina = :id_vacina";
         
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id_vermifugacao', $idVacina);
+        $sql->bindValue(':id_vacina', $idVacina);
         $sql->bindValue(':titulo_vacina',$titulo_vacina);
         $sql->bindValue(':dose',$dose);
         $sql->bindValue(':data_aplicacao',$data_aplicacao);

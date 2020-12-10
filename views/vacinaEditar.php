@@ -15,7 +15,7 @@
         $url = explode('/', $_GET['url']);
     ?>
 
-    <form method="POST" class="p-2" action="<?=BASE_URL?>animal/editar/<?=$url[2];?>">
+    <form method="POST" class="p-2" action="<?=BASE_URL?>vacina/editar/<?=$url[2];?>">
         <div class="row">
             <input type="hidden" class="form-control form-control-sm" value="<?= $url[2] ?>" name="id_vacina">
             <div class="col-md-3">
@@ -38,8 +38,8 @@
         <div class="row">
 
             <div class="col-md-2">
-                <label for="data_prox_dose">Data Revacinação </labe>
-                <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" value="<?= $dados['data_revacinacao'] ? date("d/m/Y", strtotime($dados['data_revacinacao'])) : "" ?>" name="data_revacinacao">
+                <label for="data_revacinacao">Data Revacinação </labe>
+                <input id="data_revacinacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" value="<?= $dados['data_revacinacao'] ? date("d/m/Y", strtotime($dados['data_revacinacao'])) : "" ?>" name="data_revacinacao">
             </div>
 
             <div class="col-md-3">
