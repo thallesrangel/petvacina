@@ -74,14 +74,26 @@ body{
 
 .btn-primary
 {
-    background-color:#f67280 !important;
+   background-color:#f67280 !important;
    border: 1px solid #f67280 !important;
 }
 
 .btn-primary:hover
 {
-    background:#f67280 !important;
-    border: 1px solid #f67280 !important;
+    background: #f45a6a !important;
+    border: 1px solid #f45a6a !important;
+}
+
+.btn-secondary
+{
+   background-color:#f8b195 !important;
+   border: 1px solid #f8b195 !important;
+}
+
+.btn-secondary:hover
+{
+    background:#f69f7d !important;
+    border: 1px solid#f69f7d !important;
 }
 
 .sidebar
