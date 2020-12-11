@@ -7,6 +7,7 @@ class AnimalRaca extends model
         $sql = "SELECT * FROM tbraca a
             INNER JOIN tbespecie b ON (b.id_especie = a.id_especie)
         WHERE a.flag_excluido = 0 AND a.id_usuario = ".$_SESSION['id_usuario']." OR a.flag_padrao = 1";
+
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -16,14 +17,15 @@ class AnimalRaca extends model
         return $array;
     }
 
-    public function add($nome_raca)
+    public function add($id_especie, $nome_raca)
     {     
         
-        $sql = "INSERT INTO tbraca (id_usuario, nome_raca) 
-        VALUES(:id_usuario, :nome_raca)";
+        $sql = "INSERT INTO tbraca (id_usuario, id_especie, nome_raca) 
+        VALUES(:id_usuario, :id_especie, :nome_raca)";
      
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_usuario', $_SESSION['id_usuario']);
+        $sql->bindValue(':id_especie', $id_especie);
         $sql->bindValue(':nome_raca', $nome_raca);
     
         if ($sql->execute()) {  
@@ -38,11 +40,16 @@ class AnimalRaca extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbraca SET flag_excluido = :flag_excluido WHERE id_raca = :id_raca";
+        $sql = "UPDATE tbraca SET flag_excluido = :flag_excluido WHERE id_raca = :id_raca AND id_usuario = ". $_SESSION['id_usuario']. " AND flag_padrao = 0";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_raca', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
-        $sql->execute();
+        
+        if ($sql->execute()) {  
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getRaca($idRaca)

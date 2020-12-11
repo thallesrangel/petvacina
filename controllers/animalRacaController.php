@@ -40,11 +40,12 @@ class animalRacaController extends Controller
     
     public function registrar_save()
     {      
+        $id_especie = $_POST['id_especie'];
         $nome_raca = $_POST['nome_raca'];
 
         $animalRaca = new AnimalRaca();
          
-        if ($animalRaca->add($nome_raca)) {
+        if ($animalRaca->add($id_especie, $nome_raca)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."animalraca");
         } 
@@ -55,9 +56,15 @@ class animalRacaController extends Controller
     {
         if (!empty($idRaca)) {
           $animalRaca = new AnimalRaca();
-          $animalRaca->delete($idRaca);
+          $resultado = $animalRaca->delete($idRaca);
+          
+          if ($resultado == true) {
+            $_SESSION['msg'] = 'deletado';
+          } else {
+            $_SESSION['msg'] = 'deletado_sem_permissao';
+          };
         }
-      $_SESSION['msg'] = 'deletado';
+      
       header("Location: ".BASE_URL."animalraca");
     }
     
@@ -70,9 +77,10 @@ class animalRacaController extends Controller
         if (!empty($_POST['id_raca'])) {
             
             $idRaca = $_POST['id_raca'];
+            $id_especie = $_POST['id_especie'];
             $nome_raca = $_POST['nome_raca'];
     
-            $animalRaca->edit($idRaca, $nome_raca);
+            $animalRaca->edit($idRaca, $id_especie, $nome_raca);
             
             $_SESSION['msg'] = "editado_sucesso";
             header("Location: ".BASE_URL."animalraca");

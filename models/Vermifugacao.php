@@ -120,12 +120,12 @@ class Vermifugacao extends model
         $sql->bindValue(':registro_crmv',$registro_crmv);
         
         if ($sql->execute()) {  
-            $count = $sql->rowCount();
-            echo $count . ' rows updated properly!';
-            //return true;
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated properly!';
+            return true;
         } else {
-            //return false;
-            print_r($sql->errorInfo());
+            return false;
+            //print_r($sql->errorInfo());
         }
     }
 }

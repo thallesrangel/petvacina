@@ -36,7 +36,7 @@ class AnimalEspecie extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbespecie SET flag_excluido = :flag_excluido WHERE id_especie = :id_especie";
+        $sql = "UPDATE tbespecie SET flag_excluido = :flag_excluido WHERE id_especie = :id_especie AND id_usuario = ". $_SESSION['id_usuario']. " AND flag_padrao = 0";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_especie', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);

@@ -62,7 +62,7 @@ if(isset($_SESSION['msg'])){
                 text: 'Registro alterado com sucesso.'
             })  
             </script>";
-            
+            break;
         case "report_sem_post":
             echo "<script>
             Swal.fire({
@@ -71,6 +71,16 @@ if(isset($_SESSION['msg'])){
                 text: 'Necessário preencher para gerar o relatório'
             })  
             </script>";
+            break;
+        case "deletado_sem_permissao":
+            echo "<script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Aviso',
+                text: 'Você não tem permissão para deletar este registro'
+            })  
+            </script>";
+        break;
             
     }
 }
