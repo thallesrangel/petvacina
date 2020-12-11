@@ -2,7 +2,8 @@
 
 class PesoUnidade extends model 
 {
-    public function getAll() {
+    public function getAll()
+    {
         $array = array();
         $sql = "SELECT * FROM tbpeso_unidade";
         $sql = $this->db->query($sql);

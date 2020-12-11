@@ -4,7 +4,8 @@ class Parasita extends model
 {   
 
      # Retorna vacinas especificas de um animal
-     public function getEspecifico($id) {
+     public function getEspecifico($id)
+     {
         $array = array();
         $sql = "SELECT * FROM tbparasita a
         JOIN tbpeso_unidade b ON (a.id_peso_unidade = b.id_peso_unidade)

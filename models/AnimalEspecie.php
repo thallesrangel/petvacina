@@ -1,4 +1,5 @@
 <?php
+
 class AnimalEspecie extends model 
 {
     public function getAll() {

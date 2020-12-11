@@ -1,4 +1,5 @@
 <?php
+
 class AnimalRaca extends model 
 {
     public function getAll() {

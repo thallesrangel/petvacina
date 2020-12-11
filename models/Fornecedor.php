@@ -2,7 +2,8 @@
 
 class Fornecedor extends model 
 {
-    public function getAll() {
+    public function getAll()
+    {
         $array = array();
         $sql = "SELECT * FROM tbfornecedor WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);
@@ -14,7 +15,8 @@ class Fornecedor extends model
         return $array;
     }
 
-    public function getAllResumido() {
+    public function getAllResumido()
+    {
         $array = array();
         $sql = "SELECT * FROM tbfornecedor a 
         INNER JOIN tbfornecedor_tipo b ON (a.id_fornecedor_tipo = b.id_fornecedor_tipo) WHERE id_usuario = ". $_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY id_fornecedor DESC";

@@ -2,7 +2,8 @@
 
 class Metrica extends model 
 {   
-     public function getEspecifico($id) {
+     public function getEspecifico($id)
+     {
         $array = array();
         $sql = "SELECT a.*, b.metrica_unidade as un_altura, c.metrica_unidade as un_comprimento FROM tbmetrica_animal a
         JOIN tbmetrica_unidade b ON (a.id_metrica_unidade_altura = b.id_metrica_unidade) 

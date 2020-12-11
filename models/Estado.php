@@ -2,7 +2,8 @@
 
 class Estado extends model 
 {
-    public function getAll() {
+    public function getAll()
+    {
         $array = array();
         $sql = "SELECT * FROM tbestado";
         $sql = $this->db->query($sql);

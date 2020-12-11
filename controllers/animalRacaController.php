@@ -18,6 +18,7 @@ class animalRacaController extends Controller
         $animais = new AnimalRaca();
         
         $dados['lista'] = $animais->getAll();
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalRacaList', $dados);
     }
@@ -30,11 +31,11 @@ class animalRacaController extends Controller
 			'Registrar' => 'false'
         ];
 
-        $dados = [];
+        $especies = new AnimalEspecie();
+        $dados['especies'] = $especies->getAll();
 
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalRacaRegistrar', $dados);
-
     }
     
     public function registrar_save()

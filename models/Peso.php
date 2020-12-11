@@ -2,7 +2,8 @@
 
 class Peso extends model 
 {   
-     public function getEspecifico($id) {
+     public function getEspecifico($id)
+     {
         $array = array();
         $sql = "SELECT a.*, b.* FROM tbpeso_animal a
         JOIN tbpeso_unidade b ON (a.id_peso_unidade = b.id_peso_unidade) WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";

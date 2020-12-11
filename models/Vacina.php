@@ -1,8 +1,10 @@
 <?php
+
 class Vacina extends model 
 {
     # Retorna vacinas especificas de um animal
-    public function getEspecifico($id) {
+    public function getEspecifico($id)
+    {
         $array = array();
         $sql = "SELECT * FROM tbvacina WHERE id_animal = ".$id." AND id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0 ORDER BY data_aplicacao DESC";
         $sql = $this->db->query($sql);
@@ -14,7 +16,8 @@ class Vacina extends model
         return $array;
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         $array = array();
         $sql = "SELECT * FROM tbvacina a
         WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0";
@@ -56,7 +59,8 @@ class Vacina extends model
         }
     }    
 
-    public function count() {
+    public function count()
+    {
         $array = array();
         $sql = "SELECT count(*) as qtd FROM tbvacina WHERE id_usuario = ".$_SESSION['id_usuario']." AND flag_excluido = 0";
         $sql = $this->db->query($sql);

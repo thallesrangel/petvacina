@@ -1,7 +1,10 @@
 <?php
-class Cidade extends model {
 
-	public function getCidades($idEstado) {
+class Cidade extends model
+{
+
+	public function getCidades($idEstado)
+	{
 		$array = array();
 
 		$sql = "SELECT * FROM tbcidade WHERE id_estado = :id_estado";
