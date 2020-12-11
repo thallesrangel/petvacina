@@ -3,9 +3,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="PetGestor">
+        <meta name="description" content="<?= NOME_APP ?>">
         <meta name="author" content="Thalles Rangel Lopes">
-        <title>Pet Gestor</title>
+        <title><?= NOME_APP ?></title>
         <script src="<?=BASE_URL?>assets/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
@@ -80,7 +80,7 @@
                 </div>
 
                 <input class="ml-4 mt-3 btn btn-sm btn-primary" type="submit" value="Registrar">
-                <a class="ml-4 mt-3 btn btn-sm btn-link" href="<?=BASE_URL?>login">Voltar</a>
+                <a class="ml-4 mt-3 btn btn-sm btn-secondary" href="<?=BASE_URL?>login">Voltar</a>
             </form>
         </div>
         <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL.'usuario'; ?>';</script>
