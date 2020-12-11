@@ -52,10 +52,10 @@ class animalRacaController extends Controller
     
     public function deletar($idRaca)
     {
-      if(!empty($idRaca)) {
+        if (!empty($idRaca)) {
           $animalRaca = new AnimalRaca();
           $animalRaca->delete($idRaca);
-      }
+        }
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."animalraca");
     }
