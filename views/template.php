@@ -63,7 +63,7 @@
                                 <a class="href-sub" href="<?=BASE_URL?>animalespecie">Espécie</a>
                             </li>
                             <li class="nav-item li-sub">
-                                <a class="href-sub" href="#">Raça</a>
+                                <a class="href-sub" href="<?=BASE_URL?>animalraca">Raça</a>
                             </li>
                         </ul>
                     </li>
