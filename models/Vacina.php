@@ -108,12 +108,30 @@ class Vacina extends model
         $sql->bindValue(':registro_crmv',$registro_crmv);
         
         if ($sql->execute()) {  
-            $count = $sql->rowCount();
-            echo $count . 'Feito!';
-            //return true;
+            //$count = $sql->rowCount();
+            //echo $count . 'Feito!';
+            return true;
         } else {
-            //return false;
-            print_r($sql->errorInfo());
+            return false;
+            //print_r($sql->errorInfo());
         }
+    }
+
+     # Usado em relatório 
+	public function listarReport($proprietario)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.* FROM tbvacina a
+			INNER JOIN tbanimal b ON (b.id_animal = a.id_animal)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND b.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $array;
     }
 }
