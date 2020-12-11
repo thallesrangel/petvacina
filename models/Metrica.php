@@ -88,4 +88,25 @@ class Metrica extends model
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
         $sql->execute();
     }
+
+    # Usado em relatório 
+	public function listarReport($proprietario)
+	{   
+        $array = array();
+       
+		$sql = "SELECT a.*, b.*, c.metrica_unidade as alturaUnidade, d.metrica_unidade as comprimentoUnidade, e.* FROM tbmetrica_animal a
+            INNER JOIN tbanimal b ON (b.id_animal = a.id_animal)
+            INNER JOIN tbmetrica_unidade c ON (c.id_metrica_unidade = a.id_metrica_unidade_altura)
+            INNER JOIN tbmetrica_unidade d ON (d.id_metrica_unidade = a.id_metrica_unidade_comprimento)
+            INNER JOIN tbproprietario e ON (e.id_proprietario = b.id_proprietario)
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND e.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $array;
+    }
 }

@@ -56,6 +56,22 @@
                     </a>
                 </div>
             </div>
+
+            <div class="col-md-3 col-sm-12">
+                <div class="card-report card">
+                    <a href="<?=BASE_URL?>metricareport">
+                        <div class="card-body">Métricas</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+                <div class="card-report card">
+                    <a href="<?=BASE_URL?>vacinareport">
+                        <div class="card-body">Vacinas</div>
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>
