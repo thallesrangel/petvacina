@@ -3,7 +3,9 @@ class AnimalRaca extends model
 {
     public function getAll() {
         $array = array();
-        $sql = "SELECT * FROM tbraca WHERE flag_excluido = 0 AND id_usuario = ".$_SESSION['id_usuario']." OR flag_padrao = 1";
+        $sql = "SELECT * FROM tbraca a
+            INNER JOIN tbespecie b ON (b.id_especie = a.id_especie)
+        WHERE a.flag_excluido = 0 AND a.id_usuario = ".$_SESSION['id_usuario']." OR a.flag_padrao = 1";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
