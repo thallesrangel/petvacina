@@ -50,7 +50,7 @@
 
             <div class="col-sm-12 col-md-3 form-group">
                 <label for="raca">Raça *</label>
-                <select id="raca" class="form-control form-control-sm js-select" name="id_raca" required>
+                <select id="racaAnimal" class="form-control form-control-sm js-select" name="id_raca" required>
                 </select>
                 <a href="<?=BASE_URL?>animalraca">Registrar nova raça</a>
             </div>

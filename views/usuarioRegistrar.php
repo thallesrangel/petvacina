@@ -35,7 +35,7 @@
                 <div class="text-center">
                     <img class="img-fluid" src="<?=BASE_URL?>/assets/img/logo.png">
                 </div>
-
+            
                 <div class="row pt-3 pl-4 pr-4">
                     <div class="col-sm-12 col-md-6">
                         <label for="nome">Nome</label>

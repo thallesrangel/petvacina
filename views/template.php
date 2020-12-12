@@ -129,7 +129,21 @@
             <div id="content">
                 
                 <nav class="navbar navbar-expand-lg shadow-sm bg-white static-top w-100 p-1">
-             
+                
+                <?php 
+                    if (!empty($_SESSION['url_img_perfil'])) {
+                ?>
+                    <img src="<?=BASE_URL?>assets/img/perfil/<?=$_SESSION['url_img_perfil']?>" width="45" height="45" class="rounded-circle border border-default">
+                <?php 
+                    } else {
+                ?>
+                    <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="45" height="45" class="rounded-circle border border-default">
+                <?php  
+                    }
+                ?>
+               
+                
+                <span class="ml-2"><?=$_SESSION['nome_usuario']?></span>
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
@@ -142,7 +156,7 @@
 
                        
                         <a class="list-inline-item dropdown-toggle mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><?=$_SESSION['nome_usuario']?></span>
+                        <i class="icon-menu" data-feather="more-vertical"></i>
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">

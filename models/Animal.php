@@ -11,10 +11,35 @@ class Animal extends model
           if (in_array($_FILES['arquivo']['type'], $permitidos)) {
               
             $url = md5(time().rand(0,999)). '.jpg';
+            
+            $maxDimW = 200;
+            $maxDimH = 300;
+
+            list($width, $height, $type, $attr) = getimagesize( $_FILES['arquivo']['tmp_name'] );
+            
+            if ( $width > $maxDimW || $height > $maxDimH ) {
+                $target_filename = 'assets/img/galeria/'.$url;
+                $fn = $_FILES['arquivo']['tmp_name'];
+                $size = getimagesize( $fn );
+                $ratio = $size[0]/$size[1];
+                if( $ratio > 1) {
+                    $width = $maxDimW;
+                    $height = $maxDimH/$ratio;
+                } else {
+                    $width = $maxDimW*$ratio;
+                    $height = $maxDimH;
+                }
+            }
+
+            $src = imagecreatefromstring(file_get_contents($fn));
+            $dst = imagecreatetruecolor( $width, $height );
+            
+            imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $size[0], $size[1] );
+        
+            imagejpeg($dst, $target_filename);
 
             # Salvando arquivo no servidor
-            move_uploaded_file($_FILES['arquivo']['tmp_name'], 'assets/img/galeria/'.$url);
-            # Salvando no banco de dados
+            //move_uploaded_file($_FILES['arquivo']['tmp_name'], 'assets/img/galeria/'.$url);
           }
         }
         

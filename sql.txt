@@ -21,6 +21,7 @@ create table tbusuario(
     endereco_usuario_bairro varchar(100) null,
     endereco_usuario_rua varchar(100) null,
     endereco_usuario_numero varchar(50) null,
+    url_img_perfil varchar(220) null,
     data_registro date not null,
     flag_excluido int default 0 not null,
     FOREIGN KEY (id_estado) REFERENCES tbestado(id_estado),

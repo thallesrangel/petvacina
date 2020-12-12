@@ -11,7 +11,7 @@
     foreach($lista as $item){
     ?>  
     <a class="list-color-text" href="<?=BASE_URL?>animal/detalhes/<?=$item['id_animal']?>">
-        <div class="card col-sm-12 col-md-2 align-items-center float-left ml-3 card-animal">
+        <div class="card col-sm-12 col-md-2 align-items-center float-left ml-3 mt-3 card-animal">
             <img src="<?=BASE_URL?>assets/img/galeria/<?=$item['url'] == null ? 'padrao.png': $item['url'];?>" width="85" height="85" class="rounded-circle mt-3 mb-2 border border-default">
             <p><?=$item['nome_animal'];?></p>
         </div>
