@@ -50,6 +50,9 @@ class vermifugacaoController extends Controller
         $unPeso = new PesoUnidade();
         $dados['unPeso'] = $unPeso->getAll();
 
+        $unVermifugacao = new VermifugacaoUnidade();
+        $dados['unVermifugacao'] = $unVermifugacao->getAll();
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('vermifugacaoRegistrar', $dados);
     }
@@ -59,6 +62,7 @@ class vermifugacaoController extends Controller
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
         $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
+        $unVermifugacao = $_POST['id_vermifugacao_un'];
         $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
         $id_peso_unidade = $_POST['id_peso_unidade'];
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
@@ -68,7 +72,7 @@ class vermifugacaoController extends Controller
 
         $vermifugacao = new Vermifugacao();
          
-        if ($vermifugacao->add($id_animal, $nome_produto, $dose, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+        if ($vermifugacao->add($id_animal, $nome_produto, $dose,$unVermifugacao, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
             $_SESSION['msg'] = 'registrado';
             header("Location: ".BASE_URL."vermifugacao/detalhes/".$id_animal);
         } 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Dez-2020 às 05:55
+-- Tempo de geração: 13-Dez-2020 às 11:13
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -47,13 +47,6 @@ CREATE TABLE `tbanimal` (
   `data_registro` date NOT NULL,
   `flag_excluido` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tbanimal`
---
-
-INSERT INTO `tbanimal` (`id_animal`, `id_usuario`, `nome_animal`, `identificacao_animal`, `data_nascimento`, `id_especie`, `id_raca`, `sexo`, `pelagem`, `id_proprietario`, `flag_castrado`, `flag_filhotes`, `microchip`, `data_implantacao`, `local_implantacao`, `url`, `data_registro`, `flag_excluido`) VALUES
-(1, 29, 'Zulu', '01', '0000-00-00', 1, 2, 1, 'Cinza', 25, 2, 2, NULL, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -5680,8 +5673,7 @@ CREATE TABLE `tbespecie` (
 INSERT INTO `tbespecie` (`id_especie`, `id_usuario`, `nome_especie`, `flag_excluido`, `flag_padrao`) VALUES
 (1, 1, 'Cachorro', 0, 1),
 (2, 1, 'Gato', 0, 1),
-(3, 1, 'Coelho', 0, 1),
-(4, 29, 'Gado', 0, 0);
+(3, 1, 'Coelho', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5951,8 +5943,7 @@ CREATE TABLE `tbproprietario` (
 --
 
 INSERT INTO `tbproprietario` (`id_proprietario`, `id_usuario`, `nome_proprietario`, `sobrenome_proprietario`, `data_nascimento`, `contato`, `email`, `id_estado`, `id_cidade`, `endereco_bairro`, `endereco_rua`, `endereco_numero`, `endereco_complemento`, `endereco_referencia`, `data_registro`, `flag_excluido`) VALUES
-(1, 1, 'admin', 'pet', NULL, NULL, 'rangelthr@gmail.com', 8, 26, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0),
-(25, 29, 'Paulo', 'Roberto', NULL, NULL, 'paulo@gmail.com', 8, 24, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0);
+(1, 1, 'admin', 'pet', NULL, NULL, 'rangelthr@gmail.com', 8, 26, NULL, NULL, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -6017,6 +6008,7 @@ CREATE TABLE `tbusuario` (
   `endereco_usuario_bairro` varchar(100) DEFAULT NULL,
   `endereco_usuario_rua` varchar(100) DEFAULT NULL,
   `endereco_usuario_numero` varchar(50) DEFAULT NULL,
+  `url_img_perfil` varchar(220) DEFAULT NULL,
   `data_registro` date NOT NULL,
   `flag_excluido` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -6025,9 +6017,8 @@ CREATE TABLE `tbusuario` (
 -- Extraindo dados da tabela `tbusuario`
 --
 
-INSERT INTO `tbusuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email_usuario`, `senha`, `contato_usuario`, `id_estado`, `id_cidade`, `endereco_usuario_bairro`, `endereco_usuario_rua`, `endereco_usuario_numero`, `data_registro`, `flag_excluido`) VALUES
-(1, 'admin', 'pet', 'rangelthr@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 26, NULL, NULL, NULL, '2020-12-09', 0),
-(29, 'Paulo', 'Roberto', 'paulo@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 24, NULL, NULL, NULL, '2020-12-09', 0);
+INSERT INTO `tbusuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email_usuario`, `senha`, `contato_usuario`, `id_estado`, `id_cidade`, `endereco_usuario_bairro`, `endereco_usuario_rua`, `endereco_usuario_numero`, `url_img_perfil`, `data_registro`, `flag_excluido`) VALUES
+(1, 'admin', 'pet', 'rangelthr@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 8, 26, NULL, NULL, NULL, NULL, '2020-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -6062,6 +6053,7 @@ CREATE TABLE `tbvermifugacao` (
   `id_peso_unidade` int(11) NOT NULL,
   `nome_produto` varchar(220) NOT NULL,
   `dose` double(10,2) NOT NULL,
+  `id_vermifugacao_un` int(11) NOT NULL,
   `peso` double(10,2) NOT NULL,
   `data_aplicacao` date NOT NULL,
   `data_prox_dose` date DEFAULT NULL,
@@ -6070,6 +6062,26 @@ CREATE TABLE `tbvermifugacao` (
   `data_registro` date NOT NULL,
   `flag_excluido` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbvermifugacao_unidade`
+--
+
+CREATE TABLE `tbvermifugacao_unidade` (
+  `id_vermifugacao_un` int(11) NOT NULL,
+  `vermifugacao_unidade` varchar(220) NOT NULL,
+  `flag_excluido` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbvermifugacao_unidade`
+--
+
+INSERT INTO `tbvermifugacao_unidade` (`id_vermifugacao_un`, `vermifugacao_unidade`, `flag_excluido`) VALUES
+(1, 'Ml', 0),
+(2, 'Comprimido', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -6230,7 +6242,14 @@ ALTER TABLE `tbvermifugacao`
   ADD PRIMARY KEY (`id_vermifugacao`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_animal` (`id_animal`),
-  ADD KEY `id_peso_unidade` (`id_peso_unidade`);
+  ADD KEY `id_peso_unidade` (`id_peso_unidade`),
+  ADD KEY `id_vermifugacao_un` (`id_vermifugacao_un`);
+
+--
+-- Índices para tabela `tbvermifugacao_unidade`
+--
+ALTER TABLE `tbvermifugacao_unidade`
+  ADD PRIMARY KEY (`id_vermifugacao_un`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -6240,13 +6259,13 @@ ALTER TABLE `tbvermifugacao`
 -- AUTO_INCREMENT de tabela `tbanimal`
 --
 ALTER TABLE `tbanimal`
-  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `tbanticio`
 --
 ALTER TABLE `tbanticio`
-  MODIFY `id_anticio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_anticio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tbcidade`
@@ -6270,7 +6289,7 @@ ALTER TABLE `tbestado`
 -- AUTO_INCREMENT de tabela `tbfornecedor`
 --
 ALTER TABLE `tbfornecedor`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tbfornecedor_tipo`
@@ -6282,7 +6301,7 @@ ALTER TABLE `tbfornecedor_tipo`
 -- AUTO_INCREMENT de tabela `tbhigiene`
 --
 ALTER TABLE `tbhigiene`
-  MODIFY `id_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbhigiene_tipo`
@@ -6294,7 +6313,7 @@ ALTER TABLE `tbhigiene_tipo`
 -- AUTO_INCREMENT de tabela `tbmetrica_animal`
 --
 ALTER TABLE `tbmetrica_animal`
-  MODIFY `id_metrica_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_metrica_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbmetrica_unidade`
@@ -6312,13 +6331,13 @@ ALTER TABLE `tbpais`
 -- AUTO_INCREMENT de tabela `tbparasita`
 --
 ALTER TABLE `tbparasita`
-  MODIFY `id_parasita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_parasita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tbpeso_animal`
 --
 ALTER TABLE `tbpeso_animal`
-  MODIFY `id_peso_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_peso_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tbpeso_unidade`
@@ -6330,13 +6349,13 @@ ALTER TABLE `tbpeso_unidade`
 -- AUTO_INCREMENT de tabela `tbproprietario`
 --
 ALTER TABLE `tbproprietario`
-  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `tbraca`
 --
 ALTER TABLE `tbraca`
-  MODIFY `id_raca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_raca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
@@ -6348,13 +6367,19 @@ ALTER TABLE `tbusuario`
 -- AUTO_INCREMENT de tabela `tbvacina`
 --
 ALTER TABLE `tbvacina`
-  MODIFY `id_vacina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_vacina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `tbvermifugacao`
 --
 ALTER TABLE `tbvermifugacao`
-  MODIFY `id_vermifugacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_vermifugacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `tbvermifugacao_unidade`
+--
+ALTER TABLE `tbvermifugacao_unidade`
+  MODIFY `id_vermifugacao_un` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -6456,7 +6481,8 @@ ALTER TABLE `tbraca`
 ALTER TABLE `tbvermifugacao`
   ADD CONSTRAINT `tbvermifugacao_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tbusuario` (`id_usuario`),
   ADD CONSTRAINT `tbvermifugacao_ibfk_2` FOREIGN KEY (`id_animal`) REFERENCES `tbanimal` (`id_animal`),
-  ADD CONSTRAINT `tbvermifugacao_ibfk_3` FOREIGN KEY (`id_peso_unidade`) REFERENCES `tbpeso_unidade` (`id_peso_unidade`);
+  ADD CONSTRAINT `tbvermifugacao_ibfk_3` FOREIGN KEY (`id_peso_unidade`) REFERENCES `tbpeso_unidade` (`id_peso_unidade`),
+  ADD CONSTRAINT `tbvermifugacao_ibfk_4` FOREIGN KEY (`id_vermifugacao_un`) REFERENCES `tbvermifugacao_unidade` (`id_vermifugacao_un`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

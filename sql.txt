@@ -117,6 +117,7 @@ create table tbvermifugacao(
     id_peso_unidade int not null,
     nome_produto varchar(220) not null,
     dose double(10,2) not null,
+    id_vermifugacao_un int not null,
     peso double(10,2) not null,
     data_aplicacao date not null,
     data_prox_dose date null,
@@ -126,9 +127,15 @@ create table tbvermifugacao(
     flag_excluido int default 0 not null,
     FOREIGN KEY (id_usuario) REFERENCES tbusuario(id_usuario),
     FOREIGN KEY (id_animal) REFERENCES tbanimal(id_animal),
-    FOREIGN KEY (id_peso_unidade) REFERENCES tbpeso_unidade(id_peso_unidade)
+    FOREIGN KEY (id_peso_unidade) REFERENCES tbpeso_unidade(id_peso_unidade),
+    FOREIGN KEY (id_vermifugacao_un) REFERENCES tbvermifugacao_unidade(id_vermifugacao_un)
 )
 
+create table tbvermifugacao_unidade(
+    id_vermifugacao_un int PRIMARY KEY AUTO_INCREMENT,
+    vermifugacao_unidade varchar(220) not null,
+    flag_excluido int default 0 not null
+)
 
 
 create table tbparasita(

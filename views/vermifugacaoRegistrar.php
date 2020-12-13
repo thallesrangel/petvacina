@@ -14,12 +14,25 @@
                 <input id="produto" type="text" class="form-control form-control-sm" name="nome_produto" required />
             </div>
 
-            <div class="col-md-3">
-                <label for="dose">Dose aplicada (ml) *</labe>
+            <div class="col-md-2">
+                <label for="dose">Dose aplicada *</labe>
                 <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" required />
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <span>Un Dose *</span>
+                    <select class="form-control form-control-sm" name="id_vermifugacao_un" required>
+                        <?php
+                        foreach($unVermifugacao as $item){
+                        ?>
+                        <option value="<?= $item['id_vermifugacao_un'] ?>"> <?= $item['vermifugacao_unidade']?> </option>
+                        <?php }?>
+                    </select>
+                </div>  
+            </div>
+
+            <div class="col-md-2">
                 <label for="peso">Peso do Animal *</labe>
                 <input id="peso" type="text" class="form-control form-control-sm quantidade" name="peso_animal" required />
             </div>

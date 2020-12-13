@@ -39,7 +39,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse scrollable-element">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-text mx-5 m-3">
-                    <img src="<?=BASE_URL?>/assets/img/logo.png"/>
+                    <a href="<?=BASE_URL?>"><img src="<?=BASE_URL?>/assets/img/logo.png"/></a>
                 </div>
             
                     <li class="nav-item">

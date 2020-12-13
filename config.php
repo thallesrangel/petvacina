@@ -8,13 +8,13 @@ define("NOME_APP", "Petvac");
 
 if(ENVIRONMENT == 'dev') {
     define("BASE_URL", "http://localhost/petvac/");
-    $config['dbname'] = 'dbpetgestor';
+    $config['dbname'] = 'dbpetvac';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
 } else {
     define("BASE_URL", "http://191.252.111.150/petgestor/");
-    $config['dbname'] = 'dbpetgestor';
+    $config['dbname'] = 'dbpetvac';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'thalles';
     $config['dbpass'] = 'maax0710';
