@@ -53,10 +53,10 @@ class animalEspecieController extends Controller
     
     public function deletar($id)
     {
-      if(!empty($id)) {
-          $animal = new AnimalEspecie();
-          $animal->delete($id);
-      }
+        if(!empty($id)) {
+            $animal = new AnimalEspecie();
+            $animal->delete($id);
+        }
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."animalespecie");
     }

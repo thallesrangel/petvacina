@@ -54,7 +54,11 @@ class animalController extends Controller
         $animais = new Animal();
 
         $dados['lista'] = $animais->getEspecifico($id);
-
+        
+        if (!$dados['lista']) {
+            header("Location:".BASE_URL."animal");
+        }
+        
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalDetalhes', $dados);
     }
@@ -82,7 +86,7 @@ class animalController extends Controller
     {   
         $nome_animal = $_POST['nome_animal'];
         $identificacao = $_POST['identificacao'];
-        $data_nascimento = implode('-', array_reverse(explode('/', $_POST['data_nascimento'])));
+        $data_nascimento = $_POST['data_nascimento'] == "" ? null : implode('-', array_reverse(explode('/', $_POST['data_nascimento'])));
         $id_especie = $_POST['id_especie'];
         $id_raca = $_POST['id_raca'];
         $sexo = $_POST['sexo'];
@@ -104,10 +108,10 @@ class animalController extends Controller
 
     public function deletar($id)
     {
-      if(!empty($id)) {
-          $animal = new Animal();
-          $animal->delete($id);
-      }
+        if (!empty($id)) {
+            $animal = new Animal();
+            $animal->delete($id);
+        }
       $_SESSION['msg'] = 'deletado';
       header("Location: ".BASE_URL."animal");
     }

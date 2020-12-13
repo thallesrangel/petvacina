@@ -89,6 +89,11 @@ class parasitaController extends Controller
         $parasita = new Parasita();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
+
+        if (!$dados['animal']) {
+            header("Location:".BASE_URL."parasita");
+        }
+
         $dados['lista'] = $parasita->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);

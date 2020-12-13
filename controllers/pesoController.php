@@ -51,6 +51,11 @@ class pesoController extends Controller
         $peso = new Peso();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
+        
+        if (!$dados['animal']) {
+            header("Location:".BASE_URL."peso");
+        }
+
         $dados['lista'] = $peso->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);

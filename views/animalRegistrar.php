@@ -106,8 +106,8 @@
             </div>
 
             <div class="col-sm-12 col-md-3 form-group">
-                <label id="img">Imagem</labe>
-                <input for="img" type="file" name="arquivo">
+                <label for="img" class="btn btn-secondary">Imagem de Perfil</label>
+                <input id="img" type="file" name="arquivo" style="visibility:hidden;">
             </div>
 
         </div>

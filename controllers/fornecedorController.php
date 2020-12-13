@@ -18,6 +18,11 @@ class fornecedorController extends Controller
         $fornecedor = new Fornecedor();
         $dados['fornecedor'] = $fornecedor->getAllResumido();
 
+        if (!$dados['fornecedor']) {
+            header("Location:".BASE_URL."fornecedor");
+        }
+
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('fornecedorList', $dados);
     }

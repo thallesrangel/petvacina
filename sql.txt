@@ -58,7 +58,7 @@ create table tbanimal(
     id_usuario int not null,
     nome_animal varchar(150) not null,
     identificacao_animal varchar(100) null, 
-    data_nascimento date not null,
+    data_nascimento date null,
     id_especie int not null,
     id_raca int not null,
     sexo int not null,

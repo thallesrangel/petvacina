@@ -84,10 +84,16 @@ class anticioController extends Controller
         $anticio = new Anticio();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
+
+        if (!$dados['animal']) {
+            header("Location:".BASE_URL."anticio");
+        }
+
         $dados['lista'] = $anticio->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('antiCioDetalhes', $dados); 
+       
     }
 
     public function deletar($id)

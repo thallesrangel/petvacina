@@ -53,6 +53,11 @@ class vacinaController extends Controller
         $vacinas = new Vacina();
         $animal = new Animal();
         $dados['animal'] = $animal->getEspecifico($id);
+
+        if (!$dados['animal']) {
+            header("Location:".BASE_URL."vacina");
+        }
+
         $dados['lista'] = $vacinas->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);

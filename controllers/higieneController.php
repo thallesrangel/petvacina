@@ -51,8 +51,13 @@ class higieneController extends Controller
         $dados['animal'] = $animal->getEspecifico($id);
         $dados['lista'] = $higiene->getEspecifico($id);
 
-        $this->setBreadCrumb($breadcrumb);
-        $this->loadTemplate('higieneDetalhes', $dados);
+
+        if ($dados['animal']) {
+            $this->setBreadCrumb($breadcrumb);
+            $this->loadTemplate('higieneDetalhes', $dados);
+        } else {
+           header('Location:'.BASE_URL.'higiene');
+        }
     }
 
     public function registrar()

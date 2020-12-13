@@ -90,6 +90,12 @@ class vermifugacaoController extends Controller
         $vermifugacao = new Vermifugacao();
         
         $dados['animal'] = $animal->getEspecifico($id);
+
+        if (!$dados['animal']) {
+            header("Location:".BASE_URL."vermifugacao");
+        }
+
+
         $dados['lista'] = $vermifugacao->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);

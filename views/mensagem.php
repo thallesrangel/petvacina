@@ -12,7 +12,7 @@ if(isset($_SESSION['msg'])){
                 text: 'Não há informações para este ID.'
             })  
             </script>";
-                
+            break;
             
         case "registrado": 
             echo "<script>

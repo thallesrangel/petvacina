@@ -18,6 +18,10 @@ class proprietarioController extends Controller
         $proprietario = new Proprietario();
         $dados['proprietario'] = $proprietario->getAllResumido();
 
+        if (!$dados['proprietario']) {
+            header("Location:".BASE_URL."proprietario");
+        }
+
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('proprietarioList', $dados);
     }
