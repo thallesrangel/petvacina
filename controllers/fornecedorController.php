@@ -11,7 +11,7 @@ class fornecedorController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Fornecedores' => 'false',
+			'Fornecedores' => 'fornecedor',
 			'Listagem' => 'false'
         ];
 

@@ -5,7 +5,7 @@ class vermifugacaoController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Vermifugação' => 'false',
+			'Vermifugação' => 'vermifugacao',
 			'Listagem' => 'false'
         ];
 

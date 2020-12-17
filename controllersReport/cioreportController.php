@@ -22,7 +22,7 @@ class cioreportController extends Controller
     public function index(){
         $breadcrumb = [
 			'Início' => '',
-			'Relatório' => 'false',
+			'Relatórios' => 'relatorio',
 			'Anti-cio' => 'false'
         ];
 

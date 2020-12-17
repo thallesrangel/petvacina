@@ -11,7 +11,7 @@ class vacinaController extends Controller
     {      
         $breadcrumb = [
 			'Início' => '',
-			'Vacinas' => 'false',
+			'Vacinas' => 'vacina',
 			'Listagem' => 'false'
         ];
 

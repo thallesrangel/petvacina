@@ -23,7 +23,7 @@ class vacinareportController extends Controller
     {
         $breadcrumb = [
 			'Início' => '',
-			'Relatório' => 'false',
+			'Relatórios' => 'relatorio',
 			'Parasita' => 'false'
         ];
 

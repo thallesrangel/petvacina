@@ -11,7 +11,7 @@ class parasitaController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Pulgas e Carrapatos' => 'false',
+			'Pulgas e Carrapatos' => 'parasita',
 			'Listagem' => 'false'
         ];
 

@@ -23,7 +23,7 @@ class higienereportController extends Controller
     {
         $breadcrumb = [
 			'Início' => '',
-			'Relatório' => 'false',
+			'Relatórios' => 'relatorio',
 			'Higiene' => 'false'
         ];
 

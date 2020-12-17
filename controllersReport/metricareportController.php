@@ -23,7 +23,7 @@ class metricareportController extends Controller
     {
         $breadcrumb = [
 			'Início' => '',
-			'Relatório' => 'false',
+			'Relatórios' => 'relatorio',
 			'Métrica' => 'false'
         ];
 

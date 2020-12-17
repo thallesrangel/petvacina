@@ -11,7 +11,7 @@ class animalRacaController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Raça' => 'false',
+			'Raça' => 'animalraca',
 			'Listagem' => 'false'
         ];
 

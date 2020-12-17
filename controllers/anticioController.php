@@ -11,7 +11,7 @@ class anticioController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Anti-cio' => 'false',
+			'Anti-cio' => 'peso',
 			'Listagem' => 'false'
         ];
 

@@ -12,7 +12,7 @@ class metricaController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Métrica do Animal' => 'false',
+			'Métrica do Animal' => 'metrica',
 			'Listagem' => 'false'
         ];
 
