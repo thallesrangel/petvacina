@@ -80,7 +80,7 @@
 
 if($(window).width() >= 1024){
     $(document).ready(function(){
-        let random = Math.floor((Math.random() * 7) + 1);
+        let random = Math.floor((Math.random() * 1) + 1);
         let style = 'assets/img/background/'+random+'.jpg';
         $('.login-body').css('background-image', `url(${style})`);
     });
