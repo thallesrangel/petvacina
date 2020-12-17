@@ -75,7 +75,7 @@ class Vacina extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbvacina SET flag_excluido = :flag_excluido WHERE id_vacina = :id_vacina";
+        $sql = "UPDATE tbvacina SET flag_excluido = :flag_excluido WHERE id_vacina = :id_vacina AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_vacina', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -100,7 +100,7 @@ class Vacina extends model
     {   
         $sql = "UPDATE tbvacina SET id_vacina = :id_vacina, titulo_vacina = :titulo_vacina, dose = :dose, data_aplicacao = :data_aplicacao, data_revacinacao = :data_revacinacao,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
-        WHERE id_vacina = :id_vacina";
+        WHERE id_vacina = :id_vacina AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_vacina', $idVacina);

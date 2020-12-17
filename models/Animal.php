@@ -164,7 +164,7 @@ class Animal extends model
     
     public function delete($id)
     {
-        $sql = "UPDATE tbanimal SET flag_excluido = :flag_excluido WHERE id_animal = :id_animal";
+        $sql = "UPDATE tbanimal SET flag_excluido = :flag_excluido WHERE id_animal = :id_animal AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_animal', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -190,7 +190,7 @@ class Animal extends model
     public function edit($idMetrica, $altura_animal, $id_metrica_unidade_altura, $comprimento_animal, $id_metrica_unidade_comprimento, $data_medida, $data_remedida)
     {   
         $sql = "UPDATE tbmetrica_animal SET altura = :altura, id_metrica_unidade_altura = :id_metrica_unidade_altura, comprimento = :comprimento, id_metrica_unidade_comprimento = :id_metrica_unidade_comprimento, data_medida = :data_medida, data_remedida = :data_remedida
-        WHERE id_metrica_animal = :id_metrica_animal";
+        WHERE id_metrica_animal = :id_metrica_animal AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_metrica_animal', $idMetrica);

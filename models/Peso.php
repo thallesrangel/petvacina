@@ -58,7 +58,7 @@ class Peso extends model
     public function edit($idPeso, $peso_animal, $id_peso_unidade, $data_pesagem, $data_repesagem)
     {   
         $sql = "UPDATE tbpeso_animal SET  peso = :peso, id_peso_unidade = :id_peso_unidade, data_pesagem = :data_pesagem, data_repesagem = :data_repesagem
-        WHERE id_peso_animal = :id_peso_animal";
+        WHERE id_peso_animal = :id_peso_animal AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_peso_animal', $idPeso);
@@ -72,15 +72,15 @@ class Peso extends model
             //echo $count . ' rows updated properly!';
             return true;
         } else {
-            //return false;
-            print_r($sql->errorInfo());
+            return false;
+            //print_r($sql->errorInfo());
         }
     }
 
     
     public function delete($idPesoAnimal)
     {
-        $sql = "UPDATE tbpeso_animal SET flag_excluido = :flag_excluido WHERE id_peso_animal = :id_peso_animal";
+        $sql = "UPDATE tbpeso_animal SET flag_excluido = :flag_excluido WHERE id_peso_animal = :id_peso_animal AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_peso_animal', $idPesoAnimal, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);

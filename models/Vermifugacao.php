@@ -62,7 +62,7 @@ class Vermifugacao extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbvermifugacao SET flag_excluido = :flag_excluido WHERE id_vermifugacao = :id_vermifugacao";
+        $sql = "UPDATE tbvermifugacao SET flag_excluido = :flag_excluido WHERE id_vermifugacao = :id_vermifugacao AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_vermifugacao', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -108,7 +108,7 @@ class Vermifugacao extends model
     {   
         $sql = "UPDATE tbvermifugacao SET id_vermifugacao = :id_vermifugacao, id_peso_unidade = :id_peso_unidade, nome_produto = :nome_produto, dose = :dose, peso = :peso, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
-        WHERE id_vermifugacao = :id_vermifugacao";
+        WHERE id_vermifugacao = :id_vermifugacao AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_vermifugacao', $idVermifugacao);

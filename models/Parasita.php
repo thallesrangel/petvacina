@@ -52,7 +52,7 @@ class Parasita extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbparasita SET flag_excluido = :flag_excluido WHERE id_parasita = :id_parasita";
+        $sql = "UPDATE tbparasita SET flag_excluido = :flag_excluido WHERE id_parasita = :id_parasita AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_parasita', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -77,7 +77,7 @@ class Parasita extends model
     {   
         $sql = "UPDATE tbvacina SET id_parasita = :id_parasita, nome_produto = :nome_produto, dose = :dose, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
-        WHERE id_parasita = :id_parasita";
+        WHERE id_parasita = :id_parasita AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_parasita', $idParasita);

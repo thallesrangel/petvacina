@@ -74,7 +74,7 @@ class AnimalEspecie extends model
 
     public function edit($id_especie, $nome_especie)
     {   
-        $sql = "UPDATE tbespecie SET nome_especie = :nome_especie WHERE id_especie = :id_especie";
+        $sql = "UPDATE tbespecie SET nome_especie = :nome_especie WHERE id_especie = :id_especie AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_especie', $id_especie);

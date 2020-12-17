@@ -83,7 +83,7 @@ class AnimalRaca extends model
 
     public function edit($id_raca, $nome_raca)
     {   
-        $sql = "UPDATE tbraca SET nome_raca = :nome_raca WHERE id_raca = :id_raca";
+        $sql = "UPDATE tbraca SET nome_raca = :nome_raca WHERE id_raca = :id_raca AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_raca', $id_raca);

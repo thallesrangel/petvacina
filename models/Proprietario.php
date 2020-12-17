@@ -64,7 +64,7 @@ class Proprietario extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbproprietario SET flag_excluido = :flag_excluido WHERE id_proprietario = :id_proprietario";
+        $sql = "UPDATE tbproprietario SET flag_excluido = :flag_excluido WHERE id_proprietario = :id_proprietario AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_proprietario', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -87,7 +87,7 @@ class Proprietario extends model
 
     public function edit($id_proprietario, $nome_fornecedor, $id_fornecedor_tipo)
     {   
-        $sql = "UPDATE tbproprietario SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor";
+        $sql = "UPDATE tbproprietario SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_proprietario', $id_fornecedor);

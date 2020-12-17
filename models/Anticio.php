@@ -45,7 +45,7 @@ class Anticio extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbanticio SET flag_excluido = :flag_excluido WHERE id_anticio = :id_anticio";
+        $sql = "UPDATE tbanticio SET flag_excluido = :flag_excluido WHERE id_anticio = :id_anticio AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_anticio', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -98,7 +98,7 @@ class Anticio extends model
     {   
         $sql = "UPDATE tbanticio SET id_anticio = :id_anticio, nome_produto = :nome_produto, dose = :dose, data_aplicacao = :data_aplicacao, data_prox_dose = :data_prox_dose,
         nome_veterinario = :nome_veterinario, registro_crmv = :registro_crmv
-        WHERE id_anticio = :id_anticio";
+        WHERE id_anticio = :id_anticio AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_anticio', $idAnticio);
         $sql->bindValue(':nome_produto',$nome_produto);

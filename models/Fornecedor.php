@@ -52,7 +52,7 @@ class Fornecedor extends model
 
     public function delete($idFornecedor)
     {
-        $sql = "UPDATE tbfornecedor SET flag_excluido = :flag_excluido WHERE id_fornecedor = :id_fornecedor";
+        $sql = "UPDATE tbfornecedor SET flag_excluido = :flag_excluido WHERE id_fornecedor = :id_fornecedor AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_fornecedor', $idFornecedor, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
@@ -83,7 +83,7 @@ class Fornecedor extends model
 
     public function edit($id_fornecedor, $nome_fornecedor, $id_fornecedor_tipo)
     {   
-        $sql = "UPDATE tbfornecedor SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor";
+        $sql = "UPDATE tbfornecedor SET nome_fornecedor = :nome_fornecedor, id_fornecedor_tipo = :id_fornecedor_tipo WHERE id_fornecedor = :id_fornecedor AND id_usuario = ".$_SESSION['id_usuario']."";
         
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_fornecedor', $id_fornecedor);

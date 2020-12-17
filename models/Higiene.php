@@ -6,8 +6,8 @@ class Higiene extends model
     {
         $array = array();
         $sql = "SELECT a.*, b.*, c.* FROM tbhigiene a 
-        INNER JOIN tbhigiene_tipo b ON (b.id_higiene_tipo = a.id_higiene_tipo)
-        INNER JOIN tbfornecedor c ON (c.id_fornecedor = a.id_fornecedor)
+            INNER JOIN tbhigiene_tipo b ON (b.id_higiene_tipo = a.id_higiene_tipo)
+            INNER JOIN tbfornecedor c ON (c.id_fornecedor = a.id_fornecedor)
         WHERE id_animal = ".$id." AND a.id_usuario = ".$_SESSION['id_usuario']." AND a.flag_excluido = 0 ORDER BY a.data_servico ASC";
         $sql = $this->db->query($sql);
 
@@ -45,7 +45,7 @@ class Higiene extends model
 
     public function delete($id)
     {
-        $sql = "UPDATE tbhigiene SET flag_excluido = :flag_excluido WHERE id_higiene = :id_higiene";
+        $sql = "UPDATE tbhigiene SET flag_excluido = :flag_excluido WHERE id_higiene = :id_higiene AND id_usuario = ".$_SESSION['id_usuario']."";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_higiene', $id, PDO::PARAM_INT);
         $sql->bindValue(':flag_excluido', '1', PDO::PARAM_INT);
