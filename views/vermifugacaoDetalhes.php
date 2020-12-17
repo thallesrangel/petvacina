@@ -24,7 +24,7 @@
         <div class="col-sm-12 col-md-3 text-sm-center text-md-left">
             <h4 class="m-1 pt-4"><?=$dados_animal['nome_animal'];?></h4>
             <a class="btn btn-sm btn-primary mb-3" href="<?=BASE_URL?>vermifugacao/registrar/<?=$dados_animal['id_animal'];?>"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/plus.svg"> Vermifugar</a>
-            <a class="btn btn-sm btn-primary mb-3" href="#"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/printer.svg">Imprimir</a>
+            <a class="btn btn-sm btn-primary mb-3 disabled" href="#"><img class="img-fluid" src="<?=BASE_URL?>assets/img/icon/printer.svg">Imprimir</a>
         </div>
     
     </div>

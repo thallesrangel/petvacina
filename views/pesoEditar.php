@@ -54,7 +54,7 @@
 
             <div class="col-md-3 col-sm-12">
                 <label for="data_prox_dose">Repesagem</labe>
-                <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_repesagem" value="<?= date("d/m/Y", strtotime($dados['data_repesagem'])) ?>">
+                <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_repesagem" value="<?= $dados['data_repesagem'] == "" ? "" : date("d/m/Y", strtotime($dados['data_repesagem'])) ?>">
             </div>
         </div>
      
