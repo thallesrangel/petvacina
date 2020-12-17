@@ -1,0 +1,87 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+h1
+{
+    color: #253858;
+    letter-spacing: 0;
+    margin-top: 0;
+    font-size: 2.60rem;
+    line-height: 1.18181818;
+    margin-bottom: 16px;
+    font-weight: 550;
+}
+
+h2
+{
+    color: #253858;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 2.20rem;
+    line-height: 1.33333333;
+    font-weight: 510;
+}
+
+p
+{
+    color: #42526E;
+    font-size: 1.20rem;
+    letter-spacing: .3px;
+    line-height: 1.4;
+    margin-bottom: 0;
+
+}
+
+.navbar
+{
+    background-color: #FFF;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.logo
+{
+    padding-left: 40px;
+}
+
+.div-banner
+{
+    margin-top: 35px;
+}
+
+.div-banner img
+{
+    height: 400px;
+    width: auto;
+}
+
+.btn-primary
+{
+   background-color:#f67280 !important;
+   border: 1px solid #f67280 !important;
+   color: #FFF !important;
+}
+
+.btn-primary:hover
+{
+    background: #f45a6a !important;
+    border: 1px solid #f45a6a !important;
+}
+
+.nav-link
+{
+    border: 1px solid transparent;
+    color: #0052CC;
+    margin-right: 2px;
+    margin-left: 25px;
+}
+
+.nav-link:hover
+{
+    border-bottom: 2px solid #DFE1E5;
+    padding-bottom:5px;
+    margin-bottom:0px;
+}
