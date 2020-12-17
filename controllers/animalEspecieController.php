@@ -12,7 +12,7 @@ class animalEspecieController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Espécie' => 'false',
+			'Espécie' => 'animalespecie',
 			'Listagem' => 'false'
         ];
 
@@ -27,7 +27,7 @@ class animalEspecieController extends Controller
     {
         $breadcrumb = [
 			'Início' => '',
-			'Espécie' => 'false',
+			'Espécie' => 'animalespecie',
 			'Registrar' => 'false'
         ];
 
