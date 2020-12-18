@@ -20,14 +20,14 @@ class Core
         array_shift($url);
 
         # Retorna Controller
-        $currentController = $url[0].'Controller';
+        $currentController = $url[1].'Controller';
         
         #Remove o controller do array pois já foi usado acima
         array_shift($url); // agora passa a ser a action, action é opcional
 
         # Verifica se possui action
-        if (isset($url[0]) && !empty($url[0])) {
-            $currentAction = $url[0];
+        if (isset($url[1]) && !empty($url[1])) {
+            $currentAction = $url[1];
             array_shift($url);
         } else {
             $currentAction = 'index';
