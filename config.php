@@ -13,7 +13,7 @@ if (ENVIRONMENT == 'dev') {
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
 } else {
-    define("BASE_URL", "http://191.252.202.186/app/");
+    define("BASE_URL", "http://191.252.202.186/");
     $config['dbname'] = 'petvac';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
