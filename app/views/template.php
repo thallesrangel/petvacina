@@ -36,7 +36,7 @@
     <body>
 
     <div class="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse scrollable-element">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion navigation scrollable-element">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-text mx-5 m-3">
                     <a href="<?=BASE_URL?>"><img src="<?=BASE_URL?>/assets/img/logo.png"/></a>
@@ -147,29 +147,33 @@
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
-                        <i class="icon-menu" data-feather="home"></i>
+                            <i class="icon-menu-top" data-feather="home"></i>
                         </a>
 
                         <a class="list-inline-item mr-3" href="#">
-                        <i class="icon-menu" data-feather="bell"></i>
+                            <i class="icon-menu-top" data-feather="bell"></i>
                         </a>
 
                        
                         <a class="list-inline-item dropdown-toggle mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-menu" data-feather="more-vertical"></i>
+                            <i class="icon-menu-top" data-feather="more-vertical"></i>
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="user"></i> Perfil</a>
-                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="log-out"></i> Sair</a>
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu-top" data-feather="user"></i> Perfil</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu-top" data-feather="log-out"></i> Sair</a>
                         </div>
                         
                     </ul>
 
-                    <!-- BUTTON RESPONSIVO-->
+                    <!-- BUTTON RESPONSIVO
                     <button class="list-inline-item btn btn-sm btn-dark" type="button" id="navToggle" data-toggle="offcanvas">
                             <span>=</span>
                     </button>
+                    -->
+
+                    <!-- Responsive -->
+                <div class="toggleMenu" onclick="menuToggle()"></div>
                 </nav>
                 
                 
@@ -195,5 +199,15 @@
     <script>
         feather.replace()
     </script>
+
+    <script type="text/javascript">
+        /* Responsive - Define como ativo a classe toggleMenu */
+            function menuToggle(){
+                const toggleMenu = document.querySelector('.toggleMenu');
+                const navigation = document.querySelector('.navigation');
+                toggleMenu.classList.toggle('active')
+                navigation.classList.toggle('active')
+            }
+        </script>
     </body>
 </html>

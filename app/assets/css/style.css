@@ -19,6 +19,15 @@ body{
     color: #f67280;
 }
 
+.icon-menu-top
+{
+    color: #4b4b4b;
+}
+.icon-menu-top:hover
+{
+    color: #3d3d3d;
+}
+
 .nav-link:hover
 {
     color: #3d3d3d;
@@ -198,11 +207,34 @@ background-color: #a29bfe;
 }
 
 
-@media (max-width: 700px) {
-    #navToggle{
-        display:block;
+@media (max-width: 900px) {
+
+
+    .toggleMenu
+    {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(../../assets/img/menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        z-index: 1;
+        cursor: pointer;
+        filter: invert(1);  
     }
-    .offcanvas-collapse {
+
+    .toggleMenu.active
+    {
+        background: url(../../assets/img/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 2;
+    }
+
+    .navigation {
         position: fixed;
         bottom: 0;
         right: 100%;
@@ -218,7 +250,7 @@ background-color: #a29bfe;
         z-index: 999;
     }
 
-    .offcanvas-collapse.open {
+    .navigation.active {
         left: 0;
         visibility: visible;
     }
