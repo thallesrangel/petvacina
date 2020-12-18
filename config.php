@@ -21,7 +21,7 @@ if (ENVIRONMENT == 'dev') {
     $config['dbname'] = 'petvac';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
-    $config['dbpass'] = 'maax0710';
+    $config['dbpass'] = '';
 }
 
 global $db;
