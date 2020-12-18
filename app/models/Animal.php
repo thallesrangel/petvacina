@@ -150,8 +150,7 @@ class Animal extends model
        
 		$sql = "SELECT a.*, b.* FROM tbanimal a
 			INNER JOIN tbproprietario b ON (b.id_proprietario = a.id_proprietario)
-		WHERE a.id_usuario = ".$_SESSION['id_usuario']."
-        AND b.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
+		WHERE a.id_usuario = ".$_SESSION['id_usuario']." AND b.id_proprietario IN(".implode(',', $proprietario).") AND a.flag_excluido = 0";
 
         $sql = $this->db->query($sql);
 
