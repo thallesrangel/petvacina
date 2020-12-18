@@ -56,8 +56,8 @@ class Core
     # Serve para executar a action dentro do controller e envias parametros
     call_user_func_array(array($c, $currentAction), $params);
 
-        // echo "CONTROLLER: ".$currentController."<br>";
-        // echo "ACTION: ". $currentAction."<br>";
-        // echo "PARAMS: " .print_r($params,true);
+        echo "CONTROLLER: ".$currentController."<br>";
+        echo "ACTION: ". $currentAction."<br>";
+        echo "PARAMS: " .print_r($params,true);
     }
 }
