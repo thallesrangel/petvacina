@@ -1,3 +1,3 @@
 <?php
 
-define("ENVIRONMENT", "dev2");
+define("ENVIRONMENT", "dev");
