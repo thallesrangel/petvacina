@@ -6,7 +6,7 @@ $config = array();
 
 define("NOME_APP", "Petvac");
 
-if(ENVIRONMENT == 'dev') {
+if (ENVIRONMENT == 'dev') {
     define("BASE_URL", "http://localhost/petvac/app/");
     $config['dbname'] = 'dbpetvac';
     $config['host'] = 'localhost';
@@ -21,6 +21,7 @@ if(ENVIRONMENT == 'dev') {
 }
 
 global $db;
+
 try {
 
     $db = new PDO("mysql:dbname=".$config['dbname'].";charset=utf8".";host=".$config['host'],$config['dbuser'], $config['dbpass']);
