@@ -16,7 +16,7 @@ if (ENVIRONMENT == 'dev') {
     $config['dbpass'] = '';
 } else {
     
-    define("BASE_URL", "http://191.252.202.186");
+    define("BASE_URL", "http://191.252.202.186/");
     
     $config['dbname'] = 'petvac';
     $config['host'] = 'localhost';
