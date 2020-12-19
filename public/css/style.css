@@ -203,4 +203,10 @@ p
         color: #253858;
     }
 
+    .div-banner img
+    {
+        height: 300px;
+        width: auto;
+    }
+
 }
