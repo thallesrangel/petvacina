@@ -129,7 +129,7 @@ p
         position: relative;
         width: 40px;
         height: 40px;
-        background: url(../public/img/menu.png);
+        background: url(../../public/img/menu.png);
         background-position: center;
         background-size: 30px;
         background-repeat: no-repeat;
@@ -140,7 +140,7 @@ p
 
     .toggleMenu.active
     {
-        background: url(../public/img/close.png);
+        background: url(../../public/img/close.png);
         background-position: center;
         background-size: 25px;
         background-repeat: no-repeat;
