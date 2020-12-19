@@ -23,6 +23,8 @@
         <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
         <link rel='icon' href="<?=BASE_URL?>assets/img/favicon.png" type='image/x-icon' sizes="16x16" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#f8b195">
+        <meta name="theme-color" content="#f8b195">
 </head>
     <body class="bg-cinza">
     <?php
