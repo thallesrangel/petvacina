@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./public/css/style.css"/>
     <link rel='icon' href="./public/img/favicon.png" type='image/x-icon' sizes="16x16" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#f8b195">
-    <meta name="theme-color" content="#f8b195">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFF">
+    <meta name="theme-color" content="#FFF">
 </head>
     <body>
         
