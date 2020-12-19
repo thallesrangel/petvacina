@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./public/css/style.css"/>
     <link rel='icon' href="./public/img/favicon.png" type='image/x-icon' sizes="16x16" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#f8b195">
+    <meta name="theme-color" content="#f8b195">
 </head>
     <body>
         
