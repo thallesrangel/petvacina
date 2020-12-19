@@ -142,26 +142,25 @@
                     }
                 ?>
                
-                
-                <span class="ml-2"><?=$_SESSION['nome_usuario']?></span>
+                    <span class="ml-2"><?=$_SESSION['nome_usuario']?></span>
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
-                            <i class="icon-menu-top" data-feather="home"></i>
+                            <i class="icon-menu" data-feather="home"></i>
                         </a>
 
                         <a class="list-inline-item mr-3" href="#">
-                            <i class="icon-menu-top" data-feather="bell"></i>
+                            <i class="icon-menu" data-feather="bell"></i>
                         </a>
 
                        
                         <a class="list-inline-item dropdown-toggle mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-menu-top" data-feather="more-vertical"></i>
+                            <i class="icon-menu" data-feather="more-vertical"></i>
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu-top" data-feather="user"></i> Perfil</a>
-                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu-top" data-feather="log-out"></i> Sair</a>
+                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="user"></i> Perfil</a>
+                            <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="log-out"></i> Sair</a>
                         </div>
                         
                     </ul>
@@ -173,7 +172,7 @@
                     -->
 
                     <!-- Responsive -->
-                <div class="toggleMenu" onclick="menuToggle()"></div>
+                    <div class="toggleMenu" onclick="menuToggle()"></div>
                 </nav>
                 
                 
