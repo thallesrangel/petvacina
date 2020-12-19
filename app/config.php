@@ -8,7 +8,7 @@ define("NOME_APP", "Petvac");
 
 if (ENVIRONMENT == 'dev') {
     
-    define("BASE_URL", "http://localhost/petvac/");
+    define("BASE_URL", "http://localhost/petvac/app");
     
     $config['dbname'] = 'dbpetvac';
     $config['host'] = 'localhost';
@@ -16,7 +16,7 @@ if (ENVIRONMENT == 'dev') {
     $config['dbpass'] = '';
 } else {
     
-    define("BASE_URL", "http://191.252.202.186/petvac/");
+    define("BASE_URL", "http://191.252.202.186/app/");
     
     $config['dbname'] = 'petvac';
     $config['host'] = '127.0.0.1';
