@@ -19,7 +19,7 @@ if (ENVIRONMENT == 'dev') {
     define("BASE_URL", "http://191.252.202.186/petvac/");
     
     $config['dbname'] = 'petvac';
-    $config['host'] = '191.252.202.186';
+    $config['host'] = '127.0.0.1';
     $config['dbuser'] = 'thalles';
     $config['dbpass'] = 'maax0710';
 }
