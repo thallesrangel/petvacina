@@ -37,7 +37,7 @@ class loginController extends Controller
                 $_SESSION['id_usuario'] = $dados['id_usuario'];
                 $_SESSION['nome_usuario'] = $dados['nome_usuario'];
                 $_SESSION['url_img_perfil'] = $dados['url_img_perfil'];
-                header("Location:".BASE_URL."");
+                header("Location:".BASE_URL."dashboard");
             } else {
                 $_SESSION["msg"] = "email_ou_senha_incorreto";
                 header("Location:".BASE_URL."login");

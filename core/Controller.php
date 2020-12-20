@@ -15,6 +15,14 @@ class Controller
     // Extract passa a key do array $variavel = $value para usar na view
         require_once "views/".$viewName.'.php';
     }
+    
+    # Carrega template view acesso public 
+    public function loadViewPublic($viewName, $dados = array())
+    {   
+        extract($dados);
+    // Extract passa a key do array $variavel = $value para usar na view
+        require_once "views/template_public.php";
+    }
 
     public function loadViewReport($viewName, $dados = array())
     {   

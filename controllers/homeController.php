@@ -5,7 +5,7 @@ class HomeController extends Controller
 {   
     public function index() 
     {   
-        die();
+        $this->loadViewPublic('pagina_home');
     }    
 }
 
