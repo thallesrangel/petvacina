@@ -15,31 +15,31 @@
 </head>
     <body>
         
-        <nav class="navbar navbar-expand-lg bg-white shadow p-3 mb-2 bg-white rounded">
-            <a class="navbar-brand logo" href="#"><img class="img-fluid" src="./public/img/logo.png"></a>
+    <nav class="navbar navbar-expand-lg bg-white shadow p-3 mb-2 bg-white rounded">
+    <a class="navbar-brand logo" href="#"><img class="img-fluid" src="./public/img/logo.png"></a>
 
-            <header class="ml-auto">
-                <!-- Responsive -->
-                <div class="toggleMenu" onclick="menuToggle()"></div>
-                
-                <ul class="navbar-nav navigation">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/petvac/app/adocao">Adoção</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Saiba Mais</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-sm btn-primary" href="app/login">Acessar</a>
-                    </li>
+    <header class="ml-auto">
+        <!-- Responsive -->
+        <div class="toggleMenu" onclick="menuToggle()"></div>
         
-                </ul>
-            </header>
+        <ul class="navbar-nav navigation">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/petvac/app/adocao">Adoção</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Saiba Mais</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link btn btn-sm btn-primary" href="app/login">Acessar</a>
+            </li>
+
+        </ul>
+    </header>
     
-        </nav>
-        
+</nav>
+
         <div class="container div-banner w-75">
             <div class="row align-items-center">
                 <div class="col-md-5">
