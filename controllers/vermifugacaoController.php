@@ -1,21 +1,18 @@
 <?php
-
-if (!isset($_SESSION['id_usuario'])) {
-    header("Location:".BASE_URL."login");
-    die();   
-}
-
-class parasitaController extends Controller 
+class vermifugacaoController extends Controller 
 {   
-    public function index()
+    public function index() 
     {   
         $breadcrumb = [
-			'Início' => '',
-			'Pulgas e Carrapatos' => 'parasita',
+			'Início' => 'dashboard',
+			'Vermifugação' => 'vermifugacao',
 			'Listagem' => 'false'
         ];
 
+        $dados = [];
+
         $animais = new Animal();
+
         // Paginação
         $offset = 0;
         $limit = 10;
@@ -35,46 +32,49 @@ class parasitaController extends Controller
         $dados['max_links'] = 1;
         
         $dados['lista'] = $animais->getAllResumido($offset, $limit);
-       
+        
         $this->setBreadCrumb($breadcrumb);
-        $this->loadTemplate('parasitaList', $dados);
+        $this->loadTemplate('vermifugacaoList', $dados);
     }
 
     public function registrar()
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Pulgas e Carrapatos' => 'parasita',
+			'Vermifugação' => 'vermifugacao',
 			'Registrar' => 'false'
         ];
 
         $dados = [];
+
         $unPeso = new PesoUnidade();
         $dados['unPeso'] = $unPeso->getAll();
 
+        $unVermifugacao = new VermifugacaoUnidade();
+        $dados['unVermifugacao'] = $unVermifugacao->getAll();
+
         $this->setBreadCrumb($breadcrumb);
-        $this->loadTemplate('parasitaRegistrar', $dados);
+        $this->loadTemplate('vermifugacaoRegistrar', $dados);
     }
 
     public function registrar_save($idAnimal)
-    {   
+    {
         $id_animal = $idAnimal;
         $nome_produto = $_POST['nome_produto'];
         $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
-
+        $unVermifugacao = $_POST['id_vermifugacao_un'];
         $peso_animal = str_replace(',', '.',str_replace('.', '', $_POST['peso_animal']));
         $id_peso_unidade = $_POST['id_peso_unidade'];
-
         $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
         $data_prox_dose = $_POST['data_prox_dose'] ? implode('-', array_reverse(explode('/', $_POST['data_prox_dose']))) : null;
         $nome_veterinario = $_POST['nome_veterinario'];
         $registro_crmv = $_POST['registro_crmv'];
 
-        $vacina = new Parasita();
-        
-        if ($vacina->add($id_animal, $nome_produto, $dose, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
+        $vermifugacao = new Vermifugacao();
+         
+        if ($vermifugacao->add($id_animal, $nome_produto, $dose,$unVermifugacao, $peso_animal, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv)) {
             $_SESSION['msg'] = 'registrado';
-            header("Location: ".BASE_URL."parasita/detalhes/".$id_animal);
+            header("Location: ".BASE_URL."vermifugacao/detalhes/".$id_animal);
         } 
     }
 
@@ -82,74 +82,77 @@ class parasitaController extends Controller
     {   
         $breadcrumb = [
 			'Início' => '',
-			'Pulgas e Carrapatos' => 'parasita',
+			'Vermifugação' => 'vermifugacao',
 			'Detalhes' => 'false'
         ];
-
-        $parasita = new Parasita();
+        
         $animal = new Animal();
+        $vermifugacao = new Vermifugacao();
+        
         $dados['animal'] = $animal->getEspecifico($id);
 
         if (!$dados['animal']) {
-            header("Location:".BASE_URL."parasita");
+            header("Location:".BASE_URL."vermifugacao");
         }
 
-        $dados['lista'] = $parasita->getEspecifico($id);
+
+        $dados['lista'] = $vermifugacao->getEspecifico($id);
 
         $this->setBreadCrumb($breadcrumb);
-        $this->loadTemplate('parasitaDetalhes', $dados); 
+        $this->loadTemplate('vermifugacaoDetalhes', $dados);
     }
 
     public function deletar($id)
     {
-      if (!empty($id)) {
-        $parasita = new Parasita();
-        $parasita->delete($id);
+      if(!empty($id)) {
+          $vermifugacao = new Vermifugacao();
+          $vermifugacao->delete($id);
       }
       $_SESSION['msg'] = 'deletado';
-      header("Location: ".BASE_URL."parasita");
+      header("Location: ".BASE_URL."vermifugacao");
     }
 
-    public function editar($idParasita)
+    public function editar($idVermifugacao)
     {   
         $dados = array();
     
-        if (!empty($idParasita)) {
+        if (!empty($idVermifugacao)) {
             
-            $parasita = new Parasita();
+            $vermifugacao = new Vermifugacao();
           
             // Usado para editar
-            if (!empty($_POST['id_parasita'])) {
+            if (!empty($_POST['id_vermifugacao'])) {
                 
-                $idParasita = $_POST['id_parasita'];
                 $nome_produto = $_POST['nome_produto'];
                 $dose = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
+                $id_peso_unidade = $_POST['id_peso_unidade'];
+                $peso = str_replace(',', '.',str_replace('.', '', $_POST['dose']));
                 $data_aplicacao = implode('-', array_reverse(explode('/', $_POST['data_aplicacao'])));
                 $data_prox_dose = implode('-', array_reverse(explode('/', $_POST['data_prox_dose'])));
                 $nome_veterinario = $_POST['nome_veterinario'];
                 $registro_crmv = $_POST['registro_crmv'];
 
-                $parasita->edit($idParasita, $nome_produto, $dose, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
+                $vermifugacao->edit($idVermifugacao, $nome_produto, $dose, $peso, $id_peso_unidade, $data_aplicacao, $data_prox_dose, $nome_veterinario, $registro_crmv);
                 
                 $_SESSION['msg'] = 'editado_sucesso';
-                header("Location: ".BASE_URL."parasita");
+                header("Location: ".BASE_URL."vermifugacao");
 
             } else {
                 
                 $breadcrumb = [
                     'Início' => '',
-                    'Parasita' => 'parasita',
+                    'Vermifugação' => 'vermifugacao',
                     'Editar' => 'false'
                 ];
 
-                $dados['info'] = $parasita->getEspecificoDado($idParasita);
+                $dados['info'] = $vermifugacao->getEspecificoDado($idVermifugacao);
                 
                 $unPeso = new PesoUnidade();
-                $dados['unPeso'] = $unPeso->getAll();
-
-                if (isset($dados['info'][0]['id_parasita'])) {
+                $dados['unPeso'] = $unPeso->getAll();        
+                
+                if (isset($dados['info'][0]['id_vermifugacao'])) {
                     $this->setBreadCrumb($breadcrumb);
-                    $this->loadTemplate('parasitaEditar',$dados);
+                    $this->loadTemplate('vermifugacaoEditar',$dados);
                 }
             }
             

@@ -26,7 +26,7 @@ class animalEspecieController extends Controller
     public function registrar()
     {
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Espécie' => 'animalespecie',
 			'Registrar' => 'false'
         ];

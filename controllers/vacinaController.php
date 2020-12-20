@@ -10,7 +10,7 @@ class vacinaController extends Controller
     public function index()
     {      
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Vacinas' => 'vacina',
 			'Listagem' => 'false'
         ];

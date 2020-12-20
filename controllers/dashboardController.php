@@ -1,7 +1,7 @@
 <?php
 
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {   
     public function index() 
     {   

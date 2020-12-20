@@ -5,7 +5,7 @@ class higieneController extends Controller
     public function index() 
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Higiene' => 'false',
 			'Listagem' => 'false'
         ];

@@ -10,7 +10,7 @@ class fornecedorController extends Controller
     public function index()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Fornecedores' => 'fornecedor',
 			'Listagem' => 'false'
         ];

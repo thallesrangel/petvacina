@@ -10,7 +10,7 @@ class pesoController extends Controller
     public function index()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Peso do Animal' => 'peso',
 			'Listagem' => 'false'
         ];

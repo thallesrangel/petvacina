@@ -5,7 +5,7 @@ class relatorioController extends Controller
     public function index()
     {
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Relatórios' => 'false',
         ];
 

@@ -11,7 +11,7 @@ class metricaController extends Controller
     public function index()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Métrica do Animal' => 'metrica',
 			'Listagem' => 'false'
         ];

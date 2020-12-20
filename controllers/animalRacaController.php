@@ -10,7 +10,7 @@ class animalRacaController extends Controller
     public function index()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Raça' => 'animalraca',
 			'Listagem' => 'false'
         ];

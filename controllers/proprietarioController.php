@@ -10,7 +10,7 @@ class proprietarioController extends Controller
     public function index() {
 
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Proprietários' => 'peso',
 			'Listagem' => 'false'
         ];
