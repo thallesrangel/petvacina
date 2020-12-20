@@ -133,16 +133,16 @@
                 <?php 
                     if (!empty($_SESSION['url_img_perfil'])) {
                 ?>
-                    <img src="<?=BASE_URL?>assets/img/perfil/<?=$_SESSION['url_img_perfil']?>" width="45" height="45" class="rounded-circle border border-default">
+                    <img src="<?=BASE_URL?>assets/img/perfil/<?=$_SESSION['url_img_perfil']?>" width="45" height="45" class="ml-2 rounded-circle border border-default">
                 <?php 
                     } else {
                 ?>
-                    <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="45" height="45" class="rounded-circle border border-default">
+                    <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="45" height="45" class="ml-2 rounded-circle border border-default">
                 <?php  
                     }
                 ?>
                
-                    <span class="ml-2"><?=$_SESSION['nome_usuario']?></span>
+                    <span class="ml-2"><?= $_SESSION['nome_usuario'] ?></span>
                     <ul class="list-inline ml-auto">
 
                         <a class="list-inline-item" href="<?=BASE_URL?>">
