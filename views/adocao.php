@@ -1,4 +1,4 @@
-<div class="container rounded adocao-filter mt-5">
+<div class="container rounded adocao-filter mt-5 ">
     <h1 class="text-center p-3">Encontre seu novo amigo</h1>
 
     <div class="row justify-content-center">
@@ -18,5 +18,7 @@
 
     </div>
 
-    <a class="btn btn-primary">PROCURAR</a>
+    <div class="row justify-content-center p-3">
+        <a class="btn btn-primary">PROCURAR</a>
+    </div>
 </div>
