@@ -153,6 +153,10 @@ p
         z-index: 2;
     }
 
+    .toggleMenu.active .logo{
+        z-index: 2;
+    }
+
 
     header ul
     {

@@ -220,9 +220,20 @@ background-color: #a29bfe;
     transition: 0.5s;
 }
 
+.logo-navbar-top
+{
+  visibility: hidden;
+}
 
 @media (max-width: 900px) {
 
+    .hide-mobile{
+        visibility: hidden;
+    }
+    .logo-navbar-top
+    {
+        visibility: visible;
+    }
 
     .toggleMenu
     {

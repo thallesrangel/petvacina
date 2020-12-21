@@ -38,9 +38,9 @@
     <div class="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion navigation scrollable-element">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class="sidebar-brand-text mx-5 m-3">
-                    <a href="<?=BASE_URL?>dashboard"><img src="<?=BASE_URL?>/assets/img/logo.png"/></a>
-                </div>
+                    <div class="sidebar-brand-text mx-5 m-3">
+                        <a href="<?=BASE_URL?>dashboard"><img src="<?=BASE_URL?>/assets/img/logo.png"/></a>
+                    </div>
             
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>animal">
@@ -70,7 +70,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                            <span><i class="icon-menu" data-feather="shield"></i> Vermifugação</span>
+                        <span><i class="icon-menu" data-feather="shield"></i> Vermifugação</span>
                         </a>
                     </li>
 
@@ -129,37 +129,47 @@
             <div id="content">
                 
                 <nav class="navbar navbar-expand-lg shadow-sm bg-white static-top w-100 p-1">
-                
-                <?php 
-                    if (!empty($_SESSION['url_img_perfil'])) {
-                ?>
-                    <img src="<?=BASE_URL?>assets/img/perfil/<?=$_SESSION['url_img_perfil']?>" width="45" height="45" class="ml-2 rounded-circle border border-default">
-                <?php 
-                    } else {
-                ?>
-                    <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="45" height="45" class="ml-2 rounded-circle border border-default">
-                <?php  
-                    }
-                ?>
-               
-                    <span class="ml-2"><?= $_SESSION['nome_usuario'] ?></span>
-                    
-                    <ul class="list-inline mt-2 ml-auto">
-                        <a class="list-inline-item" href="<?=BASE_URL?>">
+                    <div class="sidebar-brand-text mx-4 logo-navbar-top">
+                        <a href="<?=BASE_URL?>dashboard"><img src="<?=BASE_URL?>/assets/img/logo.png"/></a>
+                    </div>
+                    <ul class="list-inline ml-auto mt-2">
+
+                        <a class="list-inline-item mr-2" href="<?=BASE_URL?>">
                             <i class="icon-menu" data-feather="home"></i>
                         </a>
 
-                        <a class="list-inline-item mr-3" href="#">
+                        <a class="list-inline-item mr-2" href="#">
                             <i class="icon-menu" data-feather="bell"></i>
                         </a>
 
                        
-                        <a class="list-inline-item dropdown-toggle mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="list-inline-item dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="icon-menu" data-feather="more-vertical"></i>
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                            <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="user"></i> Perfil</a>
+                                <div class="dropdown-item font-14">
+                                    <?php 
+                                        if (!empty($_SESSION['url_img_perfil'])) {
+                                    ?>
+                                        <img src="<?=BASE_URL?>assets/img/perfil/<?=$_SESSION['url_img_perfil']?>" width="40" height="40" class="rounded-circle border border-default">
+                                    <?php 
+                                        } else {
+                                    ?>
+                                        <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="40" height="40" class="rounded-circle border border-default">
+                                    <?php  
+                                        }
+                                    ?>
+                                    <span class="ml-2"><?= $_SESSION['nome_usuario'] ?></span>
+                                </div>
+
+                                <div class="dropdown-divider"></div>
+                            
+                                <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button">
+                                 <i class="icon-menu" data-feather="user"></i> Perfil
+                                </a>
+                           
+                            
                             <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="log-out"></i> Sair</a>
                         </div>
                         
