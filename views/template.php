@@ -70,7 +70,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?=BASE_URL?>vermifugacao">
-                        <span><i class="icon-menu" data-feather="shield"></i> Vermifugação</span>
+                            <span><i class="icon-menu" data-feather="shield"></i> Vermifugação</span>
                         </a>
                     </li>
 
@@ -143,8 +143,8 @@
                 ?>
                
                     <span class="ml-2"><?= $_SESSION['nome_usuario'] ?></span>
-                    <ul class="list-inline ml-auto">
-
+                    
+                    <ul class="list-inline mt-2 ml-auto">
                         <a class="list-inline-item" href="<?=BASE_URL?>">
                             <i class="icon-menu" data-feather="home"></i>
                         </a>
