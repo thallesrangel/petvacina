@@ -23,9 +23,11 @@
         <div class="toggleMenu" onclick="menuToggle()"></div>
         
         <ul class="navbar-nav navigation">
+            <!--
             <li class="nav-item">
                 <a class="nav-link" href="<?=BASE_URL?>adocao">Adoção</a>
             </li>
+            -->
 
             <li class="nav-item">
                 <a class="nav-link" href="#">Saiba Mais</a>
