@@ -124,4 +124,3 @@ function pegarRacasPorEspecie(especie) {
 		}
 	});
 }
-
