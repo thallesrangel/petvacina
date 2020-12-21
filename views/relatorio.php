@@ -1,5 +1,5 @@
 <div class="container bg-white rounded h-75">
-    <h5 class="pl-3 pt-3 mb-0 h5-title-list">Relatórios</h5>
+    <h4 class="pl-3 pt-3 mb-0 h5-title-list">Relatórios</h4>
 
     <br>
     <div class="container">
@@ -8,7 +8,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>vermifugacaoreport">
-                        <div class="card-body">Vermifugação</div>
+                        <h5 class="card-body">Vermifugação</h5>
                     </a>
                 </div>
                 </a>
@@ -17,7 +17,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>animalreport">
-                        <div class="card-body">Animal</div>
+                        <h5 class="card-body">Animal</h5>
                     </a>
                 </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>cioreport">
-                        <div class="card-body">Anti-cio</div>
+                        <h5 class="card-body">Anti-cio</h5>
                     </a>
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>higienereport">
-                        <div class="card-body">Higiene</div>
+                        <h5 class="card-body">Higiene</h5>
                     </a>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>fornecedorreport">
-                        <div class="card-body">Fornecedor</div>
+                        <h5 class="card-body">Fornecedor</h5>
                     </a>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>parasitareport">
-                        <div class="card-body">Pulgas e Carrapatos</div>
+                        <h5 class="card-body">Pulgas e Carrapatos</h5>
                     </a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>metricareport">
-                        <div class="card-body">Métricas</div>
+                        <h5 class="card-body">Métricas</h5>
                     </a>
                 </div>
             </div>
@@ -68,7 +68,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a href="<?=BASE_URL?>vacinareport">
-                        <div class="card-body">Vacinas</div>
+                        <h5 class="card-body">Vacinas</h5>
                     </a>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card-report card">
                     <a target="_blank" href="<?=BASE_URL?>proprietarioreport/render">
-                        <div class="card-body">Proprietários</div>
+                        <h5 class="card-body">Proprietários</h5>
                     </a>
                 </div>
             </div>
