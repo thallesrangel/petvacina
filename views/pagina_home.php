@@ -2,7 +2,7 @@
     <div class="row align-items-center">
         <div class="col-md-5">
             <h1>A principal ferramenta de gestão de animais domésticos</h1>
-            <a class="btn btn-sm btn-secondary" href="app/login">Registre-se Grátis</a>
+            <a class="btn btn-sm btn-secondary" href="<?=BASE_URL?>usuario/registrar">Registre-se Grátis</a>
         </div>
 
         <div class="col-md-7 d-flex justify-content-center">
