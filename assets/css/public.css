@@ -216,4 +216,8 @@ p
         width: auto;
     }
 
+    #row-reverse{
+        display: flex; 
+        flex-flow: column-reverse;
+    }
 }

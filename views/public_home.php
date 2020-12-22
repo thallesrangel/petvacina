@@ -38,11 +38,11 @@
 </div>
 
 <div class="container-fluid div-top">
-    <div class="row align-items-center justify-content-center">
+    <div class="row align-items-center justify-content-center" id="row-reverse">
 
         <div class="col-sm-12 col-md-4">
             <h3>Proprietários</h3>
-            <p>Animais registrados por proprietário, permitindo maior acompnhamento do animal.</p>
+            <p>Animais registrados por proprietário, permitindo maior acompanhamento do animal.</p>
             
             <h3 class="mt-5">Vacinas</h3>
             <p>Vacine e tenha todo o histórico de vacinação de seus animais. Permite agendar vacinações sendo notificado na data definida.</p>
