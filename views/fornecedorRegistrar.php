@@ -11,13 +11,13 @@
         <div class="row">
         
             <div class="col-md-3 col-sm-12">
-                <label for="fornecedor">Fornecedor *</labe>
+                <label for="fornecedor">Fornecedor *</label>
                 <input id="fornecedor" type="text" class="form-control form-control-sm" name="nome_fornecedor" required>
             </div>
 
             <div class="col-sm-12 col-md-3">
                 <div class="form-group">
-                    <span>Fornecedor Tipo *</span>
+                    <label for="id_fornecedor_tipo">Fornecedor Tipo *</label>
                     <select class="form-control form-control-sm" name="id_fornecedor_tipo" required>
                         <?php
                         foreach($fornecedor_tipo as $item){

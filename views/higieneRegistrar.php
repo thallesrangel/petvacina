@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-3">
                 <div class="form-group">
-                    <span>Fornecedor *</span>
+                    <label for="id_fornecedor">Fornecedor *</label>
                     <select class="form-control form-control-sm js-select" name="id_fornecedor" required >
                         <?php
                         foreach($fornecedor as $item){
@@ -23,9 +23,9 @@
                 </div>  
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <div class="form-group">
-                    <span>Tipo Serviço *</span>
+                    <label for="id_higiene_tipo">Tipo Serviço *</label>
                     <select class="form-control form-control-sm js-select" name="id_higiene_tipo" required >
                         <?php
                         foreach($higiene_tipo as $item){
@@ -41,18 +41,18 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3">
                 <label for="data_servico">Data Serviço *</labe>
                 <input id="data_servico" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_servico" value="<?=date("d/m/Y")?>">
             </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-3">
                 <label for="data_prox_servico">Próximo Serviço</labe>
                 <input id="data_prox_servico" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_prox_servico">
             </div>
 
         </div>
-
+        <br>
         <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
         <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 

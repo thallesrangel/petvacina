@@ -10,15 +10,15 @@
     <form method="POST" class="p-2" action="<?=BASE_URL?>metrica/registrar_save/<?=$url[2];?>">
         <div class="row">
         
-            <div class="col-md-3 col-sm-12">
-                <label for="altura">Altura do Animal *</labe>
+            <div class="col-sm-12 col-md-2">
+                <label for="altura">Altura do Animal *</label>
                 <input id="altura" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="altura_animal" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
-                    <span>Und Altura *</span>
-                    <select class="form-control form-control-sm" name="id_metrica_unidade_altura" required >
+                    <label for="unAltura">Altura (Un) *</label>
+                    <select id="unAltura" class="form-control form-control-sm" name="id_metrica_unidade_altura" required >
                         <?php
                         foreach($unMetrica as $item){
                         ?>
@@ -28,15 +28,15 @@
                 </div>  
             </div>
 
-            <div class="col-md-3 col-sm-12">
-                <label for="comprimento">Comprimento do Animal *</labe>
+            <div class="col-md-2 col-sm-12">
+                <label for="comprimento">Comprimento *</label>
                 <input id="comprimento" type="text" class="form-control form-control-sm quantidade" placeholder="0.000,00" name="comprimento_animal" required >
             </div>
 
             <div class="col-sm-12 col-md-2">
                 <div class="form-group">
-                    <span title="Unidade de Comprimento">Comprimento *</span>
-                    <select class="form-control form-control-sm" name="id_metrica_unidade_comprimento" required >
+                    <label for="comprimento" title="Unidade de Comprimento">Comprimento (Un) *</label>
+                    <select id="comprimento" class="form-control form-control-sm" name="id_metrica_unidade_comprimento" required >
                         <?php
                         foreach($unMetrica as $item){
                         ?>
@@ -46,18 +46,17 @@
                 </div>  
             </div>
 
-            <div class="col-md-3 col-sm-12">
-                <label for="medicao">Data Medição *</labe>
+            <div class="col-md-2 col-sm-12">
+                <label for="medicao">Data Medição *</label>
                 <input id="medicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_medicao" value="<?=date("d/m/Y")?>" required>
             </div>
 
-            <div class="col-md-3 col-sm-12">
-                <label for="data_remedicao">Data Remedição</labe>
+            <div class="col-md-2 col-sm-12">
+                <label for="data_remedicao">Data Remedição</label>
                 <input id="data_remedicao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_remedicao">
             </div>
         </div>
-     
-
+        <br>
         <input class="btn btn-sm btn-primary" type="submit" value="Registrar">
         <a class="btn btn-sm btn-default" href="<?=BASE_URL?>">Cancelar</a>
     </form> 
