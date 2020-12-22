@@ -45,7 +45,7 @@ p
     letter-spacing: .3px;
     line-height: 1.4;
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 500;
 
 }
 
@@ -54,6 +54,10 @@ p
     margin-top: 80px;
 }
 
+.div-margin-img
+{
+    margin-bottom: 40px;
+}
 .navbar
 {
     background-color: #FFF;

@@ -23,7 +23,7 @@
 <div class="container-fluid div-top">
     <div class="row align-items-center justify-content-center">
         <div class="col-sm-12 col-md-7">
-            <img class="img-fluid" src="<?=BASE_URL?>/assets/img/public/1.png"/>
+            <img class="img-fluid rounded" src="<?=BASE_URL?>/assets/img/public/1.png"/>
         </div>
 
         <div class="col-sm-12 col-md-4">
@@ -49,8 +49,22 @@
             
         </div>
 
-        <div class="col-sm-12 col-md-7">
-            <img class="img-fluid" src="<?=BASE_URL?>/assets/img/public/2.png"/>
+        <div class="col-sm-12 col-md-7 div-margin-img">
+            <img class="img-fluid rounded" src="<?=BASE_URL?>/assets/img/public/2.png"/>
         </div>
     </div>
+</div>
+
+
+<div class="container div-top">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <h2>Doe ou adote um animal</h2>
+        </div>
+        
+        <div class="col-md-4">
+            <p>Todo animal registrado é passível de adoção, basta clicar, e analisar todo histórico do animal, inclusive fotos e iniciar com o atual proprietário e ter uma breve conversa para conhecer mais sobre seu novo amigo.</p>
+        </div>
+    </div>
+    
 </div>
