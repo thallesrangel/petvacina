@@ -22,7 +22,7 @@
 
 <div class="container-fluid div-top">
     <div class="row align-items-center justify-content-center">
-        <div class="col-sm-12 col-md-7">
+        <div class="col-sm-12 col-md-7 div-margin-img">
             <img class="img-fluid rounded" src="<?=BASE_URL?>/assets/img/public/1.png"/>
         </div>
 
