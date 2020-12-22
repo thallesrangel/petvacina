@@ -58,7 +58,9 @@ p
 {
     margin-left: 10px;
 }
-
+.navbar-nav .nav-item .nav-link:hover{
+    background-color: #ecf0f1;
+}
 .sidebar .nav-item .li-sub
 {
     padding: 10px;

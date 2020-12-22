@@ -16,9 +16,9 @@ class animalEspecieController extends Controller
 			'Listagem' => 'false'
         ];
 
-        $animais = new AnimalEspecie();
+        $animaisEspecie = new AnimalEspecie();
         
-        $dados['lista'] = $animais->getAll();
+        $dados['lista'] = $animaisEspecie->getAll();
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplate('animalEspecieList', $dados);
     }
