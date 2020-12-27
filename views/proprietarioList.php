@@ -5,7 +5,7 @@
             <h5 class="p-1 float-left">Proprietários</h5>
             <a href="<?=BASE_URL?>proprietario/registrar" class="btn btn-sm btn-primary float-right mr-4"><span><i data-feather="plus"></i> Registrar </span></a>
             <a target="_blank" class="btn btn-sm btn-primary float-right mr-2" href="<?=BASE_URL?>proprietarioreport/render"><span><i data-feather="printer"></i> Imprimir </span></a>
-            <table class="table">
+            <table class="table table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>

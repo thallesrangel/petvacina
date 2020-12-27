@@ -43,7 +43,7 @@ class pesoController extends Controller
     public function detalhes($id)
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Peso do Animal' => 'peso',
 			'Detalhes' => 'false'
         ];
@@ -66,7 +66,7 @@ class pesoController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Peso do Animal' => 'peso',
 			'Registrar' => 'false'
         ];
@@ -131,7 +131,7 @@ class pesoController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Peso do Animal' => 'peso',
                     'Editar' => 'false'
                 ];

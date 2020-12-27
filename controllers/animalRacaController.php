@@ -26,7 +26,7 @@ class animalRacaController extends Controller
     public function registrar()
     {
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Raça' => 'false',
 			'Registrar' => 'false'
         ];
@@ -96,7 +96,7 @@ class animalRacaController extends Controller
             $animalRaca = new AnimalRaca();
   
             $breadcrumb = [
-                'Início' => '',
+                'Início' => 'dashboard',
                 'Raça' => 'animalraca',
                 'Editar' => 'false'
             ];

@@ -134,7 +134,7 @@
                     </div>
                     <ul class="list-inline ml-auto mt-2">
 
-                        <a class="list-inline-item mr-2" href="<?=BASE_URL?>">
+                        <a class="list-inline-item mr-2" href="<?=BASE_URL?>dashboard">
                             <i class="icon-menu" data-feather="home"></i>
                         </a>
 

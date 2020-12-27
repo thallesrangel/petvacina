@@ -40,7 +40,7 @@ class vermifugacaoController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Vermifugação' => 'vermifugacao',
 			'Registrar' => 'false'
         ];
@@ -81,7 +81,7 @@ class vermifugacaoController extends Controller
     public function detalhes($id)
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Vermifugação' => 'vermifugacao',
 			'Detalhes' => 'false'
         ];
@@ -140,7 +140,7 @@ class vermifugacaoController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Vermifugação' => 'vermifugacao',
                     'Editar' => 'false'
                 ];

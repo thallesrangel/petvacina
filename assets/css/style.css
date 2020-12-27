@@ -148,6 +148,11 @@ p
     overflow-x: hidden;
 }
 
+.card-animal
+{
+    margin-left: 1rem !important;
+}
+
 .card-animal:hover{
     border: 1px solid #f67280;
 }
@@ -229,9 +234,15 @@ background-color: #a29bfe;
 
 @media (max-width: 900px) {
 
+    .card-animal
+    {
+        margin-left: 0rem !important;
+    }
+
     .hide-mobile{
         visibility: hidden;
     }
+
     .logo-navbar-top
     {
         visibility: visible;

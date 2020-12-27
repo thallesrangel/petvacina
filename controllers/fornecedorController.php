@@ -30,7 +30,7 @@ class fornecedorController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Fornecedor' => 'fornecedor',
 			'Registrar' => 'false'
         ];
@@ -96,7 +96,7 @@ class fornecedorController extends Controller
             $fornecedor = new Fornecedor();
             $fornecedor_tipo = new FornecedorTipo();
             $breadcrumb = [
-                'Início' => '',
+                'Início' => 'dashboard',
                 'Fornecedor' => 'fornecedor',
                 'Editar' => 'false'
             ];

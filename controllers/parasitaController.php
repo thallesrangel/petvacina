@@ -43,7 +43,7 @@ class parasitaController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Pulgas e Carrapatos' => 'parasita',
 			'Registrar' => 'false'
         ];
@@ -81,7 +81,7 @@ class parasitaController extends Controller
     public function detalhes($id)
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Pulgas e Carrapatos' => 'parasita',
 			'Detalhes' => 'false'
         ];
@@ -137,7 +137,7 @@ class parasitaController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Parasita' => 'parasita',
                     'Editar' => 'false'
                 ];

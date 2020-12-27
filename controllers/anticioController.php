@@ -44,7 +44,7 @@ class anticioController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Anti-cio' => 'anticio',
 			'Registrar' => 'false'
         ];
@@ -76,7 +76,7 @@ class anticioController extends Controller
     public function detalhes($id)
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Anti-cio' => 'anticio',
 			'Detalhes' => 'false'
         ];
@@ -132,7 +132,7 @@ class anticioController extends Controller
             } else {
 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Anti-cio' => 'anticio',
                     'Editar' => 'false'
                 ];

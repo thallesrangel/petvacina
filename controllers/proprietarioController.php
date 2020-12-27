@@ -30,7 +30,7 @@ class proprietarioController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Proprietários' => 'proprietario',
 			'Registrar' => 'false'
         ];
@@ -123,7 +123,7 @@ class proprietarioController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Proprietário' => 'proprietario',
                     'Editar' => 'false'
                 ];

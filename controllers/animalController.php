@@ -46,7 +46,7 @@ class animalController extends Controller
     public function detalhes($id)
     {
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Animais' => 'animal',
 			'Detalhes' => 'false'
         ];
@@ -67,7 +67,7 @@ class animalController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Animais' => 'animal',
 			'Registrar' => 'false'
         ];
@@ -156,7 +156,7 @@ class animalController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Animal' => 'animal',
                     'Editar' => 'false'
                 ];

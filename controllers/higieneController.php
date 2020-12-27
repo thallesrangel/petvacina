@@ -40,7 +40,7 @@ class higieneController extends Controller
     public function detalhes($id) 
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Higiene' => 'higiene',
 			'Detalhes' => 'false'
         ];
@@ -63,7 +63,7 @@ class higieneController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Higiene' => 'higiene',
 			'Registrar' => 'false'
         ];
@@ -119,7 +119,7 @@ class higieneController extends Controller
         
 
             $breadcrumb = [
-                'Início' => '',
+                'Início' => 'dashboard',
                 'Higiene' => 'higiene',
                 'Editar' => 'false'
             ];

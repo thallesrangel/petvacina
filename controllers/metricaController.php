@@ -45,7 +45,7 @@ class metricaController extends Controller
     public function detalhes($id)
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Métrica do Animal' => 'metrica',
 			'Detalhes' => 'false'
         ];
@@ -67,7 +67,7 @@ class metricaController extends Controller
     public function registrar()
     {   
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Metrica do Animal' => 'metrica',
 			'Registrar' => 'false'
         ];
@@ -135,7 +135,7 @@ class metricaController extends Controller
             } else {
                 
                 $breadcrumb = [
-                    'Início' => '',
+                    'Início' => 'dashboard',
                     'Métrica do Animal' => 'metrica',
                     'Editar' => 'false'
                 ];

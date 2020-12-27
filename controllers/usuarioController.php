@@ -62,7 +62,7 @@ class usuarioController extends Controller
     {
 
         $breadcrumb = [
-			'Início' => '',
+			'Início' => 'dashboard',
 			'Usuário' => 'false',
 			'Perfil' => 'false'
         ];
