@@ -11,13 +11,9 @@
 		<div class="notfound">
 		
 			<div class="notfound-404">
-				<h1>4</h1>
+				<h1>404</h1>
 			</div>
-			<img width="150" class="img-fluid rounded-circle" src="<?=BASE_URL?>/assets/img/public/404.gif"/>
-			<div class="notfound-404">
-				<h1>4</h1>
-			</div>
-
+	
 			<h2>Oops! Página não encontrada</h2>
 			<p>Esta página não existe ou está temporariamente indisponível. <a href="<?=BASE_URL?>dashboard">Voltar para início</a></p>
 			<div class="notfound-social">
