@@ -238,7 +238,11 @@ background-color: #a29bfe;
 {
   visibility: hidden;
 }
-
+.pagination
+{
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 900px) {
 
     .card-animal
