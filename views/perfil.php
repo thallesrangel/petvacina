@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-sm-12 col-md-3">
             <img src="<?=BASE_URL?>assets/img/perfil/padrao.png" width="130" height="130" class="rounded-circle border border-default">
         </div>
