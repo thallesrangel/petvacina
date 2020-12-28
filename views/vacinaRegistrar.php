@@ -20,7 +20,7 @@
                 <input id="dose" type="text" class="form-control form-control-sm quantidade" name="dose" placeholder="0.000,00" required >
             </div>
 
-            <div class="col-sm-12 col-md-2">
+            <div class="col-md-2">
                 <label for="aplicacao">Data Aplicação *</label>
                 <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao" value="<?=date("d/m/Y")?>">
             </div>
@@ -29,12 +29,12 @@
 
         <div class="row mt-3">
 
-            <div class="col-sm-12 col-md-2">
+            <div class="col-md-2">
                 <label for="revacinacao">Data Revacinação</label>
                 <input id="revacinacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_revacinacao">
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-md-3">
                 <label for="veterinario">Médico Veterinário</label>
                 <input id="veterinario" type="text" class="form-control form-control-sm" name="nome_veterinario">
             </div>

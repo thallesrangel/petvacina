@@ -20,12 +20,12 @@
             </div>
 
             
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label for="aplicacao">Data Aplicação *</label>
                 <input id="aplicacao" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_aplicacao" value="<?=date("d/m/Y")?>">
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label for="data_prox_dose">Data Reapliação</label>
                 <input id="data_prox_dose" type="text"  date-input="d/m/y" class="form-control form-control-sm" name="data_prox_dose">
             </div>
