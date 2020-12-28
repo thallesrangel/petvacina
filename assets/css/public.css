@@ -222,4 +222,10 @@ p
         display: flex; 
         flex-flow: column-reverse;
     }
+
+    .cards{
+        display: flex;
+        align-items: center;
+        height: 100vr;
+    }
 }

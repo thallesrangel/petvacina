@@ -308,11 +308,4 @@ background-color: #a29bfe;
     {
         margin-top: 10px;
     }
-    
-
-    .cards{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
