@@ -38,7 +38,7 @@
                     <img class="img-fluid" src="<?=BASE_URL?>/assets/img/logo.png">
                 </div>
             
-                <div class="row pt-3 pl-4 pr-4">
+                <div class="row pt-3 pl-2 pr-2">
                     <div class="col-sm-12 col-md-6">
                         <label for="nome">Nome</label>
                         <input class="form-control form-control-sm" id="nome" type="text" name="nome" required>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="row pt-3 pl-4 pr-4">
+                <div class="row pt-3 pl-2 pr-2">
                     <div class="col-sm-12 col-md-6">
                         <label for="email">E-mail</label>
                         <input class="form-control form-control-sm" id="email" type="email" name="email" required>
@@ -62,10 +62,11 @@
                     </div>
                 </div>
                
-                <div class="row pt-3 pl-4 pr-4">
+                <div class="row pt-3 pl-2 pr-2">
                     <div class="col-sm-12 col-md-6 mb-3">
                         <label for="estado">Estado</label><br>
                         <select class="form-control form-control-sm js-select" name="id_estado" onchange="pegarCidades(this)" required>
+                            <option value="">Estados</option>
                             <?php
                             foreach($estado as $item){
                             ?>
