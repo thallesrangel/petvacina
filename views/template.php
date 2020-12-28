@@ -148,7 +148,8 @@
                         </a>
                         
                         <div class="list-inline-item dropdown-menu dropdown-menu-right mt-2 mr-3">
-                                <div class="dropdown-item font-14">
+                                <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button">
+                                    
                                     <?php 
                                         if (!empty($_SESSION['url_img_perfil'])) {
                                     ?>
@@ -161,14 +162,9 @@
                                         }
                                     ?>
                                     <span class="ml-2"><?= $_SESSION['nome_usuario'] ?></span>
-                                </div>
+                                </a>
 
                                 <div class="dropdown-divider"></div>
-                            
-                                <a href="<?=BASE_URL?>usuario/perfil" class="dropdown-item font-14" type="button">
-                                 <i class="icon-menu" data-feather="user"></i> Perfil
-                                </a>
-                           
                             
                             <a href="<?=BASE_URL?>login/logout" class="dropdown-item font-14" type="button"><i class="icon-menu" data-feather="log-out"></i> Sair</a>
                         </div>
