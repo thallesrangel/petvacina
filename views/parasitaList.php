@@ -19,7 +19,7 @@
 
 </div>
 
-<div class="container">
+<div class="container bg-white">
  
     <ul class="pagination">
 

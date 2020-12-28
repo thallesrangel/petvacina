@@ -226,6 +226,6 @@ p
     .cards{
         display: flex;
         align-items: center;
-        height: 100vr;
+        height: 100%;
     }
 }
