@@ -1,4 +1,4 @@
-<div class="container bg-white rounded h-75">
+<div class="container bg-white rounded h-75 pb-2">
     <h5 class="pl-3 pt-3 mb-0 h5-title-list">Pulgas e Carrapatos</h5>
   
     <?php
@@ -19,7 +19,7 @@
 
 </div>
 
-<div class="container bg-white">
+<div class="container">
  
     <ul class="pagination">
 
