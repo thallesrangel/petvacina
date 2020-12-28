@@ -154,6 +154,7 @@ p
         background-repeat: no-repeat;
         filter: invert(1);
         z-index: 2;
+        position: relative;
     }
 
     .toggleMenu.active .logo{
@@ -188,9 +189,9 @@ p
     {
         border: 1px solid transparent;
         color: #42526E;
-        margin-right: 2px;
-        margin-left: 25px;
-        font-size: 1.8em;
+        margin-right: 0px;
+        margin-left: 0px;
+        font-size: 1.9em;
     }
 
     .nav-link:hover
