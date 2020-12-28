@@ -161,7 +161,6 @@ p
         z-index: 2;
     }
 
-
     header ul
     {
         position: fixed;
@@ -196,11 +195,9 @@ p
 
     .nav-link:hover
     {
-    color: #253858;
+        color: #253858;
     }
 
-
-    
     .btn-primary
     {
         padding: 4px 20px !important;
