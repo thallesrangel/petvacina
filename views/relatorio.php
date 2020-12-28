@@ -1,4 +1,4 @@
-<div class="container bg-white rounded h-75 p-1">
+<div class="container bg-white rounded h-75 pb-2">
     <h4 class="pl-3 pt-3 mb-0 h5-title-list">Relatórios</h4>
 
     <br>
