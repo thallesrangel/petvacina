@@ -23,7 +23,7 @@
  
     <ul class="pagination">
 
-        <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>peso/?p=1">Primeira</a></li>
+        <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>peso/?p=1"> <i class="icon-menu" data-feather="chevron-left"></i> </a></li>
             <?php
                 for ($pag_ant = $paginaAtual - $max_links; $pag_ant <= $paginaAtual - 1; $pag_ant++){
                     if($pag_ant >= 1){
@@ -45,6 +45,6 @@
             }
         ?>
 
-        <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>peso/?p=<?= $paginas;?>"> Última </a></li>
+        <li class="page-item"><a class="page-link" href="<?= BASE_URL;?>peso/?p=<?= $paginas;?>"> <i class="icon-menu" data-feather="chevron-right"></i> </a></li>
     </ul>
 </div>
