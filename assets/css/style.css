@@ -156,7 +156,14 @@ p
 .card-animal:hover{
     border: 1px solid #f67280;
 }
-
+.card a {
+    text-decoration: none !important;
+    color: #253858;
+}
+.card a:hover {
+    text-decoration: none !important;
+    color: #42526E;
+}
 /*
 TABELA COR SIM COR NÃO
 
