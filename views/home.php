@@ -19,7 +19,7 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center cards">
 
         <div class="col-sm-12 col-md-3 mt-2">
             <div class="card border-left-primary shadow py-2">
