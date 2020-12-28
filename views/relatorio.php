@@ -1,8 +1,8 @@
-<div class="container bg-white rounded h-75">
+<div class="container bg-white rounded h-75 p-1">
     <h4 class="pl-3 pt-3 mb-0 h5-title-list">Relatórios</h4>
 
     <br>
-    <div class="container p-1">
+    <div class="container">
         <div class="row text-center">
 
             <div class="col-md-3 col-sm-12 mt-2">
